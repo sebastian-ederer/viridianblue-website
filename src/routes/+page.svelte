@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '@fontsource-variable/dancing-script';
-	function getRandomTealColor() {
+
+	function getRayColor() {
 		const sunRayColors = [
 			'#FFFFFF', // Pure white
 			'#FFF9F0', // Very light off-white (slightly warmer)
@@ -25,13 +26,15 @@
 		{#each { length: 20 } as _, i}
 			<span
 				class={`ray${i}`}
-				style="background: linear-gradient(to bottom, {getRandomTealColor()} 0%, {getRandomTealColor()} 50%, rgba(255, 255, 255, 0) 100%);"
+				style="background: linear-gradient(to bottom, {getRayColor()} 0%, {getRayColor()} 50%, rgba(255, 255, 255, 0) 100%);"
 			></span>
 		{/each}
 	</div>
 </div>
 
 <style lang="scss">
+	@use 'sass:math';
+
 	.home {
 		flex: 1;
 		display: flex;
@@ -66,19 +69,19 @@
 			position: absolute;
 			top: calc(((100vw + 100vh) / 3) * -1);
 			left: -140px;
-			width: calc(random(100) + 30) + px;
+			width: calc(math.random(100) + 30) + px;
 			height: calc(100vw + 100vh);
 			clip-path: polygon(50% 10%, 100% 100%, 0 100%);
 			transform-origin: top right;
-			transform: rotate(calc((random(55) + 8) * -1) + deg);
+			transform: rotate(calc((math.random(55) + 8) * -1) + deg);
 			display: block;
 			mix-blend-mode: hard-light;
 			box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 			opacity: 0;
 
 			animation-name: blinkRay;
-			animation-duration: calc(random(5) + 1) + s;
-			animation-delay: calc(random($i) * random(5)) + s;
+			animation-duration: calc(math.random(5) + 1) + s;
+			animation-delay: calc(math.random($i) * math.random(5)) + s;
 			animation-iteration-count: infinite;
 			animation-direction: alternate;
 			animation-timing-function: ease-in-out;
