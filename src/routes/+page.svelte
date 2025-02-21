@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Bird from '$lib/components/bird.svelte';
 	import '@fontsource-variable/dancing-script';
 
 	function getRayColor() {
@@ -21,6 +22,8 @@
 
 <div class={'home'}>
 	<h1 class={'heading'}>Viridian Blue</h1>
+
+	<Bird />
 
 	<div class={'sun-rays'}>
 		{#each { length: 20 } as _, i}
