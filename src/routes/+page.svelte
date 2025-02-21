@@ -81,7 +81,7 @@
 
 			animation-name: blinkRay;
 			animation-duration: calc(math.random(5) + 1) + s;
-			animation-delay: calc(math.random($i) * math.random(5)) + s;
+			animation-delay: calc(($i - 1) * math.random(20)) + s;
 			animation-iteration-count: infinite;
 			animation-direction: alternate;
 			animation-timing-function: ease-in-out;
