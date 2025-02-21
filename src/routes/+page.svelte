@@ -19,7 +19,7 @@
 </script>
 
 <div class="home">
-	<h1>Viridian Blue</h1>
+	<h1 class="heading">Viridian Blue</h1>
 
 	<div class="sun-rays">
 		{#each { length: 20 } as _, i}
@@ -41,7 +41,7 @@
 		overflow: hidden;
 	}
 
-	h1 {
+	.heading {
 		font-size: 5rem;
 		font-family: 'Dancing Script Variable', cursive;
 		font-weight: bold;
