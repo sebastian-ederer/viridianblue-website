@@ -19,10 +19,10 @@
 	}
 </script>
 
-<div class="home">
-	<h1 class="heading">Viridian Blue</h1>
+<div class={'home'}>
+	<h1 class={'heading'}>Viridian Blue</h1>
 
-	<div class="sun-rays">
+	<div class={'sun-rays'}>
 		{#each { length: 20 } as _, i}
 			<span
 				class={`ray${i}`}
