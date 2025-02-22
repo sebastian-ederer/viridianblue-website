@@ -149,7 +149,11 @@
 		draw();
 	}
 
-	function playSong() {
+	async function playSong() {
+		if (audioContext.state === 'suspended') {
+			await audioContext.resume(); // ✅ Ensure the AudioContext is running
+		}
+
 		audio.play();
 		isPlaying = true;
 	}
