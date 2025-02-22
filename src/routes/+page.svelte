@@ -25,9 +25,24 @@
 			const source = audioContext.createMediaElementSource(audio);
 			source.connect(analyser);
 			analyser.connect(audioContext.destination);
-			analyser.fftSize = 128;
+			updateFFTSize();
 			frequencyData = new Uint8Array(analyser.frequencyBinCount);
 		}
+	}
+
+	// Function to dynamically adjust FFT size
+	function updateFFTSize() {
+		const fixedBarWidth = 10; // Fixed bar width in pixels
+		const screenBars = Math.floor(window.innerWidth / (fixedBarWidth * 2)); // Number of bars needed
+
+		// Find the closest power of 2 that can accommodate at least 'screenBars' frequency bins
+		let fftSize = 32; // Start with the smallest valid FFT size
+		while (fftSize / 2 < screenBars) {
+			fftSize *= 2;
+		}
+
+		analyser.fftSize = fftSize;
+		frequencyData = new Uint8Array(analyser.frequencyBinCount);
 	}
 
 	function setupAudioVisualizer() {
@@ -35,7 +50,7 @@
 
 		canvasCtx = canvas.getContext('2d');
 		canvasWidth = window.innerWidth;
-		canvasHeight = 200;
+		canvasHeight = 100;
 		canvas.width = canvasWidth;
 		canvas.height = canvasHeight;
 		canvasCtx?.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -71,27 +86,25 @@
 		if (canvasCtx === null) return;
 		requestAnimationFrame(draw);
 
-		// Update frequency data.
+		// Update frequency data
 		analyser.getByteFrequencyData(frequencyData);
-		canvasCtx.clearRect(0, 0, canvasWidth, canvasHeight); // Clear canvas
+		canvasCtx.clearRect(0, 0, canvasWidth, canvasHeight);
 
-		const totalBars = frequencyData.length / 2; // Half for left, half for right
-		const minBarHeight = 15; // Minimum bar height
+		const minBarHeight = 10; // Minimum bar height
+		const maxBarHeight = 80; // Maximum bar height
 		const borderRadius = 5; // Corner rounding
+		const fixedBarWidth = 10; // Fixed bar width
 
-		// Calculate total space available for bars (leave 10% for gaps)
-		const totalGapSpace = canvasWidth * 0.1; // 10% reserved for gaps
-		const totalAvailableWidth = canvasWidth - totalGapSpace;
+		// Compute how many bars we actually have
+		const totalBars = frequencyData.length / 2; // Half for left, half for right
 
-		// Calculate perfect bar width and gap to evenly distribute across canvas
-		const dynamicBarWidth = totalAvailableWidth / (2 * totalBars);
-		const gap = totalGapSpace / (2 * totalBars);
-
-		// Center X position
+		// Calculate the gap dynamically to distribute bars evenly
+		const totalAvailableWidth = canvasWidth; // Reserve 10% of width for gaps
+		const gap = (totalAvailableWidth - totalBars * fixedBarWidth * 2) / (2 * totalBars);
 		const centerX = canvasWidth / 2;
 
 		let xRight = centerX + gap; // Right side starts from the center
-		let xLeft = centerX - dynamicBarWidth - gap; // Left side starts just before center
+		let xLeft = centerX - fixedBarWidth; // Left side starts just before center
 
 		for (let i = 0; i < totalBars; i++) {
 			// Heights for left and right bars
@@ -99,6 +112,7 @@
 
 			// Ensure minimum height
 			barHeight = Math.max(barHeight, minBarHeight);
+			barHeight = Math.min(barHeight, maxBarHeight);
 
 			// Set bar color
 			canvasCtx.fillStyle = 'rgb(255, 255, 255)';
@@ -108,7 +122,7 @@
 				canvasCtx,
 				xLeft,
 				canvasHeight - barHeight,
-				dynamicBarWidth,
+				fixedBarWidth,
 				barHeight,
 				borderRadius
 			);
@@ -118,14 +132,14 @@
 				canvasCtx,
 				xRight,
 				canvasHeight - barHeight,
-				dynamicBarWidth,
+				fixedBarWidth,
 				barHeight,
 				borderRadius
 			);
 
 			// Move positions outward
-			xLeft -= dynamicBarWidth + gap;
-			xRight += dynamicBarWidth + gap;
+			xLeft -= fixedBarWidth + gap;
+			xRight += fixedBarWidth + gap;
 		}
 	}
 
@@ -147,12 +161,24 @@
 
 	onMount(() => {
 		init();
+
+		window.addEventListener('resize', () => {
+			updateFFTSize();
+			setupAudioVisualizer(); // Recalculate canvas size
+		});
+
+		return () => {
+			window.removeEventListener('resize', () => {
+				updateFFTSize();
+				setupAudioVisualizer(); // Recalculate canvas size
+			});
+		};
 	});
 </script>
 
 <div class="home">
 	<div class={'audioWrapper'}>
-		<audio controls bind:this={audio} loop volume="0.2">
+		<audio bind:this={audio} loop volume="0.2">
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
 			<source src={'/porter-robinson-sea-of-voices.ogg'} type="audio/ogg" />
 		</audio>
@@ -247,7 +273,7 @@
 	}
 
 	.audioWrapper {
-		z-index: 10;
+		position: absolute;
 	}
 
 	/* Canvas container styling to place the visualization at the bottom of the page */
@@ -256,7 +282,6 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 100px;
 		z-index: 1;
 	}
 
