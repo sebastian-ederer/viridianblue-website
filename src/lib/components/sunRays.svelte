@@ -49,7 +49,9 @@
 			height: calc(100vw + 100vh);
 			clip-path: polygon(50% 10%, 100% 100%, 0 100%);
 			transform-origin: top right;
+
 			transform: rotate(calc((math.random(55) + 8) * -1) + deg);
+
 			display: block;
 			mix-blend-mode: hard-light;
 			box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
@@ -60,6 +62,20 @@
 			animation-iteration-count: infinite;
 			animation-direction: alternate;
 			animation-timing-function: ease-in-out;
+		}
+
+		// Mobile-specific styles (smaller rotation angles)
+		@media (max-width: 480px) {
+			.ray#{$i} {
+				transform: rotate(calc((math.random(20) + 5) * -1) + deg);
+			}
+		}
+
+		// Tablet-specific styles (intermediate rotation angles)
+		@media (max-width: 768px) {
+			.ray#{$i} {
+				transform: rotate(calc((math.random(40) + 7) * -1) + deg);
+			}
 		}
 	}
 
