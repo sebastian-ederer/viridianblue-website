@@ -35,7 +35,7 @@
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 100vh;
+		height: 100dvh;
 		transform-style: preserve-3d;
 		overflow: hidden;
 	}
@@ -43,10 +43,10 @@
 	@for $i from 1 through 20 {
 		.ray#{$i} {
 			position: absolute;
-			top: calc(((100vw + 100vh) / 3) * -1);
+			top: calc(((100vw + 100dvh) / 3) * -1);
 			left: -140px;
 			width: calc(math.random(100) + 30) + px;
-			height: calc(100vw + 100vh);
+			height: calc(100vw + 100dvh);
 			clip-path: polygon(50% 10%, 100% 100%, 0 100%);
 			transform-origin: top right;
 

@@ -230,7 +230,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 30vh;
+		margin-top: 30dvh;
 	}
 
 	.heading {
