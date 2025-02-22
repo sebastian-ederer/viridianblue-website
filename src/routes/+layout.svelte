@@ -13,7 +13,7 @@
 
 	.main {
 		width: 100vw;
-		height: 100vh;
+		height: 100dvh;
 		margin: 0;
 		background-image: url('/forrest-base-bg.jpg');
 		background-size: cover;
