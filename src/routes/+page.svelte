@@ -9,11 +9,12 @@
 
 	let audio: HTMLAudioElement | undefined = $state(undefined);
 	let volume = $state(0.2);
+	let muted = $state(false);
 </script>
 
 <div class="home">
 	<div class={'audioWrapper'} style="z-index: 10">
-		<audio controls bind:this={audio} loop {volume}>
+		<audio controls bind:this={audio} loop {volume} {muted}>
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
 			<source src={'/porter-robinson-sea-of-voices.ogg'} type="audio/ogg" />
 		</audio>
@@ -29,7 +30,7 @@
 	<Particles />
 
 	<div class={'volume-wrapper'}>
-		<VolumeControl bind:volume />
+		<VolumeControl bind:volume bind:muted />
 	</div>
 
 	<AudioWave {audio} height={80} />
@@ -75,7 +76,7 @@
 
 	.volume-wrapper {
 		position: absolute;
-		right: -20px;
+		right: -55px;
 		bottom: 150px;
 	}
 </style>
