@@ -10,6 +10,7 @@
 	let previousVolume: number = volume;
 	let volumeElement: HTMLDivElement | null = null;
 	let volumeInput: HTMLInputElement;
+	let overlayInput: HTMLInputElement;
 
 	// Update the CSS variable for slider background
 	function updateGradient() {
@@ -43,11 +44,35 @@
 
 	onMount(() => {
 		updateGradient();
+		overlayInput.setAttribute('orient', 'vertical');
 	});
 </script>
 
 <div class="volume" bind:this={volumeElement}>
 	<div class="input-wrapper">
+		<div class="center">
+			<input
+				class="volume-input"
+				bind:value={volume}
+				bind:this={volumeInput}
+				type="range"
+				min="0"
+				max="1"
+				step="0.01"
+			/>
+
+			<input
+				bind:value={volume}
+				bind:this={overlayInput}
+				type="range"
+				class="overlay-input"
+				min="0"
+				max="1"
+				step="0.01"
+				oninput={handleVolumeChange}
+			/>
+		</div>
+
 		<button aria-label="mute music" class={'mute-button'} onclick={toggleMuted}>
 			{#if !muted}
 				<svg
@@ -85,23 +110,10 @@
 				>
 			{/if}
 		</button>
-
-		<input
-			class="volume-input"
-			bind:value={volume}
-			bind:this={volumeInput}
-			type="range"
-			min="0"
-			max="1"
-			step="0.01"
-			oninput={handleVolumeChange}
-		/>
 	</div>
 </div>
 
 <style lang="scss">
-	$size: 150px;
-
 	:root {
 		--slider-track-height: 4px;
 		--slider-track-height-correction: -6px;
@@ -114,7 +126,6 @@
 
 	.mute-button {
 		cursor: pointer;
-		transform: rotate(90deg);
 		border: none;
 		background: transparent;
 
@@ -130,23 +141,38 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: start;
-		width: $size;
-		height: $size;
+		height: 150px;
 		align-items: end;
-		transform: rotate(270deg);
 	}
 
 	.input-wrapper {
 		display: flex;
 		align-items: center;
 		gap: 6px;
+		flex-direction: column;
+		justify-content: end;
+	}
+
+	.center {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+	}
+
+	.overlay-input {
+		appearance: slider-vertical;
+		-webkit-appearance: slider-vertical;
+		writing-mode: bt-lr;
+		position: relative;
+		height: 100px;
+		opacity: 0;
 	}
 
 	.volume-input {
 		width: 100px;
-		height: 30px;
-		appearance: none;
-		-webkit-appearance: none;
+		transform: rotate(-90deg);
 		cursor: pointer;
 		background: linear-gradient(
 			to right,
@@ -156,9 +182,13 @@
 		border: solid 1px var(--slider-color);
 		border-radius: 4px;
 		height: var(--slider-track-height);
-		outline: none;
 		transition: background 250ms ease-in-out;
 		opacity: 0.8;
+
+		appearance: none;
+		position: absolute;
+		pointer-events: none;
+		touch-action: none;
 	}
 
 	/* Chrome & Safari */
@@ -169,14 +199,14 @@
 	}
 
 	.volume-input::-webkit-slider-thumb {
-		appearance: none;
-		-webkit-appearance: none;
 		background: var(--slider-color);
 		width: calc(var(--slider-thumb-size) + var(--slider-thumb-size-correction));
 		height: calc(var(--slider-thumb-size) + var(--slider-thumb-size-correction));
 		border-radius: 50%;
 		border: 2px solid var(--slider-color);
 		margin-top: var(--slider-track-height-correction);
+		appearance: none;
+		-webkit-appearance: none;
 	}
 
 	/* Firefox */

@@ -23,7 +23,7 @@
 
 <div class="home">
 	<div class={'audioWrapper'} style="z-index: 10">
-		<audio controls bind:this={audio} loop {volume} {muted}>
+		<audio bind:this={audio} loop {volume} {muted}>
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
 			<source src={'/porter-robinson-sea-of-voices.ogg'} type="audio/ogg" />
 		</audio>
@@ -36,9 +36,11 @@
 		{/if}
 	</div>
 
-	<Bird />
-	<SunRays />
-	<Particles />
+	<div class="background">
+		<Bird />
+		<SunRays />
+		<Particles />
+	</div>
 
 	<div class={'volume-wrapper'}>
 		<VolumeControl bind:volume bind:muted />
@@ -89,7 +91,7 @@
 	.volume-wrapper {
 		position: absolute;
 		right: 16px;
-		bottom: 80px;
+		bottom: 90px;
 		display: flex;
 		justify-content: end;
 		align-items: end;
