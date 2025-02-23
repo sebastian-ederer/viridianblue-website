@@ -14,7 +14,7 @@
 
 <div class="home">
 	<div class={'audioWrapper'} style="z-index: 10">
-		<audio controls bind:this={audio} loop {volume} {muted}>
+		<audio bind:this={audio} loop {volume} {muted}>
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
 			<source src={'/porter-robinson-sea-of-voices.ogg'} type="audio/ogg" />
 		</audio>
