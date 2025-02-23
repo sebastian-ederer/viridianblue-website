@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AudioWave from '$lib/components/audioWave.svelte';
-	import Bird from '$lib/components/bird.svelte';
+	import Birds from '$lib/components/birds.svelte';
 	import Particles from '$lib/components/particles.svelte';
 	import PlayPauseButton from '$lib/components/playPauseButton.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
@@ -37,7 +37,7 @@
 	</div>
 
 	<div class="background">
-		<Bird />
+		<Birds />
 		<SunRays />
 		<Particles />
 	</div>
