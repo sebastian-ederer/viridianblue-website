@@ -5,7 +5,9 @@
 	import PauseIcon from '$lib/components/pauseIcon.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
 	import { onMount } from 'svelte';
+	import Particles from '$lib/components/particles.svelte';
 
+	const CANVAS_HEIGHT = 80;
 	let audio: HTMLAudioElement;
 	let audioContext: AudioContext;
 	let analyser: AnalyserNode;
@@ -50,7 +52,7 @@
 
 		canvasCtx = canvas.getContext('2d');
 		canvasWidth = window.innerWidth;
-		canvasHeight = 100;
+		canvasHeight = CANVAS_HEIGHT;
 		canvas.width = canvasWidth;
 		canvas.height = canvasHeight;
 		canvasCtx?.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -91,7 +93,6 @@
 		canvasCtx.clearRect(0, 0, canvasWidth, canvasHeight);
 
 		const minBarHeight = 10; // Minimum bar height
-		const maxBarHeight = 80; // Maximum bar height
 		const borderRadius = 5; // Corner rounding
 		const fixedBarWidth = 10; // Fixed bar width
 
@@ -112,7 +113,6 @@
 
 			// Ensure minimum height
 			barHeight = Math.max(barHeight, minBarHeight);
-			barHeight = Math.min(barHeight, maxBarHeight);
 
 			// Set bar color
 			canvasCtx.fillStyle = 'rgb(255, 255, 255)';
@@ -151,7 +151,7 @@
 
 	async function playSong() {
 		if (audioContext.state === 'suspended') {
-			await audioContext.resume(); // ✅ Ensure the AudioContext is running
+			await audioContext.resume();
 		}
 
 		audio.play();
@@ -181,7 +181,7 @@
 </script>
 
 <div class="home">
-	<div class={'audioWrapper'}>
+	<div class={'audioWrapper'} style="z-index: 10">
 		<audio bind:this={audio} loop volume="0.2">
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
 			<source src={'/porter-robinson-sea-of-voices.ogg'} type="audio/ogg" />
@@ -208,6 +208,8 @@
 	<Bird />
 
 	<SunRays />
+
+	<Particles />
 
 	<!-- Canvas container for the audio visualization placed at the bottom -->
 	<div class="canvas-container">
@@ -260,7 +262,7 @@
 		align-items: center;
 		justify-content: center;
 		background-color: rgba(255, 255, 255, 0.2);
-		border: 1px solid rgb(156, 156, 156);
+		border: 1px solid #002958;
 		cursor: pointer;
 
 		&:hover {

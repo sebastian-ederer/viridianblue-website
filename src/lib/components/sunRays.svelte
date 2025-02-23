@@ -9,8 +9,7 @@
 			'#FFFBEB',
 			'#FFF9E6',
 			'#FFF8E0',
-			'#FFF7DA',
-			'#FFF6D4'
+			'#FFF7DA'
 		];
 		const randomIndex = Math.floor(Math.random() * sunRayColors.length);
 		return sunRayColors[randomIndex];
@@ -21,7 +20,7 @@
 	{#each { length: 20 } as _, i}
 		<span
 			class={`ray${i}`}
-			style="background: linear-gradient(to bottom, {getRayColor()} 0%, {getRayColor()} 50%, rgba(255, 255, 255, 0) 100%);"
+			style="background: linear-gradient(to bottom, {getRayColor()} 0%, {getRayColor()} 60%, rgba(255, 255, 255, 0) 100%);"
 		>
 		</span>
 	{/each}
@@ -38,12 +37,13 @@
 		height: 100dvh;
 		transform-style: preserve-3d;
 		overflow: hidden;
+		filter: blur(3px);
 	}
 
 	@for $i from 1 through 20 {
 		.ray#{$i} {
 			position: absolute;
-			top: calc(((100vw + 100dvh) / 3) * -1);
+			top: calc(((100vw + 100dvh) / 4) * -1);
 			left: -140px;
 			width: calc(math.random(100) + 30) + px;
 			height: calc(100vw + 100dvh);
