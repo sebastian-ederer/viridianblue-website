@@ -61,6 +61,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		position: relative;
 		overflow: hidden;
 	}
@@ -70,14 +71,9 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 30dvh;
 		padding: 20px;
 		width: 100%;
 		gap: 24px;
-
-		@media (max-width: 480px) {
-			margin-top: 10dvh;
-		}
 	}
 
 	.heading {
@@ -89,6 +85,14 @@
 		user-select: none;
 		z-index: 1;
 		margin: 0;
+
+		@media (max-width: 768px) {
+			font-size: 4rem;
+		}
+
+		@media (max-width: 480px) {
+			font-size: 3rem;
+		}
 	}
 
 	.audioWrapper {
@@ -102,10 +106,14 @@
 
 	.volume-wrapper {
 		position: absolute;
-		right: 16px;
+		right: 32px;
 		bottom: 90px;
 		display: flex;
 		justify-content: end;
 		align-items: end;
+
+		@media (max-width: 1200px) {
+			right: 16px;
+		}
 	}
 </style>
