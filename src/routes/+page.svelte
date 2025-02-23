@@ -36,7 +36,7 @@
 			<PlayPauseButton {audio} {audioContext} />
 
 			<div class={'progress-wrapper'}>
-				<AudioProgressControl {audio} {audioContext} />
+				<AudioProgressControl {audio} />
 			</div>
 		{/if}
 	</div>
