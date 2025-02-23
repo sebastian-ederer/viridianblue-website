@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AudioProgressControl from '$lib/components/audioProgressControl.svelte';
 	import AudioWave from '$lib/components/audioWave.svelte';
 	import Birds from '$lib/components/birds.svelte';
 	import Particles from '$lib/components/particles.svelte';
@@ -33,6 +34,10 @@
 		<h1 class="heading">Viridian Blue</h1>
 		{#if audioContext}
 			<PlayPauseButton {audio} {audioContext} />
+
+			<div class={'progress-wrapper'}>
+				<AudioProgressControl {audio} {audioContext} />
+			</div>
 		{/if}
 	</div>
 
@@ -67,6 +72,8 @@
 		justify-content: center;
 		margin-top: 30dvh;
 		padding: 20px;
+		width: 100%;
+		gap: 24px;
 
 		@media (max-width: 480px) {
 			margin-top: 10dvh;
@@ -81,11 +88,16 @@
 		text-align: center;
 		user-select: none;
 		z-index: 1;
-		margin-bottom: 20px;
+		margin: 0;
 	}
 
 	.audioWrapper {
 		position: absolute;
+	}
+
+	.progress-wrapper {
+		z-index: 2;
+		width: 60%;
 	}
 
 	.volume-wrapper {

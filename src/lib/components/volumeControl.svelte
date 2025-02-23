@@ -12,7 +12,6 @@
 	let volumeInput: HTMLInputElement;
 	let overlayInput: HTMLInputElement;
 
-	// Update the CSS variable for slider background
 	function updateGradient() {
 		const percentage =
 			((volume - parseFloat(volumeInput.min)) /
@@ -124,19 +123,6 @@
 		--percentage: 20%;
 	}
 
-	.mute-button {
-		cursor: pointer;
-		border: none;
-		background: transparent;
-
-		svg {
-			height: 20px;
-			width: 20px;
-			stroke: var(--slider-color);
-			fill: var(--slider-color);
-		}
-	}
-
 	.volume {
 		display: flex;
 		flex-direction: row;
@@ -151,6 +137,26 @@
 		gap: 6px;
 		flex-direction: column;
 		justify-content: end;
+		opacity: 0.5;
+		user-select: none;
+
+		&:hover,
+		&:active {
+			opacity: 1;
+		}
+	}
+
+	.mute-button {
+		cursor: pointer;
+		border: none;
+		background: transparent;
+
+		svg {
+			height: 20px;
+			width: 20px;
+			stroke: var(--slider-color);
+			fill: var(--slider-color);
+		}
 	}
 
 	.center {
@@ -168,12 +174,12 @@
 		position: relative;
 		height: 100px;
 		opacity: 0;
+		cursor: pointer;
 	}
 
 	.volume-input {
 		width: 100px;
 		transform: rotate(-90deg);
-		cursor: pointer;
 		background: linear-gradient(
 			to right,
 			var(--slider-color) var(--percentage),
@@ -183,8 +189,6 @@
 		border-radius: 4px;
 		height: var(--slider-track-height);
 		transition: background 250ms ease-in-out;
-		opacity: 0.8;
-
 		appearance: none;
 		position: absolute;
 		pointer-events: none;
