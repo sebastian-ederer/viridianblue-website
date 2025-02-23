@@ -88,7 +88,10 @@
 
 	.volume-wrapper {
 		position: absolute;
-		right: -55px;
-		bottom: 150px;
+		right: 16px;
+		bottom: 80px;
+		display: flex;
+		justify-content: end;
+		align-items: end;
 	}
 </style>
