@@ -2,12 +2,14 @@
 	import '@fontsource-variable/dancing-script';
 	import { onMount } from 'svelte';
 
-	let { audio, height = 80 } = $props<{ audio: HTMLAudioElement; height: number }>();
+	let {
+		audio,
+		audioContext,
+		height = 80
+	} = $props<{ audio: HTMLAudioElement; audioContext: AudioContext; height: number }>();
 
-	let audioContext: AudioContext;
 	let analyser: AnalyserNode;
 	let frequencyData: Uint8Array;
-
 	let canvas: HTMLCanvasElement;
 	let canvasCtx: CanvasRenderingContext2D | null;
 
@@ -15,15 +17,12 @@
 	let canvasHeight: number;
 
 	function setupAudio() {
-		if (!audioContext) {
-			audioContext = new AudioContext();
-			analyser = audioContext.createAnalyser();
-			const source = audioContext.createMediaElementSource(audio);
-			source.connect(analyser);
-			analyser.connect(audioContext.destination);
-			updateFFTSize();
-			frequencyData = new Uint8Array(analyser.frequencyBinCount);
-		}
+		analyser = audioContext.createAnalyser();
+		const source = audioContext.createMediaElementSource(audio);
+		source.connect(analyser);
+		analyser.connect(audioContext.destination);
+		updateFFTSize();
+		frequencyData = new Uint8Array(analyser.frequencyBinCount);
 	}
 
 	// Function to dynamically adjust FFT size

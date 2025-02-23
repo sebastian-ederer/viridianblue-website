@@ -1,9 +1,10 @@
 <script lang="ts">
 	import '@fontsource-variable/dancing-script';
-	import { onMount } from 'svelte';
 
-	let { audio } = $props<{ audio: HTMLAudioElement | undefined }>();
-	let audioContext: AudioContext;
+	let { audio, audioContext } = $props<{
+		audio: HTMLAudioElement | undefined;
+		audioContext: AudioContext;
+	}>();
 	let isPlaying = $state(false);
 
 	async function playSong() {
@@ -15,16 +16,10 @@
 		isPlaying = true;
 	}
 
-	async function pauseSong() {
+	function pauseSong() {
 		audio?.pause();
 		isPlaying = false;
 	}
-
-	onMount(() => {
-		if (!audioContext && audio) {
-			audioContext = new AudioContext();
-		}
-	});
 </script>
 
 {#if !isPlaying}

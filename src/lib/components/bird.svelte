@@ -16,14 +16,6 @@
 		animation-timing-function: steps(10);
 		animation-iteration-count: infinite;
 		animation-duration: 0.5s;
-
-		// &--one {
-		// 	transform: scale(0.2);
-		// }
-
-		// &--two {
-		// 	transform: scale(0.25);
-		// }
 	}
 
 	.bird-container {
