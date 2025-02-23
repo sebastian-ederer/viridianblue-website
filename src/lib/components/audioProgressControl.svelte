@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	let { audio } = $props<{
 		audio: HTMLAudioElement;
-		audioContext: AudioContext;
 	}>();
 
 	let inputValue: number = $state(0);
@@ -14,12 +13,13 @@
 
 	// Updates the slider when the song progress changes
 	function updateProgress() {
-		if (audio && !isDragging) {
+		if (audio && !isDragging && duration > 0) {
 			inputValue = audio.currentTime / duration;
 			updateGradient();
 		}
 	}
 
+	// Update progress bar gradient
 	function updateGradient() {
 		const percentage = inputValue * 100;
 		progressElement.style.setProperty('--percentage', `${percentage}%`);
@@ -31,25 +31,44 @@
 	}
 
 	// Seek function: Moves the audio to selected position
-	function handleSeek(e: any) {
-		e.stopPropagation();
+	function handleSeek() {
 		isDragging = false;
-		if (audio) {
-			audio.currentTime = inputValue * duration;
+		if (audio && duration > 0) {
+			const newTime = inputValue * duration;
+			if (!isNaN(newTime)) {
+				audio.currentTime = newTime;
+			}
+		}
+	}
+
+	// Ensure metadata is loaded to get duration
+	function handleMetadata() {
+		if (audio.duration && !isNaN(audio.duration)) {
+			duration = audio.duration;
+			updateProgress();
 		}
 	}
 
 	// Attach event listeners when component is mounted
 	onMount(() => {
-		if (audio) {
-			duration = audio.duration;
-			updateProgress();
-			audio.addEventListener('timeupdate', updateProgress);
+		if (!audio) return;
+
+		// Ensure metadata is loaded
+		if (audio.readyState >= 1) {
+			handleMetadata();
+		} else {
+			audio.addEventListener('loadedmetadata', handleMetadata);
+			audio.addEventListener('canplaythrough', handleMetadata); // Fallback
 		}
 
-		return () => {
+		audio.addEventListener('timeupdate', updateProgress);
+
+		// Cleanup on destroy
+		onDestroy(() => {
+			audio.removeEventListener('loadedmetadata', handleMetadata);
+			audio.removeEventListener('canplaythrough', handleMetadata);
 			audio.removeEventListener('timeupdate', updateProgress);
-		};
+		});
 	});
 </script>
 
