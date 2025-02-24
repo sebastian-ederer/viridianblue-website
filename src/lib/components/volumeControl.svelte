@@ -38,8 +38,6 @@
 			muted = !muted;
 		}
 
-		console.log('Changed volume', volume);
-
 		updateGradient();
 	}
 
