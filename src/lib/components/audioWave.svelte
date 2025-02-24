@@ -94,7 +94,11 @@
 
 		// Calculate the gap dynamically to distribute bars evenly
 		const totalAvailableWidth = canvasWidth; // Reserve 10% of width for gaps
-		const gap = (totalAvailableWidth - totalBars * fixedBarWidth * 2) / (2 * totalBars);
+		const calculatedGap = Math.max(
+			2,
+			(totalAvailableWidth - totalBars * fixedBarWidth * 2) / (2 * totalBars)
+		);
+		const gap = Math.min(5, calculatedGap);
 		const centerX = canvasWidth / 2;
 
 		let xRight = centerX + gap; // Right side starts from the center
