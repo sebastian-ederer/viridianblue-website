@@ -29,7 +29,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: #53c5a0;
+		background-color: rgb(var(--background-mix-color));
 		mix-blend-mode: overlay;
 	}
 </style>

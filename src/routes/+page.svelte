@@ -91,7 +91,7 @@
 		font-size: 5rem;
 		font-family: 'Dancing Script Variable', cursive;
 		font-weight: bold;
-		color: rgb(0, 41, 88);
+		color: rgb(var(--color-primary));
 		text-align: center;
 		user-select: none;
 		z-index: 1;

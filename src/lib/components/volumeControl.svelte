@@ -118,7 +118,7 @@
 		--slider-track-height-correction: -6px;
 		--slider-thumb-size: 12px;
 		--slider-thumb-size-correction: 4px;
-		--slider-color: #002958;
+		--slider-color: rgb(var(--color-primary));
 		--slider-bg: #fff;
 		--percentage: 20%;
 	}

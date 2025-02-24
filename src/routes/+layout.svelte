@@ -1,6 +1,7 @@
 <script>
 	import Background from '$lib/components/background.svelte';
 	import '@fontsource-variable/figtree';
+	import '$lib/theme/colors.css';
 	let { children } = $props();
 </script>
 
@@ -9,7 +10,7 @@
 	{@render children()}
 </div>
 
-<style>
+<style lang="scss">
 	:global(body) {
 		margin: 0;
 	}

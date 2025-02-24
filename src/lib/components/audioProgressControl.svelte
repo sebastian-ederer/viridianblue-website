@@ -106,8 +106,12 @@
 		width: calc(100% - 6px);
 		height: 4px;
 		border-radius: 3px;
-		border: 1px solid #002958;
-		background: linear-gradient(to right, #002958 var(--percentage), #fff var(--percentage));
+		border: 1px solid rgb(var(--color-primary));
+		background: linear-gradient(
+			to right,
+			rgb(var(--color-primary)) var(--percentage),
+			#fff var(--percentage)
+		);
 		cursor: pointer;
 	}
 

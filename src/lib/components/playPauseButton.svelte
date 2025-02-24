@@ -33,7 +33,6 @@
 				<g id="line">
 					<path
 						fill="none"
-						stroke="#002958"
 						stroke-linejoin="round"
 						stroke-miterlimit="10"
 						stroke-width="2"
@@ -63,13 +62,17 @@
 		align-items: center;
 		justify-content: center;
 		background: transparent;
-		border: 1px solid #002958;
+		border: 1px solid rgb(var(--color-primary));
 		cursor: pointer;
 		opacity: 0.7;
 
 		&:hover,
 		&:active {
 			opacity: 1;
+		}
+
+		svg {
+			stroke: rgb(var(--color-primary));
 		}
 	}
 
@@ -99,7 +102,7 @@
 		position: absolute;
 		width: 8px;
 		height: 32px;
-		border: 1px solid #002958;
+		border: 1px solid rgb(var(--color-primary));
 		border-radius: 3px;
 	}
 
