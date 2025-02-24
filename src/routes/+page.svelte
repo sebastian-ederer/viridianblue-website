@@ -14,15 +14,19 @@
 	let volume = $state(0.2);
 	let muted = $state(false);
 	let audioWaveHeight: number = $state(80);
+	let isSafari = $state(false); // Safari does not support volume controls
 
 	function updateAudioWaveHeight() {
 		audioWaveHeight = window.innerWidth > 1200 ? 120 : 80;
-		if (window.innerWidth <= 480) {
+		if (window.innerWidth <= 480 || isSafari) {
 			volume = 1;
 		}
 	}
 
 	onMount(() => {
+		const userAgent = window.navigator.userAgent.toLocaleLowerCase();
+		isSafari = /^((?!chrome|android).)*safari/.test(userAgent);
+
 		if (!audioContext && audio) {
 			audioContext = new AudioContext();
 		}
@@ -38,7 +42,7 @@
 
 <div class="home">
 	<div class={'audioWrapper'} style="z-index: 10">
-		<audio controls bind:this={audio} loop {volume} {muted}>
+		<audio bind:this={audio} loop {volume} {muted}>
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
 			<source src={'/porter-robinson-sea-of-voices.ogg'} type="audio/ogg" />
 		</audio>
@@ -61,9 +65,12 @@
 		<Particles />
 	</div>
 
-	<div class={'volume-wrapper'}>
-		<VolumeControl bind:volume bind:muted />
-	</div>
+	{#if !isSafari}
+		<div class={'volume-wrapper'}>
+			<VolumeControl bind:volume bind:muted />
+		</div>
+	{/if}
+
 	{#if audioContext}
 		<AudioWave {audio} {audioContext} height={audioWaveHeight} />
 	{/if}
