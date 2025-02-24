@@ -7,18 +7,29 @@
 	import SunRays from '$lib/components/sunRays.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
 	import '@fontsource-variable/dancing-script';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	let audio: HTMLAudioElement | undefined = $state();
 	let audioContext: AudioContext | undefined = $state();
-
 	let volume = $state(0.2);
 	let muted = $state(false);
+	let audioWaveHeight: number = $state(80);
+
+	function updateAudioWaveHeight() {
+		audioWaveHeight = window.innerWidth > 1200 ? 120 : 80;
+	}
 
 	onMount(() => {
 		if (!audioContext && audio) {
 			audioContext = new AudioContext();
 		}
+
+		updateAudioWaveHeight();
+		window.addEventListener('resize', updateAudioWaveHeight);
+	});
+
+	onDestroy(() => {
+		window.removeEventListener('resize', updateAudioWaveHeight);
 	});
 </script>
 
@@ -51,7 +62,7 @@
 		<VolumeControl bind:volume bind:muted />
 	</div>
 	{#if audioContext}
-		<AudioWave {audio} {audioContext} height={80} />
+		<AudioWave {audio} {audioContext} height={audioWaveHeight} />
 	{/if}
 </div>
 
@@ -107,13 +118,14 @@
 	.volume-wrapper {
 		position: absolute;
 		right: 32px;
-		bottom: 90px;
+		bottom: 130px;
 		display: flex;
 		justify-content: end;
 		align-items: end;
 
 		@media (max-width: 1200px) {
 			right: 16px;
+			bottom: 90px;
 		}
 	}
 </style>

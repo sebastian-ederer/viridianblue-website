@@ -62,13 +62,13 @@
 		}
 
 		audio.addEventListener('timeupdate', updateProgress);
+	});
 
-		// Cleanup on destroy
-		onDestroy(() => {
-			audio.removeEventListener('loadedmetadata', handleMetadata);
-			audio.removeEventListener('canplaythrough', handleMetadata);
-			audio.removeEventListener('timeupdate', updateProgress);
-		});
+	// Cleanup on destroy
+	onDestroy(() => {
+		audio.removeEventListener('loadedmetadata', handleMetadata);
+		audio.removeEventListener('canplaythrough', handleMetadata);
+		audio.removeEventListener('timeupdate', updateProgress);
 	});
 </script>
 
