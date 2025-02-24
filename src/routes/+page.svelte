@@ -1,10 +1,7 @@
 <script lang="ts">
 	import AudioProgressControl from '$lib/components/audioProgressControl.svelte';
 	import AudioWave from '$lib/components/audioWave.svelte';
-	import Birds from '$lib/components/birds.svelte';
-	import Particles from '$lib/components/particles.svelte';
 	import PlayPauseButton from '$lib/components/playPauseButton.svelte';
-	import SunRays from '$lib/components/sunRays.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
 	import '@fontsource-variable/dancing-script';
 	import { onMount } from 'svelte';
@@ -16,7 +13,7 @@
 	let audioWaveHeight: number = $state(80);
 	let isSafari = $state(false); // Safari does not support volume controls
 
-	function updateAudioWaveHeight() {
+	function onWindowResize() {
 		audioWaveHeight = window.innerWidth > 1200 ? 120 : 80;
 		if (window.innerWidth <= 480 || isSafari) {
 			volume = 1;
@@ -31,11 +28,11 @@
 			audioContext = new AudioContext();
 		}
 
-		updateAudioWaveHeight();
-		window.addEventListener('resize', updateAudioWaveHeight);
+		onWindowResize();
+		window.addEventListener('resize', onWindowResize);
 
 		return () => {
-			window.removeEventListener('resize', updateAudioWaveHeight);
+			window.removeEventListener('resize', onWindowResize);
 		};
 	});
 </script>
@@ -59,12 +56,6 @@
 		{/if}
 	</div>
 
-	<div class="background">
-		<Birds />
-		<SunRays />
-		<Particles />
-	</div>
-
 	{#if !isSafari}
 		<div class={'volume-wrapper'}>
 			<VolumeControl bind:volume bind:muted />
@@ -84,22 +75,6 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		overflow: hidden;
-		background-image: url('/forrest-base-bg.jpg');
-		background-size: cover;
-		background-repeat: no-repeat;
-		filter: brightness(0.9);
-	}
-
-	.home::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #53c5a0;
-		mix-blend-mode: overlay;
 	}
 
 	.heading-wrapper {

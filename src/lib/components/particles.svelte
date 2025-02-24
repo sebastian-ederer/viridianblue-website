@@ -5,7 +5,6 @@
 	let ctx: CanvasRenderingContext2D | null = null;
 	let width = 0;
 	let height = 0;
-	let animationFrameId: number;
 	let system: ParticleSystem;
 
 	class Particle {
@@ -87,7 +86,7 @@
 	function animate() {
 		system.update();
 		draw();
-		animationFrameId = requestAnimationFrame(animate);
+		requestAnimationFrame(animate);
 	}
 
 	onMount(() => {

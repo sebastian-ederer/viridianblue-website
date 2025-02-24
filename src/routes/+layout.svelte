@@ -1,15 +1,21 @@
 <script>
+	import Background from '$lib/components/background.svelte';
 	import '@fontsource-variable/figtree';
 	let { children } = $props();
 </script>
 
 <div class="main">
+	<Background />
 	{@render children()}
 </div>
 
 <style>
 	:global(body) {
 		margin: 0;
+	}
+
+	:global(*) {
+		box-sizing: border-box;
 	}
 
 	.main {
