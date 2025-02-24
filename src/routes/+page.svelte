@@ -17,6 +17,9 @@
 
 	function updateAudioWaveHeight() {
 		audioWaveHeight = window.innerWidth > 1200 ? 120 : 80;
+		if (window.innerWidth <= 480) {
+			volume = 1;
+		}
 	}
 
 	onMount(() => {
@@ -126,6 +129,10 @@
 		@media (max-width: 1200px) {
 			right: 16px;
 			bottom: 90px;
+		}
+
+		@media (max-width: 480px) {
+			display: none;
 		}
 	}
 </style>

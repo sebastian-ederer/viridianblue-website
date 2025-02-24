@@ -69,6 +69,7 @@
 				max="1"
 				step="0.01"
 				oninput={handleVolumeChange}
+				onchange={handleVolumeChange}
 			/>
 		</div>
 
