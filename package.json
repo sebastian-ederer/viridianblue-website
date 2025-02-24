@@ -34,6 +34,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@fontsource-variable/dancing-script": "^5.1.1"
+		"@fontsource-variable/dancing-script": "^5.1.1",
+		"@fontsource-variable/figtree": "^5.1.2"
 	}
 }

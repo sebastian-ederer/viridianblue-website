@@ -85,6 +85,21 @@
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+		background-image: url('/forrest-base-bg.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		filter: brightness(0.9);
+	}
+
+	.home::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #53c5a0;
+		mix-blend-mode: overlay;
 	}
 
 	.heading-wrapper {
