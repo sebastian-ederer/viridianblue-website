@@ -38,6 +38,8 @@
 			muted = !muted;
 		}
 
+		console.log('Changed volume', volume);
+
 		updateGradient();
 	}
 
@@ -69,7 +71,6 @@
 				max="1"
 				step="0.01"
 				oninput={handleVolumeChange}
-				onchange={handleVolumeChange}
 			/>
 		</div>
 
