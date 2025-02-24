@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D | null = null;
@@ -101,10 +101,10 @@
 			animate();
 			window.addEventListener('resize', resizeCanvas);
 		}
-	});
 
-	onDestroy(() => {
-		window.addEventListener('resize', resizeCanvas);
+		return () => {
+			window.addEventListener('resize', resizeCanvas);
+		};
 	});
 </script>
 

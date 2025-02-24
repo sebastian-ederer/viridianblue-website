@@ -7,7 +7,7 @@
 	import SunRays from '$lib/components/sunRays.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
 	import '@fontsource-variable/dancing-script';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let audio: HTMLAudioElement | undefined = $state();
 	let audioContext: AudioContext | undefined = $state();
@@ -26,10 +26,10 @@
 
 		updateAudioWaveHeight();
 		window.addEventListener('resize', updateAudioWaveHeight);
-	});
 
-	onDestroy(() => {
-		window.removeEventListener('resize', updateAudioWaveHeight);
+		return () => {
+			window.removeEventListener('resize', updateAudioWaveHeight);
+		};
 	});
 </script>
 

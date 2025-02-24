@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let { audio } = $props<{
 		audio: HTMLAudioElement;
@@ -62,13 +62,12 @@
 		}
 
 		audio.addEventListener('timeupdate', updateProgress);
-	});
 
-	// Cleanup on destroy
-	onDestroy(() => {
-		audio.removeEventListener('loadedmetadata', handleMetadata);
-		audio.removeEventListener('canplaythrough', handleMetadata);
-		audio.removeEventListener('timeupdate', updateProgress);
+		return () => {
+			audio.removeEventListener('loadedmetadata', handleMetadata);
+			audio.removeEventListener('canplaythrough', handleMetadata);
+			audio.removeEventListener('timeupdate', updateProgress);
+		};
 	});
 </script>
 
