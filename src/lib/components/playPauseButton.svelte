@@ -62,12 +62,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: rgba(255, 255, 255, 0.2);
+		background: transparent;
 		border: 1px solid #002958;
 		cursor: pointer;
+		opacity: 0.7;
 
-		&:hover {
-			background-color: rgba(255, 255, 255, 0.5);
+		&:hover,
+		&:active {
+			opacity: 1;
 		}
 	}
 
