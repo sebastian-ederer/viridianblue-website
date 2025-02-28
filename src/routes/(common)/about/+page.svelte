@@ -3,18 +3,19 @@
 	import { onDestroy, onMount } from 'svelte';
 	import Swiper from 'swiper';
 	import 'swiper/css/bundle';
-	import { A11y, Keyboard, Mousewheel, Scrollbar } from 'swiper/modules';
+	import { A11y, Autoplay, Keyboard, Mousewheel, Scrollbar } from 'swiper/modules';
 
 	let swiper: Swiper | null = $state(null);
 	let season: 'spring' | 'summer' | 'fall' | 'winter' = $state('summer');
 
 	onMount(() => {
 		swiper = new Swiper('.swiper', {
-			modules: [Scrollbar, Mousewheel, Keyboard, A11y],
+			modules: [Scrollbar, Mousewheel, Keyboard, Autoplay, A11y],
 			mousewheel: true,
 			keyboard: true,
+			speed: 700,
 			autoplay: {
-				delay: 20000
+				delay: 5000
 			},
 			slidesPerView: 1,
 			loop: true,
@@ -133,14 +134,17 @@
 	}
 
 	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 		color: #fff;
 		background-color: rgba(39, 39, 39, 0.5);
 		padding: 20px;
 		overflow-y: auto;
-		border: 1px solid rgb(39, 39, 39);
-		border-radius: 8px;
-		max-width: 650px;
 		backdrop-filter: blur(5px);
+		height: 325px;
+		width: 100%;
 
 		h2 {
 			font-family: 'Dancing Script Variable', cursive;
@@ -149,12 +153,11 @@
 		}
 
 		p {
-			text-align: justify;
+			max-width: 650px;
+			text-align: center;
 		}
 
 		@media (max-width: 480px) {
-			border-radius: 0;
-			border: none;
 			height: 100%;
 			backdrop-filter: blur(2px);
 		}
