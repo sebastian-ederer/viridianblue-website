@@ -1,9 +1,9 @@
 <script lang="ts">
 	import AudioProgressControl from '$lib/components/audioProgressControl.svelte';
 	import AudioWave from '$lib/components/audioWave.svelte';
+	import Background from '$lib/components/background.svelte';
 	import PlayPauseButton from '$lib/components/playPauseButton.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
-	import '@fontsource-variable/dancing-script';
 	import { onMount } from 'svelte';
 
 	let audio: HTMLAudioElement | undefined = $state();
@@ -38,6 +38,8 @@
 </script>
 
 <div class="home">
+	<Background />
+
 	<div class={'audioWrapper'} style="z-index: 10">
 		<audio bind:this={audio} loop {volume} {muted}>
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />

@@ -1,12 +1,11 @@
 <script>
-	import Background from '$lib/components/background.svelte';
-	import '@fontsource-variable/figtree';
 	import '$lib/theme/colors.css';
+	import '@fontsource-variable/dancing-script';
+	import '@fontsource-variable/figtree';
 	let { children } = $props();
 </script>
 
 <div class="main">
-	<Background />
 	{@render children()}
 </div>
 

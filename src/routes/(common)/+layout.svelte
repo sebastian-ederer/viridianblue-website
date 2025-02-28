@@ -4,15 +4,13 @@
 	let { children } = $props();
 </script>
 
-<Menu />
-
 <div class="common-page">
+	<Menu />
 	{@render children()}
 </div>
 
 <style>
 	.common-page {
-		padding: 20px;
 		flex: 1;
 	}
 </style>
