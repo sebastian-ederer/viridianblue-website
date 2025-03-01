@@ -2,6 +2,7 @@
 	import Birds from '$lib/components/birds.svelte';
 	import Particles from '$lib/components/particles.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
+	import LeafeAnimation from './leafeAnimation.svelte';
 
 	export let season: 'spring' | 'summer' | 'fall' | 'winter' = 'summer';
 	let backgroundImageElement: HTMLDivElement;
@@ -17,7 +18,7 @@
 </script>
 
 <div class={['background', season]}>
-	<div class={['background-colored-image']}></div>
+	<div class={['background-colored-image']} data-swiper-parallax="-23%"></div>
 	<div bind:this={backgroundImageElement} class={['background-image']}></div>
 	{#if season === 'summer' || season == 'spring'}
 		<Birds />
@@ -26,6 +27,10 @@
 	{#if season === 'summer'}
 		<SunRays />
 		<Particles />
+	{/if}
+
+	{#if season === 'fall'}
+		<LeafeAnimation />
 	{/if}
 </div>
 
