@@ -55,8 +55,8 @@
 					<h2>Introduction</h2>
 					<p>
 						Hi and welcome to my Website! Glad you found it. <br />
-						My name is Sebastian and I am a Software Developer from Germany who just wants to have fun
-						building awesome stuff.
+						I call myself <i>.Gildarts_</i> and I am a Software Developer from Germany who just wants
+						to have fun building awesome stuff.
 					</p>
 				</div>
 			</div>
