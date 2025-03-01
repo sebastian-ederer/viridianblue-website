@@ -3,6 +3,7 @@
 	import Particles from '$lib/components/particles.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
 	import LeafeAnimation from './leafeAnimation.svelte';
+	import SnowAnimation from './snowAnimation.svelte';
 
 	export let season: 'spring' | 'summer' | 'fall' | 'winter' = 'summer';
 	let backgroundImageElement: HTMLDivElement;
@@ -31,6 +32,10 @@
 
 	{#if season === 'fall'}
 		<LeafeAnimation />
+	{/if}
+
+	{#if season === 'winter'}
+		<SnowAnimation />
 	{/if}
 </div>
 
