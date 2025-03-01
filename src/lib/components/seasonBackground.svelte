@@ -2,6 +2,7 @@
 	import Birds from '$lib/components/birds.svelte';
 	import Particles from '$lib/components/particles.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
+	import CherryBlossom from './cherryBlossom.svelte';
 	import LeafeAnimation from './leafeAnimation.svelte';
 	import SnowAnimation from './snowAnimation.svelte';
 
@@ -36,6 +37,10 @@
 
 	{#if season === 'winter'}
 		<SnowAnimation />
+	{/if}
+
+	{#if season === 'spring'}
+		<CherryBlossom />
 	{/if}
 </div>
 

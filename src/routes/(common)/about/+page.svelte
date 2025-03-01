@@ -15,7 +15,7 @@
 			keyboard: true,
 			speed: 700,
 			autoplay: {
-				delay: 5000
+				delay: 20000
 			},
 			slidesPerView: 1,
 			loop: true,
