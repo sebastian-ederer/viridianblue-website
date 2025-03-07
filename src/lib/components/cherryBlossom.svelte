@@ -1,32 +1,45 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let canvas: HTMLCanvasElement;
-	const TOTAL = 100;
-	const petalArray: Petal[] = [];
+	let ctx: CanvasRenderingContext2D | null = $state(null);
+	let animationFrameId: number;
 
-	const petalImg = new Image();
-	petalImg.src = 'https://djjjk9bjm164h.cloudfront.net/petal.png';
+	const TOTAL = 75;
+	const petalArray: Petal[] = [];
+	let petalImg: HTMLImageElement | null = $state(null);
+	const globalSpeedMultiplier = 0.2;
 
 	onMount(() => {
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-		const ctx = canvas.getContext('2d');
+		if (typeof window !== 'undefined') {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			ctx = canvas.getContext('2d');
 
-		if (ctx) {
-			petalImg.onload = () => {
-				for (let i = 0; i < TOTAL; i++) {
-					petalArray.push(new Petal(0.3, 0.3, 0.3)); // Set the speed to 30% of the normal speed
-				}
-				render(ctx);
-			};
+			if (ctx) {
+				petalImg = new Image();
+				petalImg.src = '/petal.png';
+				petalImg.onload = () => {
+					for (let i = 0; i < TOTAL; i++) {
+						petalArray.push(
+							new Petal(globalSpeedMultiplier, globalSpeedMultiplier, globalSpeedMultiplier)
+						);
+					}
+					render();
+				};
+			}
 		}
 
 		window.addEventListener('resize', resizeCanvas);
-	});
 
-	onDestroy(() => {
-		window.removeEventListener('resize', resizeCanvas);
+		return () => {
+			window.removeEventListener('resize', resizeCanvas);
+
+			if (animationFrameId) {
+				window.cancelAnimationFrame(animationFrameId);
+			}
+			ctx = null;
+		};
 	});
 
 	function resizeCanvas() {
@@ -34,10 +47,12 @@
 		canvas.height = window.innerHeight;
 	}
 
-	function render(ctx: CanvasRenderingContext2D) {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		petalArray.forEach((petal) => petal.animate(ctx));
-		window.requestAnimationFrame(() => render(ctx));
+	function render() {
+		if (ctx) {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			petalArray.forEach((petal) => petal.animate(ctx!));
+			animationFrameId = window.requestAnimationFrame(() => render());
+		}
 	}
 
 	class Petal {
@@ -47,6 +62,7 @@
 		h: number;
 		opacity: number;
 		flip: number;
+		scale: number;
 
 		xSpeed: number;
 		ySpeed: number;
@@ -63,29 +79,33 @@
 			this.h = 20 + Math.random() * 10;
 			this.opacity = this.w / 40;
 			this.flip = Math.random();
+			this.scale = 0.5 + Math.random() / 2;
 
 			// Apply speed multipliers (set to 30% speed)
 			this.xSpeed = (1.5 + Math.random() * 2) * xSpeedMultiplier;
-			this.ySpeed = (1 + Math.random() * 1) * ySpeedMultiplier;
+			this.ySpeed = (1 + Math.random()) * ySpeedMultiplier;
 			this.flipSpeed = Math.random() * 0.03 * flipSpeedMultiplier;
 		}
 
 		draw(ctx: CanvasRenderingContext2D) {
-			if (this.y > canvas.height || this.x > canvas.width) {
-				this.x = -petalImg.width;
+			if (this.y > canvas.height || this.x > canvas.width || !petalImg) {
+				this.x = petalImg?.width ? -petalImg.width : 0;
 				this.y = Math.random() * canvas.height * 2 - canvas.height;
-				this.xSpeed = (1.5 + Math.random() * 2) * 1; // Reset with default multiplier
-				this.ySpeed = (1 + Math.random() * 1) * 1; // Reset with default multiplier
+				this.xSpeed = (1.5 + Math.random() * 2) * globalSpeedMultiplier;
+				this.ySpeed = (1 + Math.random()) * globalSpeedMultiplier;
 				this.flip = Math.random();
+				this.scale = 0.5 + Math.random() / 2;
 			}
-			ctx.globalAlpha = this.opacity;
-			ctx.drawImage(
-				petalImg,
-				this.x,
-				this.y,
-				this.w * (0.6 + Math.abs(Math.cos(this.flip)) / 3),
-				this.h * (0.8 + Math.abs(Math.sin(this.flip)) / 5)
-			);
+			if (petalImg) {
+				ctx.globalAlpha = this.opacity;
+				ctx.drawImage(
+					petalImg,
+					this.x,
+					this.y,
+					this.w * (0.6 + Math.abs(Math.cos(this.flip)) / 3) * this.scale,
+					this.h * (0.8 + Math.abs(Math.sin(this.flip)) / 5) * this.scale
+				);
+			}
 		}
 
 		animate(ctx: CanvasRenderingContext2D) {

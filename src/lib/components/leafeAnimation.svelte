@@ -12,8 +12,7 @@
 		background-image: url('/fall-leafes.png');
 		background-size: cover;
 		background-size: 400% 400%;
-		width: 64px;
-		height: 64px;
+
 		position: absolute;
 	}
 
@@ -34,8 +33,9 @@
 			animation-iteration-count: infinite;
 			animation-timing-function: ease-in-out;
 			transform-origin: center center;
-			$initial-scale: random-float(0.5, 1.2);
-			transform: scale($initial-scale);
+			$initial-scale: random-float(0.5, 1);
+			width: calc(64px * $initial-scale);
+			height: calc(64px * $initial-scale);
 			filter: hue-rotate(#{random-float(-20, 20)}deg);
 		}
 
