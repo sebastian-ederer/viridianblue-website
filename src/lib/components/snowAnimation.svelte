@@ -22,7 +22,7 @@
 	}
 
 	.initial-snow > * {
-		font-size: 50px;
+		font-size: 30px;
 		color: white;
 		position: absolute;
 		top: -5vh;
@@ -39,16 +39,30 @@
 
 	.snow {
 		&:nth-child(2n) {
+			font-size: 25px;
+		}
+		&:nth-child(4n) {
 			filter: blur(1px);
-			font-size: 40px;
+			font-size: 20px;
 		}
 		&:nth-child(6n) {
 			filter: blur(2px);
-			font-size: 30px;
+			font-size: 15px;
 		}
+
+		&:nth-child(8n) {
+			filter: blur(3px);
+			font-size: 12px;
+		}
+
 		&:nth-child(10n) {
-			filter: blur(5px);
-			font-size: 30px;
+			filter: blur(4px);
+			font-size: 10px;
+		}
+
+		&:nth-child(17n) {
+			filter: blur(6px);
+			font-size: 6px;
 		}
 	}
 
@@ -57,7 +71,6 @@
 	}
 
 	@for $i from 0 through 18 {
-		$size: random-float(0.2vw, 1vw);
 		$left-ini: random-float(-10vw, 10vw);
 		$left-end: random-float(-10vw, 10vw);
 		$left: random-float(0vw, 90vw);
@@ -65,7 +78,6 @@
 		$delay: random-float(-8s, -1s);
 
 		.snow:nth-child(#{$i}) {
-			--size: #{$size};
 			--left-ini: #{$left-ini};
 			--left-end: #{$left-end};
 			left: #{$left};
@@ -75,7 +87,6 @@
 	}
 
 	@for $i from 19 through 49 {
-		$size: random-float(0.2vw, 1vw);
 		$left-ini: random-float(-10vw, 10vw);
 		$left-end: random-float(-10vw, 10vw);
 		$left: random-float(0vw, 90vw);
@@ -83,7 +94,6 @@
 		$delay: random-float(-15s, 0s);
 
 		.snow:nth-child(#{$i}) {
-			--size: #{$size};
 			--left-ini: #{$left-ini};
 			--left-end: #{$left-end};
 			left: #{$left};
