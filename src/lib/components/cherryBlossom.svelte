@@ -11,23 +11,21 @@
 	const globalSpeedMultiplier = 0.2;
 
 	onMount(() => {
-		if (typeof window !== 'undefined') {
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			ctx = canvas.getContext('2d');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		ctx = canvas.getContext('2d');
 
-			if (ctx) {
-				petalImg = new Image();
-				petalImg.src = '/petal.png';
-				petalImg.onload = () => {
-					for (let i = 0; i < TOTAL; i++) {
-						petalArray.push(
-							new Petal(globalSpeedMultiplier, globalSpeedMultiplier, globalSpeedMultiplier)
-						);
-					}
-					render();
-				};
-			}
+		if (ctx) {
+			petalImg = new Image();
+			petalImg.src = '/petal.png';
+			petalImg.onload = () => {
+				for (let i = 0; i < TOTAL; i++) {
+					petalArray.push(
+						new Petal(globalSpeedMultiplier, globalSpeedMultiplier, globalSpeedMultiplier)
+					);
+				}
+				render();
+			};
 		}
 
 		window.addEventListener('resize', resizeCanvas);
