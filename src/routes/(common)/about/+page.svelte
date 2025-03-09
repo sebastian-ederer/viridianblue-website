@@ -3,14 +3,14 @@
 	import { onDestroy, onMount } from 'svelte';
 	import Swiper from 'swiper';
 	import 'swiper/css/bundle';
-	import { A11y, Autoplay, Keyboard, Mousewheel, Scrollbar } from 'swiper/modules';
+	import { A11y, Autoplay, Keyboard, Mousewheel, Navigation, Scrollbar } from 'swiper/modules';
 
 	let swiper: Swiper | null = $state(null);
 	let season: 'spring' | 'summer' | 'fall' | 'winter' = $state('summer');
 
 	onMount(() => {
 		swiper = new Swiper('.swiper', {
-			modules: [Scrollbar, Mousewheel, Keyboard, Autoplay, A11y],
+			modules: [Scrollbar, Mousewheel, Keyboard, Autoplay, Navigation, A11y],
 			mousewheel: true,
 			keyboard: true,
 			speed: 700,
@@ -19,10 +19,13 @@
 			},
 			slidesPerView: 1,
 			loop: true,
-
 			scrollbar: {
 				el: '.swiper-scrollbar',
-				hide: true
+				hide: false
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev'
 			}
 		});
 
@@ -52,12 +55,17 @@
 		<div class="swiper-wrapper">
 			<div data-season="summer" class="slide swiper-slide">
 				<div class="card">
-					<h2>Introduction</h2>
-					<p>
-						Hi and welcome to my Website! Glad you found it. <br />
-						I call myself <i>.Gildarts_</i> and I am a Software Developer from Germany who just wants
-						to have fun building awesome stuff.
-					</p>
+					<div class="introduction">
+						<img alt="pic" src="/profile_pic.jpg" />
+						<div>
+							<h2>Introduction</h2>
+							<p>
+								Hi and welcome to my Website! I am glad that you've found it. <br />
+								My name is <i>Sebastian</i> and I am a Software Developer from Germany who just wants
+								to have fun building awesome stuff.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -69,7 +77,7 @@
 						A key priority in my work is developing scalable and maintainable software architectures
 						that ensure the long-term success of a project. My goal is not only to create
 						high-quality applications but also to structure the development process in a way that
-						keeps efficiency and sustainabilityat the core.
+						keeps efficiency and sustainability at its core.
 					</p>
 				</div>
 			</div>
@@ -105,6 +113,10 @@
 				</div>
 			</div>
 		</div>
+		<div class="navigation">
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
 		<div class="swiper-scrollbar"></div>
 	</div>
 </div>
@@ -117,11 +129,21 @@
 		flex-direction: column;
 	}
 
+	.swiper-wrapper {
+		@media (min-width: 480px) {
+			display: grid;
+			grid-template-rows: 1fr auto 1fr;
+		}
+	}
+
 	.slide {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		grid-row: 2/3;
+		@media (max-width: 480px) {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 
 	.swiper {
@@ -143,8 +165,14 @@
 		padding: 20px;
 		overflow-y: auto;
 		backdrop-filter: blur(5px);
-		height: 325px;
 		width: 100%;
+		text-align: center;
+		height: 100%;
+
+		@media (min-width: 480px) {
+			padding: 40px 20px;
+			grid-row: 2/3;
+		}
 
 		h2 {
 			font-family: 'Dancing Script Variable', cursive;
@@ -154,12 +182,38 @@
 
 		p {
 			max-width: 650px;
-			text-align: center;
 		}
 
 		@media (max-width: 480px) {
 			height: 100%;
 			backdrop-filter: blur(2px);
+		}
+
+		.introduction {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: 650px;
+			flex-direction: column;
+
+			img {
+				width: 125px;
+				height: 125px;
+				border-radius: 50%;
+				object-fit: cover;
+				object-position: top center;
+				overflow: hidden;
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	.navigation {
+		--swiper-theme-color: rgba(255, 255, 255, 0.5);
+		--swiper-navigation-size: 24px;
+
+		@media (max-width: 768px) {
+			display: none;
 		}
 	}
 </style>
