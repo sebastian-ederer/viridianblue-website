@@ -6,41 +6,41 @@
 			27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
 			50, 51, 52
 		],
-		"description": "Entwicklung der Cross-Platform-App Chatsprint, einer KI-gestützten Sprachlernplattform, die Nutzern das Lernen neuer Sprachen ermöglicht. Die App bietet Interaktion mit KI-Chatbots, die auf Basis der Nutzereingaben Antworten generieren und korrigieren. Ein Spaced-Repetitive-Learning-Algorithmus sorgt für ein effizientes Vokabeltraining. Die App wird auf Web, iOS und Android veröffentlicht.",
+		"description": "Development of the cross-platform app Chatsprint, an AI-supported language learning platform that enables users to learn new languages. The app offers interaction with AI chatbots that generate and correct answers based on user input. A spaced repetitive learning algorithm ensures efficient vocabulary training. The app is published on the web, iOS, and Android.",
 		"tasks": [
-			"Konzeption und Implementierung der Software-Architektur für die Cross-Platform-App Chatsprint.",
-			"Entwicklung der App mit Capacitor.js und React basierend auf einem Figma-Design und Styling mit SCSS-Modulen.",
-			"Globales und asynchrones State-Management mit Jotai und TanstackQuery.",
-			"Implementierung einer Demo-App mit React Native und SQLite für einen schnellen Showcase.",
-			"Entwicklung von Authentication-Formularen mit React-Hook-Form, inklusive Client-Side-Validierung mit Yup.",
-			"Einrichtung von Storybook für Dokumentation, Visualisierung und Testing von Komponenten.",
-			"Testen der Business-Logik mit Jest und Schreiben von E2E-Tests mit Playwright sowie MSW.",
-			"Erstellung von HTML-E-Mails mit MJML für konsistente Darstellung in verschiedenen E-Mail-Clients.",
-			"Implementierung eines Authentifizierungssystems nach OAuth 2.0 mit AWS Cognito als Identity Provider.",
-			"Hosting der Web-Version der App über AWS Amplify.",
-			"Entwicklung von Lambda-Funktionen in Python für die Kommunikation zwischen Frontend, Backend und AWS Cognito.",
-			"Entwicklung des Backends mit .NET und Logging mittels Serilog mit AWS CloudWatch Integration.",
-			"Schreiben von Unit-Tests mit NUnit und Mocking mit NSubstitute zur Sicherstellung der Backend-Qualität.",
-			"Entwurf und Implementierung der Datenbankstruktur mit AWS RDS PostgreSQL und Entity Framework.",
-			"Aufsetzen eines Directus Docker-Images auf AWS ECS als Headless CMS.",
-			"Einrichtung von Mapperly in .NET für Model-DTO Mapping.",
-			"Anbindung und Integration von Google Analytics über Firebase für Web und native Apps.",
-			"Einrichtung des AWS Parameter Stores und Integration in .NET zur sicheren Speicherung sensibler Daten.",
-			"Erstellung und Verwaltung von SSL-Zertifikaten für benutzerdefinierte Domains.",
-			"Verwaltung und Konfiguration von Domains, inklusive DNS-Einstellungen und Subdomains.",
-			"Implementierung eines Zahlungssystems mit Stripe für Web und RevenueCat für In-App-Käufe.",
-			"Veröffentlichung der App in den Stores (Google Play Console und App Store Connect).",
-			"Entwicklung von Endpunkten für die Chat GPT Completion API Integration.",
-			"Anbindung eines AWS S3-Buckets für dynamische Inhalte und öffentlich zugängliche E-Mail-Bilder.",
-			"Dockerisierung des Backends zur Bereitstellung auf AWS ECS (Fargate).",
-			"Erstellung von Dockerfiles und Docker-Compose-Konfigurationen für Build- und Deployment-Automatisierung.",
-			"Implementierung von CI/CD-Pipelines mit GitHub Actions für Tests und automatisierte Deployments.",
-			"Einführung von Pre-Commit-Hooks mit Husky für ESLint und Code-Formatierung.",
-			"Entwicklung von Build- und Versionierungsskripten für Web, iOS und Android.",
-			"Konzeption und Umsetzung von Release-Strategien.",
-			"Projektmanagement mit YouTrack und einem angepassten SCRUM-Ansatz."
+			"Conception and implementation of the software architecture for the cross-platform app Chatsprint.",
+			"Development of the app with Capacitor.js and React based on a Figma design and styling with SCSS modules.",
+			"Global and asynchronous state management with Jotai and TanstackQuery.",
+			"Implementation of a demo app with React Native and SQLite for a quick showcase.",
+			"Development of authentication forms with React-Hook-Form, including client-side validation with Yup.",
+			"Setting up Storybook for documentation, visualization, and testing of components.",
+			"Testing the business logic with Jest and writing E2E tests with Playwright and MSW.",
+			"Creating HTML emails with MJML for consistent display in various email clients.",
+			"Implementation of an authentication system according to OAuth 2.0 with AWS Cognito as Identity Provider.",
+			"Hosting the web version of the app via AWS Amplify.",
+			"Developing Lambda functions in Python for communication between frontend, backend, and AWS Cognito.",
+			"Developing the backend with .NET and logging with Serilog with AWS CloudWatch integration.",
+			"Writing unit tests with NUnit and mocking with NSubstitute to ensure backend quality.",
+			"Design and implementation of the database structure with AWS RDS PostgreSQL and Entity Framework.",
+			"Setting up a Directus Docker image on AWS ECS as a headless CMS.",
+			"Setting up Mapperly in .NET for Model-DTO mapping.",
+			"Connecting and integrating Google Analytics via Firebase for web and native apps.",
+			"Setting up the AWS Parameter Store and integrating it into .NET for secure storage of sensitive data.",
+			"Creating and managing SSL certificates for custom domains.",
+			"Managing and configuring domains, including DNS settings and subdomains.",
+			"Implementing a payment system with Stripe for web and RevenueCat for in-app purchases.",
+			"Publishing the app in the stores (Google Play Console and App Store Connect).",
+			"Developing endpoints for the Chat GPT Completion API integration.",
+			"Connecting an AWS S3 bucket for dynamic content and publicly accessible email images.",
+			"Dockerization of the backend for deployment on AWS ECS (Fargate).",
+			"Creating Dockerfiles and Docker Compose configurations for build and deployment automation.",
+			"Implementing CI/CD pipelines with GitHub Actions for tests and automated deployments.",
+			"Introducing pre-commit hooks with Husky for ESLint and code formatting.",
+			"Developing build and versioning scripts for web, iOS, and Android.",
+			"Conception and implementation of release strategies.",
+			"Project management with YouTrack and a customized SCRUM approach."
 		],
-		"customer": "Glowbyte",
+		"customer": "Glowbyte GmbH",
 		"metadata": [
 			{
 				"start": "07/2023",
@@ -52,230 +52,230 @@
 	{
 		"id": 2,
 		"technologyIds": [1, 2, 4, 10, 11, 23, 24, 28, 51, 52, 53],
-		"description": "Entwicklung und Optimierung der Website von Smart, mit Fokus auf Performance, Testbarkeit und die Integration eines Headless-CMS.",
+		"description": "Development and optimization of the customers website, focusing on performance, testability, and the integration of a headless CMS.",
 		"tasks": [
-			"Entwicklung von Frontend-Komponenten mit Next.js, basierend auf einem Headless-CMS (Drupal).",
-			"Styling der Komponenten mit CSS-Modules und SASS/SCSS für ein modulares und wartbares Design.",
-			"Implementierung eines Dealer-Locators mit Here-Map, einschließlich Darstellung von Standorten auf interaktiven Karten.",
-			"Entwicklung von Auto-Suggestion-Funktionen mit Here-Map für automatische Adress-Vervollständigung.",
-			"Durchführung von Performance-Optimierungen zur Verbesserung der Ladezeiten.",
-			"Erstellung und Durchführung von End-to-End-Tests (E2E) mit Playwright.",
-			"Konzeption und Umsetzung einer umfassenden Teststrategie.",
-			"Einrichtung von Storybook für visuelle Dokumentation und verbesserte Teamarbeit.",
-			"Testen der Business-Logik und Komponenten mit Jest.",
-			"Ersetzen von Redux durch TanstackQuery und Jotai für verbessertes State-Management."
+			"Development of frontend components with Next.js, based on a headless CMS (Drupal).",
+			"Styling the components with CSS modules and SASS/SCSS for a modular and maintainable design.",
+			"Implementing a dealer locator with Here-Map, including displaying locations on interactive maps.",
+			"Developing auto-suggestion features with Here-Map for automatic address completion.",
+			"Performing performance optimizations to improve loading times.",
+			"Creating and conducting end-to-end tests (E2E) with Playwright.",
+			"Conception and implementation of a comprehensive test strategy.",
+			"Setting up Storybook for visual documentation and improved teamwork.",
+			"Testing the business logic and components with Jest.",
+			"Replacing Redux with TanstackQuery and Jotai for improved state management."
 		],
-		"customer": "Smart",
+		"customer": "car manufacturer",
 		"metadata": [
 			{
 				"start": "04/2023",
 				"end": "07/2023",
-				"role": "Lead Frontend-Entwickler"
+				"role": "Lead Frontend Developer"
 			},
 			{
 				"start": "08/2021",
 				"end": "03/2022",
-				"role": "Frontend-Entwickler"
+				"role": "Frontend Developer"
 			}
 		]
 	},
 	{
 		"id": 3,
 		"technologyIds": [1, 54, 55, 56, 36, 57],
-		"description": "Entwicklung einer Software zur Erstellung von Mitarbeiter-Profilen, die für Bewerbungen auf Projekte genutzt werden können.",
+		"description": "Development of software for creating employee profiles that can be used for project applications.",
 		"tasks": [
-			"Konzeption und Implementierung der Frontend-Architektur mit Angular und PrimeNG.",
-			"Entwicklung und Styling von Frontend-Komponenten mit TypeScript und PrimeNG, einschließlich responsiver Designs.",
-			"Integration des Backends mit dem Frontend für die Speicherung von Mitarbeiterdaten in AWS DynamoDB.",
-			"Anbindung eines AWS S3-Buckets für die Verwaltung von Profilbildern.",
-			"Optimierung der Datenpersistenz und API-Kommunikation mit AWS DynamoDB und AWS S3.",
-			"Implementierung eines Features mit der Google Docs API zur Profil-Generierung nach Templates mit Export-Optionen."
+			"Conception and implementation of the frontend architecture with Angular and PrimeNG.",
+			"Development and styling of frontend components with TypeScript and PrimeNG, including responsive designs.",
+			"Integration of the backend with the frontend for storing employee data in AWS DynamoDB.",
+			"Connecting an AWS S3 bucket for managing profile pictures.",
+			"Optimizing data persistence and API communication with AWS DynamoDB and AWS S3.",
+			"Implementing a feature with the Google Docs API for profile generation based on templates with export options."
 		],
-		"customer": "Rockstardevelopers",
+		"customer": "web agency",
 		"metadata": [
 			{
 				"start": "01/2023",
 				"end": "03/2023",
-				"role": "Frontend-Entwickler"
+				"role": "Frontend Developer"
 			}
 		]
 	},
 	{
 		"id": 4,
 		"technologyIds": [1, 2, 4, 58, 7, 59, 60, 10],
-		"description": "Implementierung eines Authentifizierungssystems für die HiPP-Website, basierend auf OAuth 2.0, mit Fokus auf Benutzerfreundlichkeit und Sicherheit.",
+		"description": "Implementation of an authentication system for the customers website, based on OAuth 2.0, focusing on user-friendliness and security.",
 		"tasks": [
-			"Einrichtung von Auth0 als Identity Provider (IdP) für die Authentifizierung von Nutzern.",
-			"Entwicklung von Formularen für Login, Registrierung und Passwort-Reset mit Forms.io und Yup.",
-			"Implementierung des Login- und Registrierungssystems gemäß OAuth 2.0-Standards.",
-			"Styling und Optimierung der Frontend-Komponenten mit SCSS."
+			"Setting up Auth0 as Identity Provider (IdP) for user authentication.",
+			"Developing forms for login, registration, and password reset with Forms.io and Yup.",
+			"Implementing the login and registration system according to OAuth 2.0 standards.",
+			"Styling and optimizing the frontend components with SCSS."
 		],
-		"customer": "HiPP",
+		"customer": "infant nutrition sector",
 		"metadata": [
 			{
 				"start": "10/2022",
 				"end": "12/2022",
-				"role": "Frontend-Entwickler"
+				"role": "Frontend Developer"
 			}
 		]
 	},
 	{
 		"id": 5,
 		"technologyIds": [61, 1, 23, 28, 10, 8, 62, 63, 64],
-		"description": "Entwicklung und Optimierung einer modularen Frontend-UI-Bibliothek, die zur Standardisierung und Wiederverwendbarkeit von Komponenten im Projekt diente. Die Bibliothek wurde im Rahmen einer Masterarbeit erstellt, mit einem besonderen Fokus auf Barrierefreiheit (WCAG-Konformität), Flexibilität und Nutzerfreundlichkeit.",
+		"description": "Development and optimization of a modular frontend UI library that served to standardize and reuse components in the project. The library was created as part of a master's thesis, with a special focus on accessibility (WCAG compliance), flexibility, and user-friendliness.",
 		"tasks": [
-			"Konzeption und Entwicklung wiederverwendbarer UI-Komponenten mit Svelte und TypeScript.",
-			"Implementierung und Pflege von Storybook für Dokumentation und Visualisierung.",
-			"Durchführung von Unit-Tests mit Jest für Code-Qualitätssicherung.",
-			"Sicherstellung der Einhaltung von Barrierefreiheitsstandards (WCAG/BITV 2.0) mit automatischen Kontrast-Berechnungen.",
-			"Entwicklung eines responsiven Designs mit SASS/SCSS und interaktiven Features mit Swiper.js.",
-			"Integration eines CI/CD-Prozesses mit Bitbucket für kontinuierliche Bereitstellungen.",
-			"Einführung einer zentralisierten Komponentenbibliothek für effiziente Entwicklungszeiten.",
-			"Verbesserung der Nutzerfreundlichkeit und Barrierefreiheit durch WCAG-Standards.",
-			"Förderung der Teamarbeit und Effizienz durch Dokumentation und Storybook.",
-			"Erfolgreicher Einsatz der UI-Bibliothek bei Freudenberg SE."
+			"Conception and development of reusable UI components with Svelte and TypeScript.",
+			"Implementation and maintenance of Storybook for documentation and visualization.",
+			"Performing unit tests with Jest for code quality assurance.",
+			"Ensuring compliance with accessibility standards (WCAG/BITV 2.0) with automatic contrast calculations.",
+			"Developing a responsive design with SASS/SCSS and interactive features with Swiper.js.",
+			"Integrating a CI/CD process with Bitbucket for continuous deployments.",
+			"Introducing a centralized component library for efficient development times.",
+			"Improving user-friendliness and accessibility through WCAG standards.",
+			"Promoting teamwork and efficiency through documentation and Storybook.",
+			"Successful use of the UI library at Freudenberg SE."
 		],
-		"customer": "Rockstardevelopers",
+		"customer": "web agency",
 		"metadata": [
 			{
 				"start": "04/2022",
 				"end": "09/2022",
-				"role": "Frontend-Entwickler"
+				"role": "Frontend Developer"
 			}
 		]
 	},
 	{
 		"id": 6,
 		"technologyIds": [14, 15, 65, 16, 66, 26, 82, 67, 49, 68, 69, 70, 71],
-		"description": "Entwicklung und Weiterentwicklung einer Auftragsverwaltungssoftware zur Planung und Abwicklung von Laseraufträgen für Bus-Paneele. Besondere Anforderungen waren die Integration von SAP-Daten, Benutzerverwaltung über LDAP und Active Directory, sowie eine anpassbare Oberfläche mit PDF-Generierung.",
+		"description": "Development and enhancement of an order management software for planning and processing laser orders for bus panels. Special requirements included the integration of SAP data, user management via LDAP and Active Directory, as well as a customizable interface with PDF generation.",
 		"tasks": [
-			"Konzeptionierung der Datenstruktur in MSSQL unter Berücksichtigung der SAP-Integration.",
-			"Erstellung von Database-First-Migrations mit Entity Framework.",
-			"Erweiterung der bestehenden Datenstruktur in MSSQL für neue Anforderungen.",
-			"Implementierung einer .NET API mit Versionierung und Swagger-Dokumentation.",
-			"Entwicklung eines Authentifizierungssystems mit IdentityServer 4 nach OAuth 2.0.",
-			"Entwicklung und Implementierung neuer API-Endpunkte.",
-			"Entwicklung von Frontend-Ansichten mit DevExpress mit kundenspezifischen Sortier- und Filter-Funktionen.",
-			"Styling der Frontend-Komponenten mit CSS gemäß Kunden-Branding.",
-			"Generierung von Auftragsbestätigungen im PDF-Format mit DevExpress.",
-			"Schreiben von Unit-Tests mit NUnit und Daten-Mocking mit FakeItEasy.",
-			"Konzeption von Regelwerken zur Qualitätssicherung mit SonarQueue und Roslyn.",
-			"Implementierung einer Pipeline für Integrationstests in Jenkins mit Groovy.",
-			"Schreiben von File-Based-Logs mit Serilog.",
-			"Konzeptionierung und Abstimmung neuer Anforderungen mit dem Kunden.",
-			"Projektmanagement und Versionskontrolle mit Redmine und Git."
+			"Conceptualization of the data structure in MSSQL, considering SAP integration.",
+			"Creation of Database-First migrations with Entity Framework.",
+			"Extension of the existing data structure in MSSQL for new requirements.",
+			"Implementation of a .NET API with versioning and Swagger documentation.",
+			"Development of an authentication system with IdentityServer 4 according to OAuth 2.0.",
+			"Development and implementation of new API endpoints.",
+			"Development of frontend views with DevExpress with customer-specific sorting and filtering functions.",
+			"Styling of the frontend components with CSS according to customer branding.",
+			"Generation of order confirmations in PDF format with DevExpress.",
+			"Writing unit tests with NUnit and data mocking with FakeItEasy.",
+			"Conception of rule sets for quality assurance with SonarQueue and Roslyn.",
+			"Implementation of a pipeline for integration tests in Jenkins with Groovy.",
+			"Writing file-based logs with Serilog.",
+			"Conceptualization and coordination of new requirements with the customer.",
+			"Project management and version control with Redmine and Git."
 		],
-		"customer": "Continental",
+		"customer": "automotive supplier",
 		"metadata": [
 			{
 				"start": "02/2021",
 				"end": "08/2021",
-				"role": "Technischer Verantwortlicher"
+				"role": "Technical Lead"
 			},
 			{
 				"start": "01/2019",
 				"end": "02/2020",
-				"role": "Fullstack-Entwickler"
+				"role": "Fullstack Developer"
 			}
 		]
 	},
 	{
 		"id": 7,
 		"technologyIds": [14, 15, 72, 16, 66, 70, 71],
-		"description": "Entwicklung einer Roadmap-Planungs-Software für das Projektmanagement interner Infineon-Projekte.",
+		"description": "Development of roadmap planning software for the project management of internal projects of the customer.",
 		"tasks": [
-			"Konzeption und Erweiterung der Datenstruktur in MSSQL für die Roadmap-Planung.",
-			"Erstellung von Database-First-Migrations mit Entity Framework.",
-			"Implementierung neuer Frontend-Features mit der Telerik Kendo UI und CSS."
+			"Conception and extension of the data structure in MSSQL for roadmap planning.",
+			"Creation of Database-First migrations with Entity Framework.",
+			"Implementation of new frontend features with Telerik Kendo UI and CSS."
 		],
-		"customer": "Infineon",
+		"customer": "semiconductor manufacturer",
 		"metadata": [
 			{
 				"start": "11/2020",
 				"end": "02/2021",
-				"role": "Fullstack-Entwickler"
+				"role": "Fullstack Developer"
 			}
 		]
 	},
 	{
 		"id": 8,
 		"technologyIds": [14, 73, 16, 26, 82, 68, 74, 49, 15, 70, 71],
-		"description": "Entwicklung einer API zur Kommunikation zwischen dem Frontend, einer Timeseries-Datenbank und einem Datei-Server.",
+		"description": "Development of an API for communication between the frontend, a timeseries database, and a file server.",
 		"tasks": [
-			"Konzeptionierung und Design einer neuen Datenstruktur in PostgreSQL, um die Python-Modulverwaltung abzubilden.",
-			"Erstellung von Code-First-Migrations mit Entity Framework zur flexiblen Implementierung und Weiterentwicklung der Datenbank.",
-			"Entwicklung eines Code-Generators für CRUD-Endpunkte in ASP.NET Core, um wiederholbare Prozesse zu automatisieren und die Entwicklung zu beschleunigen.",
-			"Implementierung von Unit-Tests mit NUnit und FakeItEasy, um die API-Funktionalität zu testen und Fehler frühzeitig zu identifizieren.",
-			"Dokumentation der API mithilfe von Swagger und Swashbuckler, um eine klare und vollständige Übersicht der verfügbaren Endpunkte bereitzustellen.",
-			"Schreiben von File-Based-Logs mit Serilog, um eine lückenlose Protokollierung und Nachverfolgbarkeit der Backend-Aktivitäten sicherzustellen."
+			"Conceptualization and design of a new data structure in PostgreSQL to map the Python module management.",
+			"Creation of Code-First migrations with Entity Framework for flexible implementation and further development of the database.",
+			"Development of a code generator for CRUD endpoints in ASP.NET Core to automate repeatable processes and accelerate development.",
+			"Implementation of unit tests with NUnit and FakeItEasy to test the API functionality and identify errors early.",
+			"Documentation of the API using Swagger and Swashbuckle to provide a clear and complete overview of the available endpoints.",
+			"Writing file-based logs with Serilog to ensure seamless logging and traceability of backend activities."
 		],
-		"customer": "Gefasoft",
+		"customer": "automotive supplier",
 		"metadata": [
 			{
 				"start": "10/2020",
 				"end": "11/2020",
-				"role": "Backend-Entwickler"
+				"role": "Backend Developer"
 			}
 		]
 	},
 	{
 		"id": 9,
 		"technologyIds": [14, 12, 16, 26, 82, 75, 76],
-		"description": "Entwicklung eines eventgesteuerten Microsoft-Services für eine Auftragsverwaltungssoftware.",
+		"description": "Development of an event-driven Microsoft service for an order management software.",
 		"tasks": [
-			"Design und Implementierung einer Datenstruktur für Audit-Daten mit SQLite, um die Nachverfolgbarkeit und Auswertung von Aufträgen zu gewährleisten.",
-			"Erstellung von Code-First-Migrations mit Entity Framework zur strukturierten Verwaltung der Datenbank.",
-			"Konzeption komplexer Logiken mit UML-Design und Implementierung in .NET Core, um die Verarbeitung der XML-Aufträge zu automatisieren.",
-			"Durchführung von Performance-Optimierungen mit Multi-Threading, um mehrere Aufträge gleichzeitig effizient zu verarbeiten und die Gesamtleistung des Systems zu verbessern.",
-			"Implementierung von Unit-Tests mit NUnit und FakeItEasy, um die Funktionalität und Zuverlässigkeit der Backend-Komponenten sicherzustellen.",
-			"Schreiben von File-Based-Logs mit log4net, um eine lückenlose Protokollierung und Analyse von Prozessen zu ermöglichen."
+			"Design and implementation of a data structure for audit data with SQLite to ensure the traceability and evaluation of orders.",
+			"Creation of Code-First migrations with Entity Framework for structured management of the database.",
+			"Conception of complex logic with UML design and implementation in .NET Core to automate the processing of XML orders.",
+			"Performing performance optimizations with multi-threading to efficiently process multiple orders simultaneously and improve overall system performance.",
+			"Implementation of unit tests with NUnit and FakeItEasy to ensure the functionality and reliability of the backend components.",
+			"Writing file-based logs with log4net to enable seamless logging and analysis of processes."
 		],
-		"customer": "BMW",
+		"customer": "car manufacturer",
 		"metadata": [
 			{
 				"start": "06/2020",
 				"end": "10/2020",
-				"role": "Backend-Entwickler"
+				"role": "Backend Developer"
 			}
 		]
 	},
 	{
 		"id": 10,
 		"technologyIds": [77, 78],
-		"description": "Untersuchung des HTM (Hierarchical Temporal Memory) Algorithmus, einer KI-Technologie von Numenta.",
+		"description": "Investigation of the HTM (Hierarchical Temporal Memory) algorithm, an AI technology from Numenta.",
 		"tasks": [
-			"Integration der htm.core-Implementierung des HTM-Algorithmus von Numenta in das Forschungsprojekt.",
-			"Entwicklung einer Testumgebung in C++, die Ergebnisse des Algorithmus in der Konsole visualisierte, um das Verhalten der Parameter und deren Auswirkungen auf das Lernen interpretieren zu können.",
-			"Analyse und Dokumentation der Ergebnisse in Form einer Bachelorarbeit, die die Methodik, die Experimente und das Lernverhalten der verschiedenen Parameter des Temporal Memory-Teils des Algorithmus detailliert beschreibt."
+			"Integration of the htm.core implementation of the HTM algorithm from Numenta into the research project.",
+			"Development of a test environment in C++ that visualized the results of the algorithm in the console to interpret the behavior of the parameters and their effects on learning.",
+			"Analysis and documentation of the results in the form of a bachelor's thesis, which details the methodology, the experiments, and the learning behavior of the various parameters of the Temporal Memory part of the algorithm."
 		],
-		"customer": "Gefasoft",
+		"customer": "automotive supplier",
 		"metadata": [
 			{
 				"start": "02/2020",
 				"end": "06/2020",
-				"role": "Forschungsarbeit"
+				"role": "Research Work"
 			}
 		]
 	},
 	{
 		"id": 11,
 		"technologyIds": [14, 73, 16, 79, 80, 81, 26, 82, 76, 15, 70, 71],
-		"description": "Entwicklung von Schnittstellen und einer Web-App für eine iOS-Messenger-App mit Alarm- und Event-Broadcasting-Funktion.",
+		"description": "Development of interfaces and a web app for an iOS messenger app with alarm and event broadcasting function.",
 		"tasks": [
-			"Entwicklung einer REST API mit ASP.NET Core, die über XMPP mit einem Ejabberd-Server kommunizierte und ein Pub-/Sub-Pattern implementierte.",
-			"Erstellung von REST-Endpunkten für die Datenkommunikation mit der iOS-App, um Alarme und Events zuverlässig zu übertragen.",
-			"Entwicklung einer Web-App zur Verwaltung von Eskalations-Matrizen, die es ermöglichte, Alarme in zeitlich abnehmenden Intervallen an verschiedene Mitarbeiter zu senden.",
-			"Implementierung eines Kalendersystems, um Mitarbeiter in Schichtbetrieben zu verwalten und die Alarmweiterleitung entsprechend der Verfügbarkeiten zu steuern.",
-			"Versand von Verification-Emails via SMTP zur Benutzerverifizierung und Kommunikation.",
-			"Integration von Apple Push-Notifications im .NET-Backend, um Alarme direkt an iOS-Geräte zu senden.",
-			"Implementierung eines konfigurierbaren File-Based-Logging-Systems mit log4net, um detaillierte Protokolle für Analyse- und Fehlerbehebungszwecke zu erstellen."
+			"Development of a REST API with ASP.NET Core that communicated with an Ejabberd server via XMPP and implemented a Pub/Sub pattern.",
+			"Creation of REST endpoints for data communication with the iOS app to reliably transmit alarms and events.",
+			"Development of a web app to manage escalation matrices, which made it possible to send alarms to different employees at decreasing time intervals.",
+			"Implementation of a calendar system to manage employees in shift operations and control alarm forwarding according to availabilities.",
+			"Sending verification emails via SMTP for user verification and communication.",
+			"Integration of Apple Push Notifications in the .NET backend to send alarms directly to iOS devices.",
+			"Implementation of a configurable file-based logging system with log4net to create detailed logs for analysis and troubleshooting purposes."
 		],
-		"customer": "BMW",
+		"customer": "car manufacturer",
 		"metadata": [
 			{
 				"start": "08/2018",
 				"end": "12/2018",
-				"role": "Fullstack-Entwickler"
+				"role": "Fullstack Developer"
 			}
 		]
 	}

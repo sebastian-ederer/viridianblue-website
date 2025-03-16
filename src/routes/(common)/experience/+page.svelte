@@ -160,6 +160,12 @@
 
 <div class="experience">
 	<h1>Experience</h1>
+	<p class="note">
+		&#128712; <i>
+			Most customer names have been anonymized to ensure compliance with potential Non-Disclosure
+			Agreements (NGAs).
+		</i>
+	</p>
 
 	<div class="filter-wrapper">
 		<div class="filter">
@@ -207,6 +213,12 @@
 		gap: 24px;
 		align-items: center;
 		margin: 20px 0;
+	}
+
+	.note {
+		padding: 0 20px;
+		text-align: left;
+		max-width: 768px;
 	}
 
 	.projects {
