@@ -17,6 +17,7 @@
 		height: 80px;
 		position: sticky;
 		top: 0;
+		z-index: 9;
 	}
 
 	a {

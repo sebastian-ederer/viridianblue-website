@@ -1,0 +1,200 @@
+[
+	{
+		"id": 1,
+		"technologyIds": [
+			1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+			27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+			50, 51, 52
+		],
+		"description": "Entwicklung der Cross-Platform-App Chatsprint, einer KI-gestützten Sprachlernplattform, die Nutzern das Lernen neuer Sprachen ermöglicht. Die App bietet Interaktion mit KI-Chatbots, die auf Basis der Nutzereingaben Antworten generieren und korrigieren. Ein Spaced-Repetitive-Learning-Algorithmus sorgt für ein effizientes Vokabeltraining. Die App wird auf Web, iOS und Android veröffentlicht.",
+		"tasks": [
+			"Konzeption und Implementierung der Software-Architektur für die Cross-Platform-App Chatsprint.",
+			"Entwicklung der App mit Capacitor.js und React basierend auf einem Figma-Design und Styling mit SCSS-Modulen.",
+			"Globales und asynchrones State-Management mit Jotai und TanstackQuery.",
+			"Implementierung einer Demo-App mit React Native und SQLite für einen schnellen Showcase.",
+			"Entwicklung von Authentication-Formularen mit React-Hook-Form, inklusive Client-Side-Validierung mit Yup.",
+			"Einrichtung von Storybook für Dokumentation, Visualisierung und Testing von Komponenten.",
+			"Testen der Business-Logik mit Jest und Schreiben von E2E-Tests mit Playwright sowie MSW.",
+			"Erstellung von HTML-E-Mails mit MJML für konsistente Darstellung in verschiedenen E-Mail-Clients.",
+			"Implementierung eines Authentifizierungssystems nach OAuth 2.0 mit AWS Cognito als Identity Provider.",
+			"Hosting der Web-Version der App über AWS Amplify.",
+			"Entwicklung von Lambda-Funktionen in Python für die Kommunikation zwischen Frontend, Backend und AWS Cognito.",
+			"Entwicklung des Backends mit .NET und Logging mittels Serilog mit AWS CloudWatch Integration.",
+			"Schreiben von Unit-Tests mit NUnit und Mocking mit NSubstitute zur Sicherstellung der Backend-Qualität.",
+			"Entwurf und Implementierung der Datenbankstruktur mit AWS RDS PostgreSQL und Entity Framework.",
+			"Aufsetzen eines Directus Docker-Images auf AWS ECS als Headless CMS.",
+			"Einrichtung von Mapperly in .NET für Model-DTO Mapping.",
+			"Anbindung und Integration von Google Analytics über Firebase für Web und native Apps.",
+			"Einrichtung des AWS Parameter Stores und Integration in .NET zur sicheren Speicherung sensibler Daten.",
+			"Erstellung und Verwaltung von SSL-Zertifikaten für benutzerdefinierte Domains.",
+			"Verwaltung und Konfiguration von Domains, inklusive DNS-Einstellungen und Subdomains.",
+			"Implementierung eines Zahlungssystems mit Stripe für Web und RevenueCat für In-App-Käufe.",
+			"Veröffentlichung der App in den Stores (Google Play Console und App Store Connect).",
+			"Entwicklung von Endpunkten für die Chat GPT Completion API Integration.",
+			"Anbindung eines AWS S3-Buckets für dynamische Inhalte und öffentlich zugängliche E-Mail-Bilder.",
+			"Dockerisierung des Backends zur Bereitstellung auf AWS ECS (Fargate).",
+			"Erstellung von Dockerfiles und Docker-Compose-Konfigurationen für Build- und Deployment-Automatisierung.",
+			"Implementierung von CI/CD-Pipelines mit GitHub Actions für Tests und automatisierte Deployments.",
+			"Einführung von Pre-Commit-Hooks mit Husky für ESLint und Code-Formatierung.",
+			"Entwicklung von Build- und Versionierungsskripten für Web, iOS und Android.",
+			"Konzeption und Umsetzung von Release-Strategien.",
+			"Projektmanagement mit YouTrack und einem angepassten SCRUM-Ansatz."
+		],
+		"customer": "Glowbyte",
+		"metadata": [
+			{
+				"start": "07/2023",
+				"end": null,
+				"role": "Technical Lead & CEO"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"technologyIds": [1, 2, 4, 10, 11, 23, 24, 28, 51, 52, 53],
+		"description": "Entwicklung und Optimierung der Website von Smart, mit Fokus auf Performance, Testbarkeit und die Integration eines Headless-CMS.",
+		"tasks": [
+			"Entwicklung von Frontend-Komponenten mit Next.js, basierend auf einem Headless-CMS (Drupal).",
+			"Styling der Komponenten mit CSS-Modules und SASS/SCSS für ein modulares und wartbares Design.",
+			"Implementierung eines Dealer-Locators mit Here-Map, einschließlich Darstellung von Standorten auf interaktiven Karten.",
+			"Entwicklung von Auto-Suggestion-Funktionen mit Here-Map für automatische Adress-Vervollständigung.",
+			"Durchführung von Performance-Optimierungen zur Verbesserung der Ladezeiten.",
+			"Erstellung und Durchführung von End-to-End-Tests (E2E) mit Playwright.",
+			"Konzeption und Umsetzung einer umfassenden Teststrategie.",
+			"Einrichtung von Storybook für visuelle Dokumentation und verbesserte Teamarbeit.",
+			"Testen der Business-Logik und Komponenten mit Jest.",
+			"Ersetzen von Redux durch TanstackQuery und Jotai für verbessertes State-Management."
+		],
+		"customer": "Smart",
+		"metadata": [
+			{
+				"start": "04/2023",
+				"end": "07/2023",
+				"role": "Lead Frontend-Entwickler"
+			},
+			{
+				"start": "08/2021",
+				"end": "03/2022",
+				"role": "Frontend-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"technologyIds": [1, 54, 55, 56, 36, 57],
+		"description": "Entwicklung einer Software zur Erstellung von Mitarbeiter-Profilen, die für Bewerbungen auf Projekte genutzt werden können.",
+		"tasks": [
+			"Konzeption und Implementierung der Frontend-Architektur mit Angular und PrimeNG.",
+			"Entwicklung und Styling von Frontend-Komponenten mit TypeScript und PrimeNG, einschließlich responsiver Designs.",
+			"Integration des Backends mit dem Frontend für die Speicherung von Mitarbeiterdaten in AWS DynamoDB.",
+			"Anbindung eines AWS S3-Buckets für die Verwaltung von Profilbildern.",
+			"Optimierung der Datenpersistenz und API-Kommunikation mit AWS DynamoDB und AWS S3.",
+			"Implementierung eines Features mit der Google Docs API zur Profil-Generierung nach Templates mit Export-Optionen."
+		],
+		"customer": "Rockstardevelopers",
+		"metadata": [
+			{
+				"start": "01/2023",
+				"end": "03/2023",
+				"role": "Frontend-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"technologyIds": [1, 2, 4, 58, 7, 59, 60, 10],
+		"description": "Implementierung eines Authentifizierungssystems für die HiPP-Website, basierend auf OAuth 2.0, mit Fokus auf Benutzerfreundlichkeit und Sicherheit.",
+		"tasks": [
+			"Einrichtung von Auth0 als Identity Provider (IdP) für die Authentifizierung von Nutzern.",
+			"Entwicklung von Formularen für Login, Registrierung und Passwort-Reset mit Forms.io und Yup.",
+			"Implementierung des Login- und Registrierungssystems gemäß OAuth 2.0-Standards.",
+			"Styling und Optimierung der Frontend-Komponenten mit SCSS."
+		],
+		"customer": "HiPP",
+		"metadata": [
+			{
+				"start": "10/2022",
+				"end": "12/2022",
+				"role": "Frontend-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"technologyIds": [61, 1, 23, 28, 10, 8, 62, 63, 64],
+		"description": "Entwicklung und Optimierung einer modularen Frontend-UI-Bibliothek, die zur Standardisierung und Wiederverwendbarkeit von Komponenten im Projekt diente. Die Bibliothek wurde im Rahmen einer Masterarbeit erstellt, mit einem besonderen Fokus auf Barrierefreiheit (WCAG-Konformität), Flexibilität und Nutzerfreundlichkeit.",
+		"tasks": [
+			"Konzeption und Entwicklung wiederverwendbarer UI-Komponenten mit Svelte und TypeScript.",
+			"Implementierung und Pflege von Storybook für Dokumentation und Visualisierung.",
+			"Durchführung von Unit-Tests mit Jest für Code-Qualitätssicherung.",
+			"Sicherstellung der Einhaltung von Barrierefreiheitsstandards (WCAG/BITV 2.0) mit automatischen Kontrast-Berechnungen.",
+			"Entwicklung eines responsiven Designs mit SASS/SCSS und interaktiven Features mit Swiper.js.",
+			"Integration eines CI/CD-Prozesses mit Bitbucket für kontinuierliche Bereitstellungen.",
+			"Einführung einer zentralisierten Komponentenbibliothek für effiziente Entwicklungszeiten.",
+			"Verbesserung der Nutzerfreundlichkeit und Barrierefreiheit durch WCAG-Standards.",
+			"Förderung der Teamarbeit und Effizienz durch Dokumentation und Storybook.",
+			"Erfolgreicher Einsatz der UI-Bibliothek bei Freudenberg SE."
+		],
+		"customer": "Rockstardevelopers",
+		"metadata": [
+			{
+				"start": "04/2022",
+				"end": "09/2022",
+				"role": "Frontend-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 6,
+		"technologyIds": [14, 15, 65, 16, 66, 26, 82, 67, 49, 68, 69, 70, 71],
+		"description": "Entwicklung und Weiterentwicklung einer Auftragsverwaltungssoftware zur Planung und Abwicklung von Laseraufträgen für Bus-Paneele. Besondere Anforderungen waren die Integration von SAP-Daten, Benutzerverwaltung über LDAP und Active Directory, sowie eine anpassbare Oberfläche mit PDF-Generierung.",
+		"tasks": [
+			"Konzeptionierung der Datenstruktur in MSSQL unter Berücksichtigung der SAP-Integration.",
+			"Erstellung von Database-First-Migrations mit Entity Framework.",
+			"Erweiterung der bestehenden Datenstruktur in MSSQL für neue Anforderungen.",
+			"Implementierung einer .NET API mit Versionierung und Swagger-Dokumentation.",
+			"Entwicklung eines Authentifizierungssystems mit IdentityServer 4 nach OAuth 2.0.",
+			"Entwicklung und Implementierung neuer API-Endpunkte.",
+			"Entwicklung von Frontend-Ansichten mit DevExpress mit kundenspezifischen Sortier- und Filter-Funktionen.",
+			"Styling der Frontend-Komponenten mit CSS gemäß Kunden-Branding.",
+			"Generierung von Auftragsbestätigungen im PDF-Format mit DevExpress.",
+			"Schreiben von Unit-Tests mit NUnit und Daten-Mocking mit FakeItEasy.",
+			"Konzeption von Regelwerken zur Qualitätssicherung mit SonarQueue und Roslyn.",
+			"Implementierung einer Pipeline für Integrationstests in Jenkins mit Groovy.",
+			"Schreiben von File-Based-Logs mit Serilog.",
+			"Konzeptionierung und Abstimmung neuer Anforderungen mit dem Kunden.",
+			"Projektmanagement und Versionskontrolle mit Redmine und Git."
+		],
+		"customer": "Continental",
+		"metadata": [
+			{
+				"start": "02/2021",
+				"end": "08/2021",
+				"role": "Technischer Verantwortlicher"
+			},
+			{
+				"start": "01/2019",
+				"end": "02/2020",
+				"role": "Fullstack-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 7,
+		"technologyIds": [14, 15, 72, 16, 66, 70, 71],
+		"description": "Entwicklung einer Roadmap-Planungs-Software für das Projektmanagement interner Infineon-Projekte.",
+		"tasks": [
+			"Konzeption und Erweiterung der Datenstruktur in MSSQL für die Roadmap-Planung.",
+			"Erstellung von Database-First-Migrations mit Entity Framework.",
+			"Implementierung neuer Frontend-Features mit der Telerik Kendo UI und CSS."
+		],
+		"customer": "Infineon",
+		"metadata": [
+			{
+				"start": "11/2020",
+				"end": "02/2021",
+				"role": "Fullstack-Entwickler"
+			}
+		]
+	}
+]

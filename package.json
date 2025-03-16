@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@fontsource-variable/dancing-script": "^5.1.1",
 		"@fontsource-variable/figtree": "^5.1.2",
+		"fuse.js": "^7.1.0",
 		"swiper": "^11.2.4"
 	}
 }
