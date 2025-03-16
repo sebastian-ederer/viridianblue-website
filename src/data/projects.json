@@ -196,5 +196,87 @@
 				"role": "Fullstack-Entwickler"
 			}
 		]
+	},
+	{
+		"id": 8,
+		"technologyIds": [14, 73, 16, 26, 82, 68, 74, 49, 15, 70, 71],
+		"description": "Entwicklung einer API zur Kommunikation zwischen dem Frontend, einer Timeseries-Datenbank und einem Datei-Server.",
+		"tasks": [
+			"Konzeptionierung und Design einer neuen Datenstruktur in PostgreSQL, um die Python-Modulverwaltung abzubilden.",
+			"Erstellung von Code-First-Migrations mit Entity Framework zur flexiblen Implementierung und Weiterentwicklung der Datenbank.",
+			"Entwicklung eines Code-Generators für CRUD-Endpunkte in ASP.NET Core, um wiederholbare Prozesse zu automatisieren und die Entwicklung zu beschleunigen.",
+			"Implementierung von Unit-Tests mit NUnit und FakeItEasy, um die API-Funktionalität zu testen und Fehler frühzeitig zu identifizieren.",
+			"Dokumentation der API mithilfe von Swagger und Swashbuckler, um eine klare und vollständige Übersicht der verfügbaren Endpunkte bereitzustellen.",
+			"Schreiben von File-Based-Logs mit Serilog, um eine lückenlose Protokollierung und Nachverfolgbarkeit der Backend-Aktivitäten sicherzustellen."
+		],
+		"customer": "Gefasoft",
+		"metadata": [
+			{
+				"start": "10/2020",
+				"end": "11/2020",
+				"role": "Backend-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 9,
+		"technologyIds": [14, 12, 16, 26, 82, 75, 76],
+		"description": "Entwicklung eines eventgesteuerten Microsoft-Services für eine Auftragsverwaltungssoftware.",
+		"tasks": [
+			"Design und Implementierung einer Datenstruktur für Audit-Daten mit SQLite, um die Nachverfolgbarkeit und Auswertung von Aufträgen zu gewährleisten.",
+			"Erstellung von Code-First-Migrations mit Entity Framework zur strukturierten Verwaltung der Datenbank.",
+			"Konzeption komplexer Logiken mit UML-Design und Implementierung in .NET Core, um die Verarbeitung der XML-Aufträge zu automatisieren.",
+			"Durchführung von Performance-Optimierungen mit Multi-Threading, um mehrere Aufträge gleichzeitig effizient zu verarbeiten und die Gesamtleistung des Systems zu verbessern.",
+			"Implementierung von Unit-Tests mit NUnit und FakeItEasy, um die Funktionalität und Zuverlässigkeit der Backend-Komponenten sicherzustellen.",
+			"Schreiben von File-Based-Logs mit log4net, um eine lückenlose Protokollierung und Analyse von Prozessen zu ermöglichen."
+		],
+		"customer": "BMW",
+		"metadata": [
+			{
+				"start": "06/2020",
+				"end": "10/2020",
+				"role": "Backend-Entwickler"
+			}
+		]
+	},
+	{
+		"id": 10,
+		"technologyIds": [77, 78],
+		"description": "Untersuchung des HTM (Hierarchical Temporal Memory) Algorithmus, einer KI-Technologie von Numenta.",
+		"tasks": [
+			"Integration der htm.core-Implementierung des HTM-Algorithmus von Numenta in das Forschungsprojekt.",
+			"Entwicklung einer Testumgebung in C++, die Ergebnisse des Algorithmus in der Konsole visualisierte, um das Verhalten der Parameter und deren Auswirkungen auf das Lernen interpretieren zu können.",
+			"Analyse und Dokumentation der Ergebnisse in Form einer Bachelorarbeit, die die Methodik, die Experimente und das Lernverhalten der verschiedenen Parameter des Temporal Memory-Teils des Algorithmus detailliert beschreibt."
+		],
+		"customer": "Gefasoft",
+		"metadata": [
+			{
+				"start": "02/2020",
+				"end": "06/2020",
+				"role": "Forschungsarbeit"
+			}
+		]
+	},
+	{
+		"id": 11,
+		"technologyIds": [14, 73, 16, 79, 80, 81, 26, 82, 76, 15, 70, 71],
+		"description": "Entwicklung von Schnittstellen und einer Web-App für eine iOS-Messenger-App mit Alarm- und Event-Broadcasting-Funktion.",
+		"tasks": [
+			"Entwicklung einer REST API mit ASP.NET Core, die über XMPP mit einem Ejabberd-Server kommunizierte und ein Pub-/Sub-Pattern implementierte.",
+			"Erstellung von REST-Endpunkten für die Datenkommunikation mit der iOS-App, um Alarme und Events zuverlässig zu übertragen.",
+			"Entwicklung einer Web-App zur Verwaltung von Eskalations-Matrizen, die es ermöglichte, Alarme in zeitlich abnehmenden Intervallen an verschiedene Mitarbeiter zu senden.",
+			"Implementierung eines Kalendersystems, um Mitarbeiter in Schichtbetrieben zu verwalten und die Alarmweiterleitung entsprechend der Verfügbarkeiten zu steuern.",
+			"Versand von Verification-Emails via SMTP zur Benutzerverifizierung und Kommunikation.",
+			"Integration von Apple Push-Notifications im .NET-Backend, um Alarme direkt an iOS-Geräte zu senden.",
+			"Implementierung eines konfigurierbaren File-Based-Logging-Systems mit log4net, um detaillierte Protokolle für Analyse- und Fehlerbehebungszwecke zu erstellen."
+		],
+		"customer": "BMW",
+		"metadata": [
+			{
+				"start": "08/2018",
+				"end": "12/2018",
+				"role": "Fullstack-Entwickler"
+			}
+		]
 	}
 ]

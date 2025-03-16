@@ -160,39 +160,38 @@
 
 <div class="experience">
 	<h1>Experience</h1>
-	<div class="date-filters">
-		<div class="input-group">
-			<label for="start-date">started</label>
-			<input
-				id="start-date"
-				type="text"
-				placeholder="MM / YYYY"
-				value={startDate}
-				oninput={(event) => handleDateInput(event, (value) => (startDate = value))}
-				maxlength="9"
-			/>
+
+	<div class="filter-wrapper">
+		<div class="filter">
+			<div class="input-group">
+				<label for="start-date">started</label>
+				<input
+					id="start-date"
+					type="text"
+					placeholder="MM / YYYY"
+					value={startDate}
+					oninput={(event) => handleDateInput(event, (value) => (startDate = value))}
+					maxlength="9"
+				/>
+			</div>
+			<div class="input-group">
+				<label for="end-date">finished</label>
+				<input
+					id="end-date"
+					type="text"
+					placeholder="MM / YYYY"
+					value={endDate}
+					oninput={(event) => handleDateInput(event, (value) => (endDate = value))}
+					maxlength="9"
+				/>
+			</div>
 		</div>
-		<div class="input-group">
-			<label for="end-date">finished</label>
-			<input
-				id="end-date"
-				type="text"
-				placeholder="MM / YYYY"
-				value={endDate}
-				oninput={(event) => handleDateInput(event, (value) => (endDate = value))}
-				maxlength="9"
-			/>
+
+		<div class="filter">
+			<input bind:value={searchString} oninput={filterProjects} type="text" placeholder="Search" />
 		</div>
 	</div>
 
-	<div class="global-filter">
-		<input
-			bind:value={searchString}
-			oninput={filterProjects}
-			type="text"
-			placeholder="Search anything"
-		/>
-	</div>
 	<div class="projects">
 		{#each projects as project}
 			<ProjectCard {project} />
@@ -218,10 +217,23 @@
 		max-width: 768px;
 	}
 
-	.global-filter,
-	.date-filters {
+	.filter-wrapper {
 		width: 100%;
 		max-width: 768px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+
+		padding: 0 20px;
+
+		@media (min-width: 788px) {
+			padding: 0;
+		}
+	}
+
+	.filter {
+		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

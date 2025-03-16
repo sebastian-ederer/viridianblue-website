@@ -83,14 +83,25 @@
 	}
 
 	.row {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		@media (min-width: 480px) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 
 	.metadata {
 		display: flex;
 		flex-direction: column;
 		font-size: 10pt;
+		gap: 24px;
+
+		@media (min-width: 480px) {
+			gap: 6px;
+		}
 	}
 
 	.icon {
