@@ -124,7 +124,7 @@
 <style lang="scss">
 	.about {
 		max-width: 100vw;
-		height: calc(100dvh - 80px);
+		height: calc(100dvh - 60px);
 		display: flex;
 		flex-direction: column;
 	}
@@ -182,11 +182,6 @@
 
 		p {
 			max-width: 650px;
-		}
-
-		@media (max-width: 480px) {
-			height: 100%;
-			backdrop-filter: blur(2px);
 		}
 
 		.introduction {

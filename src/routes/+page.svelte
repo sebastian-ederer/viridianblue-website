@@ -40,6 +40,12 @@
 <div class="home">
 	<Background />
 
+	<div class="menu">
+		<a class="active" href="/">Home</a>
+		<a href="/about">About</a>
+		<a href="/experience">Experience</a>
+	</div>
+
 	<div class={'audioWrapper'} style="z-index: 10">
 		<audio bind:this={audio} loop {volume} {muted}>
 			<source src={'/porter-robinson-sea-of-voices.mp3'} type="audio/mpeg" />
@@ -132,6 +138,55 @@
 
 		@media (max-width: 480px) {
 			display: none;
+		}
+	}
+
+	.menu {
+		position: fixed;
+		z-index: 9;
+		top: 30px;
+		display: flex;
+		gap: 30px;
+
+		a {
+			font-weight: 500;
+			color: #2c3e50;
+			text-decoration: none;
+			margin: 0;
+			position: relative;
+			transition: color 0.3s ease;
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 0%;
+				height: 2px;
+				left: 0;
+				bottom: -4px;
+				background-color: #73c6b6;
+				transition: width 0.3s ease;
+			}
+
+			&:hover {
+				color: #73c6b6;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+
+			&.active {
+				color: #73c6b6;
+
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+
+		@media (min-width: 768px) {
+			top: 60px;
+			gap: 50px;
 		}
 	}
 </style>
