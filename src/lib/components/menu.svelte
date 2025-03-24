@@ -142,14 +142,46 @@
 		display: flex;
 		flex-direction: row;
 		gap: 12px;
+		position: relative;
+		transition: color 0.3s ease;
 	}
 
-	a span.active {
+	a span:not(.icon) {
+		position: relative;
+		transition: color 0.3s ease;
+	}
+
+	a span:not(.icon)::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 0%;
+		height: 2px;
+		background-color: #73c6b6;
+		transition: width 0.3s ease;
+	}
+
+	a:hover span:not(.icon) {
+		color: #73c6b6;
+	}
+
+	a:hover span:not(.icon)::after {
+		width: 100%;
+	}
+
+	a span:not(.icon).active {
 		color: #73c6b6;
 		font-weight: 600;
-		border-bottom: 2px solid #73c6b6;
+	}
 
-		@media (max-width: 480px) {
+	a span:not(.icon).active::after {
+		width: 100%;
+		background-color: #73c6b6;
+	}
+
+	@media (max-width: 480px) {
+		a span:not(.icon).active {
 			border: none;
 		}
 	}
