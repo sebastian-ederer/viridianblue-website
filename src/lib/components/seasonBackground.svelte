@@ -22,17 +22,13 @@
 <div class={['background', season]}>
 	<div class={['background-colored-image']} data-swiper-parallax="-23%"></div>
 	<div bind:this={backgroundImageElement} class={['background-image']}></div>
-	{#if season === 'summer' || season == 'spring'}
+	{#if season === 'summer' || season == 'spring' || season == 'fall'}
 		<Birds />
 	{/if}
 
 	{#if season === 'summer'}
 		<SunRays />
 		<Particles />
-	{/if}
-
-	{#if season === 'fall'}
-		<LeafeAnimation />
 	{/if}
 
 	{#if season === 'winter'}
@@ -107,34 +103,34 @@
 
 	.fall {
 		.background-colored-image::before {
-			background-color: rgb(172, 95, 65);
+			background-color: rgb(153, 100, 79);
 		}
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-fall.jpg');
+			background-image: url('/forrest-base-bg-fall.png');
 		}
 	}
 
 	.winter {
 		.background-colored-image::before {
-			background-color: rgb(142, 175, 210);
+			background-color: rgb(152, 175, 201);
 		}
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-winter.jpg');
+			background-image: url('/forrest-base-bg-winter.png');
 		}
 	}
 
 	.spring {
 		.background-colored-image::before {
-			background-color: rgb(222, 133, 166);
+			background-color: rgb(208, 145, 168);
 		}
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-spring.jpg');
+			background-image: url('/forrest-base-bg-spring.png');
 		}
 	}
 
