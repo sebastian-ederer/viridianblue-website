@@ -164,7 +164,7 @@
 		background-color: rgba(39, 39, 39, 0.5);
 		padding: 20px;
 		overflow-y: auto;
-		backdrop-filter: blur(5px);
+		backdrop-filter: blur(2px);
 		width: 100%;
 		text-align: center;
 		height: 100%;
