@@ -3,7 +3,6 @@
 	import Particles from '$lib/components/particles.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
 	import CherryBlossom from './cherryBlossom.svelte';
-	import LeafeAnimation from './leafeAnimation.svelte';
 	import SnowAnimation from './snowAnimation.svelte';
 
 	export let season: 'spring' | 'summer' | 'fall' | 'winter' = 'summer';
