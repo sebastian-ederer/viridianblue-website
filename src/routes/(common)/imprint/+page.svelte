@@ -10,7 +10,7 @@
 
 		<p class="contact-info">
 			Phone: <a href="tel:+4915161115905">(+49) 15161115905</a><br />
-			E-Mail: <a href="mailto:sebi.ederer@gmx.de">sebi.ederer@gmx.de</a><br />
+			E-Mail: <a href="mailto:sebi.ederer@gmx.de">dev.sebastian.ederer@gmail.com</a><br />
 		</p>
 
 		<section class="eu-dispute-resolution">
