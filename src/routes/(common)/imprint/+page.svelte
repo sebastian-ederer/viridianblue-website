@@ -57,20 +57,20 @@
 	h1 {
 		font-size: 2.5em;
 		margin-bottom: 20px;
-		color: #333;
+		color: #2c3e50;
 	}
 
 	h2 {
 		font-size: 1.8em;
 		margin-top: 30px;
 		margin-bottom: 15px;
-		color: #555;
+		color: #2c3e50;
 	}
 
 	p {
 		line-height: 1.6;
 		margin-bottom: 15px;
-		color: #666;
+		color: #2c3e50;
 	}
 
 	.owner-info {
@@ -78,7 +78,7 @@
 	}
 
 	.contact-info a {
-		color: #007bff;
+		color: #73c6b6;
 		text-decoration: none;
 	}
 
@@ -87,7 +87,7 @@
 	}
 
 	.eu-dispute-resolution a {
-		color: #007bff;
+		color: #73c6b6;
 		text-decoration: none;
 	}
 
