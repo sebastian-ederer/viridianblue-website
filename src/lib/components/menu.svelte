@@ -201,12 +201,6 @@
 		background-color: #73c6b6;
 	}
 
-	@media (max-width: 480px) {
-		a span:not(.icon).active {
-			border: none;
-		}
-	}
-
 	.menu-group {
 		position: relative;
 		display: flex;

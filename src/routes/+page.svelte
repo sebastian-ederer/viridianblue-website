@@ -107,7 +107,7 @@
 	}
 
 	.heading {
-		font-size: 5rem;
+		font-size: 3rem;
 		font-family: 'Dancing Script Variable', cursive;
 		font-weight: bold;
 		color: rgb(var(--color-primary));
@@ -116,12 +116,12 @@
 		z-index: 1;
 		margin: 0;
 
-		@media (max-width: 768px) {
+		@media (min-width: 480px) {
 			font-size: 4rem;
 		}
 
-		@media (max-width: 480px) {
-			font-size: 3rem;
+		@media (min-width: 768px) {
+			font-size: 5rem;
 		}
 	}
 
@@ -136,19 +136,20 @@
 
 	.volume-wrapper {
 		position: absolute;
-		right: 32px;
-		bottom: 130px;
 		display: flex;
 		justify-content: end;
 		align-items: end;
+		display: none;
 
-		@media (max-width: 1200px) {
+		@media (min-width: 480px) {
+			display: flex;
 			right: 16px;
 			bottom: 90px;
 		}
 
-		@media (max-width: 480px) {
-			display: none;
+		@media (min-width: 1200px) {
+			right: 32px;
+			bottom: 130px;
 		}
 	}
 

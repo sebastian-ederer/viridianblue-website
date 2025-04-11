@@ -30,27 +30,16 @@
 
 		&--one {
 			top: 15%;
-			animation-duration: 20s;
+			animation-duration: 7s;
 		}
 
 		&--two {
 			top: 25%;
-			animation-duration: 20s;
-			animation-delay: 5s;
+			animation-duration: 7s;
+			animation-delay: 2s;
 		}
 
-		@media (max-width: 1200px) {
-			&--one {
-				animation-duration: 15s;
-			}
-
-			&--two {
-				animation-duration: 15s;
-				animation-delay: 4s;
-			}
-		}
-
-		@media (max-width: 768px) {
+		@media (min-width: 480px) {
 			&--one {
 				animation-duration: 10s;
 			}
@@ -61,14 +50,25 @@
 			}
 		}
 
-		@media (max-width: 480px) {
+		@media (min-width: 768px) {
 			&--one {
-				animation-duration: 7s;
+				animation-duration: 15s;
 			}
 
 			&--two {
-				animation-duration: 7s;
-				animation-delay: 2s;
+				animation-duration: 15s;
+				animation-delay: 4s;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			&--one {
+				animation-duration: 20s;
+			}
+
+			&--two {
+				animation-duration: 20s;
+				animation-delay: 5s;
 			}
 		}
 	}

@@ -138,12 +138,6 @@
 
 	.slide {
 		grid-row: 2/3;
-		@media (max-width: 480px) {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
 	}
 
 	.swiper {
@@ -206,9 +200,10 @@
 	.navigation {
 		--swiper-theme-color: rgba(255, 255, 255, 0.5);
 		--swiper-navigation-size: 24px;
+		display: none;
 
-		@media (max-width: 768px) {
-			display: none;
+		@media (min-width: 768px) {
+			display: block;
 		}
 	}
 </style>

@@ -132,22 +132,4 @@
 			background-image: url('/forrest-base-bg-spring.png');
 		}
 	}
-
-	@media (max-width: 480px) {
-		.background-image {
-			mask-position: 0% 70%; // Adjust vertical position for mobile
-			-webkit-mask-position: 0% 70%; // Adjust vertical position for mobile
-
-			@keyframes addColor {
-				0% {
-					-webkit-mask-position: 0% 70%;
-					mask-position: 0% 70%;
-				}
-				100% {
-					-webkit-mask-position: 100% 70%;
-					mask-position: 100% 70%;
-				}
-			}
-		}
-	}
 </style>

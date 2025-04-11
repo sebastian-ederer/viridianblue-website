@@ -50,7 +50,7 @@
 			clip-path: polygon(50% 10%, 100% 100%, 0 100%);
 			transform-origin: top right;
 
-			transform: rotate(calc((math.random(55) + 8) * -1) + deg);
+			transform: rotate(calc((math.random(20) + 5) * -1) + deg);
 
 			display: block;
 			mix-blend-mode: hard-light;
@@ -65,16 +65,16 @@
 		}
 
 		// Mobile-specific styles (smaller rotation angles)
-		@media (max-width: 480px) {
+		@media (min-width: 480px) {
 			.ray#{$i} {
-				transform: rotate(calc((math.random(20) + 5) * -1) + deg);
+				transform: rotate(calc((math.random(40) + 7) * -1) + deg);
 			}
 		}
 
 		// Tablet-specific styles (intermediate rotation angles)
-		@media (max-width: 768px) {
+		@media (min-width: 768px) {
 			.ray#{$i} {
-				transform: rotate(calc((math.random(40) + 7) * -1) + deg);
+				transform: rotate(calc((math.random(55) + 8) * -1) + deg);
 			}
 		}
 	}
