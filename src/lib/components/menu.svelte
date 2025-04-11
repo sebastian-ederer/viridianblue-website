@@ -27,20 +27,32 @@
 
 	<div class="menu" class:open={isOpen}>
 		<div class="inner-menu">
-			<a href="/" onclick={closeMenuIfMobile}>
-				<span class="icon"><Logo /></span>
-				<span class:active={isActive('/')}>Home</span>
-			</a>
+			<div class="menu-group">
+				<a href="/" onclick={closeMenuIfMobile}>
+					<span class="icon"><Logo /></span>
+					<span class:active={isActive('/')}>Home</span>
+				</a>
+			</div>
 
-			<a href="/about" onclick={closeMenuIfMobile}>
-				<span class="icon"><Person /></span>
-				<span class:active={isActive('/about')}>About</span>
-			</a>
+			<div class="menu-group">
+				<a href="/about" onclick={closeMenuIfMobile}>
+					<span class="icon"><Person /></span>
+					<span class:active={isActive('/about')}>About</span>
+				</a>
 
-			<a href="/experience" onclick={closeMenuIfMobile}>
-				<span class="icon"><Experience /></span>
-				<span class:active={isActive('/experience')}>Experience</span>
-			</a>
+				<div class="dropdown">
+					<a href="/imprint" onclick={closeMenuIfMobile}>
+						<span class:active={isActive('/imprint')}>Imprint</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="menu-group">
+				<a href="/experience" onclick={closeMenuIfMobile}>
+					<span class="icon"><Experience /></span>
+					<span class:active={isActive('/experience')}>Experience</span>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -97,7 +109,7 @@
 		top: 60px;
 		left: 0;
 		right: 0;
-		height: 100dvh;
+		height: calc(100dvh - 60px);
 		overflow: hidden;
 		background-color: #292929;
 
@@ -113,6 +125,7 @@
 			align-items: center;
 			height: 60px;
 			width: 100%;
+			overflow: visible;
 		}
 	}
 
@@ -121,6 +134,7 @@
 		padding: 20px;
 		flex-direction: column;
 		gap: 20px;
+		height: 100%;
 
 		@media (min-width: 480px) {
 			flex-direction: row;
@@ -128,6 +142,7 @@
 			align-items: center;
 			height: 60px;
 			width: 100%;
+			padding: 0;
 		}
 	}
 
@@ -144,6 +159,12 @@
 		gap: 12px;
 		position: relative;
 		transition: color 0.3s ease;
+		align-items: center;
+		height: auto;
+
+		@media (min-width: 480px) {
+			height: 60px;
+		}
 	}
 
 	a span:not(.icon) {
@@ -183,6 +204,49 @@
 	@media (max-width: 480px) {
 		a span:not(.icon).active {
 			border: none;
+		}
+	}
+
+	.menu-group {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.menu-group:hover .dropdown {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	.dropdown {
+		padding: 12px 0 0 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: 480px) {
+			position: absolute;
+			top: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			border-radius: 0 0 4px 4px;
+			overflow: hidden;
+			z-index: 10;
+			min-width: calc(100% + 8px);
+			margin-top: 0;
+			padding: 6px 6px 12px 6px;
+			width: calc(100% - 18px);
+
+			opacity: 0;
+			transform: translateY(-10px);
+			transition:
+				opacity 0.3s ease,
+				transform 0.3s ease;
+		}
+
+		a {
+			height: fit-content;
 		}
 	}
 </style>
