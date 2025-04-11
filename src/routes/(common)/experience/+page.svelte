@@ -214,7 +214,8 @@
 		flex-direction: column;
 		gap: 24px;
 		align-items: center;
-		margin: 20px 0;
+		padding: 20px 0;
+		background-color: #f9f9f9;
 	}
 
 	.info-icon {
@@ -272,7 +273,7 @@
 		width: 100%;
 		padding: 10px;
 		border-radius: 4px;
-		border: 1px solid black;
+		border: 1px solid #e6e6e6;
 		&::placeholder {
 			color: #999;
 		}

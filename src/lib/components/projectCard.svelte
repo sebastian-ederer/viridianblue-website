@@ -69,7 +69,8 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-		background-color: #ebebeb;
+		background-color: #fff;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 		@media (min-width: 768px) {
 			border-radius: 4px;
@@ -78,7 +79,7 @@
 		h1 {
 			color: rgb(var(--color-primary));
 			margin-top: 0;
-			border-bottom: 1px solid #ccc;
+			border-bottom: 1px solid #eee;
 		}
 	}
 
@@ -139,13 +140,13 @@
 		text-align: left;
 		padding: 12px;
 		font-size: 12pt;
-		background-color: #cdcdcd;
+		background-color: #eee;
 		border: none;
 		border-radius: 4px;
 		cursor: pointer;
 
 		&:hover {
-			background-color: #ababab;
+			background-color: #e6e6e6;
 		}
 
 		.arrow-container {

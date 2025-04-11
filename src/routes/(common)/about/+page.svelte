@@ -124,7 +124,7 @@
 <style lang="scss">
 	.about {
 		max-width: 100vw;
-		height: calc(100dvh - 60px);
+		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}
