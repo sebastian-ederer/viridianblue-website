@@ -40,45 +40,45 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 40px 20px; /* Increased padding for better spacing */
-		background-color: #f9f9f9; /* Light background for better readability */
+		padding: 40px 20px;
+		background-color: #f9f9f9;
 		flex: 1;
 	}
 
 	.wrapper {
 		text-align: left;
 		width: min(100%, 768px);
-		padding: 30px; /* Padding inside the wrapper */
-		background-color: #fff; /* White background for content area */
-		border-radius: 8px; /* Slightly rounded corners */
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+		padding: 30px;
+		background-color: #fff;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
 
 	h1 {
 		font-size: 2.5em;
 		margin-bottom: 20px;
-		color: #333; /* Darker heading text */
+		color: #333;
 	}
 
 	h2 {
 		font-size: 1.8em;
 		margin-top: 30px;
 		margin-bottom: 15px;
-		color: #555; /* Slightly lighter heading text */
+		color: #555;
 	}
 
 	p {
 		line-height: 1.6;
 		margin-bottom: 15px;
-		color: #666; /* Standard text color */
+		color: #666;
 	}
 
 	.owner-info {
-		white-space: pre-line; /* Preserve line breaks */
+		white-space: pre-line;
 	}
 
 	.contact-info a {
-		color: #007bff; /* Link color */
+		color: #007bff;
 		text-decoration: none;
 	}
 

@@ -2,6 +2,7 @@
 	import AudioProgressControl from '$lib/components/audioProgressControl.svelte';
 	import AudioWave from '$lib/components/audioWave.svelte';
 	import Background from '$lib/components/background.svelte';
+	import Menu from '$lib/components/menu.svelte';
 	import PlayPauseButton from '$lib/components/playPauseButton.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
 	import { onMount } from 'svelte';
@@ -37,12 +38,22 @@
 	});
 </script>
 
+<div class="mobile-menu">
+	<Menu />
+</div>
 <div class="home">
 	<Background />
 
 	<div class="menu">
 		<a class="active" href="/">Home</a>
-		<a href="/about">About</a>
+		<div class="menu-group">
+			<a href="/about"> About </a>
+
+			<div class="dropdown">
+				<a href="/imprint">Imprint </a>
+			</div>
+		</div>
+
 		<a href="/experience">Experience</a>
 	</div>
 
@@ -141,11 +152,17 @@
 		}
 	}
 
+	@media (min-width: 480px) {
+		.mobile-menu {
+			display: none;
+		}
+	}
+
 	.menu {
+		display: none;
 		position: fixed;
 		z-index: 9;
 		top: 30px;
-		display: flex;
 		gap: 30px;
 
 		a {
@@ -184,9 +201,55 @@
 			}
 		}
 
+		@media (min-width: 480px) {
+			display: flex;
+		}
+
 		@media (min-width: 768px) {
 			top: 60px;
 			gap: 50px;
+		}
+	}
+
+	.menu-group {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.menu-group:hover .dropdown {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+
+	.dropdown {
+		padding: 12px 0 0 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: 480px) {
+			position: absolute;
+			top: 100%;
+			border-radius: 0 0 4px 4px;
+			overflow: hidden;
+			z-index: 10;
+			min-width: calc(100% + 8px);
+			margin-top: 0;
+			padding: 20px 6px;
+			width: calc(100% - 18px);
+
+			opacity: 0;
+			transform: translateY(-10px);
+			transition:
+				opacity 0.3s ease,
+				transform 0.3s ease;
+		}
+
+		a {
+			height: fit-content;
 		}
 	}
 </style>
