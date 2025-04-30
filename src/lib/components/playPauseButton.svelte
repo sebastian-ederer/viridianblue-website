@@ -23,7 +23,7 @@
 </script>
 
 {#if !isPlaying}
-	<button aria-label="play music" class="audioControl" onclick={playSong}>
+	<button aria-label="play and pause music" class="audioControl" onclick={playSong}>
 		<div class="playIconWrapper">
 			<svg width="40" height="40" viewBox="0 0 72 72" id="emoji" xmlns="http://www.w3.org/2000/svg">
 				<g id="color" />

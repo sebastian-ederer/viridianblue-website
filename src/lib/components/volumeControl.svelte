@@ -51,6 +51,7 @@
 	<div class="input-wrapper">
 		<div class="center">
 			<input
+				aria-label="to turn up and down the volume"
 				class="volume-input"
 				bind:value={volume}
 				bind:this={volumeInput}
@@ -61,6 +62,7 @@
 			/>
 
 			<input
+				aria-label="to turn up and down the volume"
 				bind:value={volume}
 				bind:this={overlayInput}
 				type="range"
@@ -168,6 +170,7 @@
 	}
 
 	.overlay-input {
+		// TODO: the slider-vertical is deprecated
 		appearance: slider-vertical;
 		-webkit-appearance: slider-vertical;
 		writing-mode: bt-lr;

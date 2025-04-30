@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Imprint</title>
+</svelte:head>
+
 <div class="imprint">
 	<div class="wrapper">
 		<h1>Imprint</h1>
@@ -78,7 +82,7 @@
 	}
 
 	.contact-info a {
-		color: #73c6b6;
+		color: #2c3e50;
 		text-decoration: none;
 	}
 
@@ -87,7 +91,7 @@
 	}
 
 	.eu-dispute-resolution a {
-		color: #73c6b6;
+		color: #2c3e50;
 		text-decoration: none;
 	}
 

@@ -74,6 +74,7 @@
 <div class="progress" bind:this={progressElement}>
 	<div class="progress-bar"></div>
 	<input
+		aria-label="fast forward and rewind music"
 		bind:this={inputElement}
 		bind:value={inputValue}
 		type="range"

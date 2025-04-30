@@ -50,10 +50,11 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-fall.png" as="image" />
-	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-spring.png" as="image" />
-	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-summer.png" as="image" />
-	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-winter.png" as="image" />
+	<title>About Me</title>
+	<link rel="preload" href="/forrest-base-bg-fall.png" as="image" />
+	<link rel="preload" href="/forrest-base-bg-spring.png" as="image" />
+	<link rel="preload" href="/forrest-base-bg-summer.png" as="image" />
+	<link rel="preload" href="/forrest-base-bg-winter.png" as="image" />
 </svelte:head>
 
 <div class="about">

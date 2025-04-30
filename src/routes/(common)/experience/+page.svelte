@@ -7,7 +7,6 @@
 	import technologiesData from '../../../data/technologies.json';
 	import type Project from '../../../data/types/project';
 	import type Technology from '../../../data/types/technology';
-	import Info from '$lib/components/icons/info.svelte';
 
 	let originalProjects: Project[] = projectsData;
 	let projects: Project[] = [];
@@ -159,6 +158,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Experience</title>
+</svelte:head>
+
 <div class="experience">
 	<h1>Experience</h1>
 
@@ -209,21 +212,6 @@
 		align-items: center;
 		padding: 20px 0;
 		background-color: #f9f9f9;
-	}
-
-	.info-icon {
-		:global(svg) {
-			width: 16px;
-			height: 16px;
-		}
-	}
-
-	.note {
-		padding: 0 20px;
-		text-align: left;
-		max-width: 768px;
-		display: flex;
-		gap: 4px;
 	}
 
 	.projects {

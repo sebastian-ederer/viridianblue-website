@@ -39,7 +39,8 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-summer.png" as="image" />
+	<title>Viridian Blue</title>
+	<link rel="preload" href="/forrest-base-bg-summer.png" as="image" />
 </svelte:head>
 
 <div class="mobile-menu">
