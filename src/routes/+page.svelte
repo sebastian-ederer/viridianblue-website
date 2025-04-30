@@ -38,6 +38,10 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-summer.png" as="image" />
+</svelte:head>
+
 <div class="mobile-menu">
 	<Menu />
 </div>
