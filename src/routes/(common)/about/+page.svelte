@@ -158,6 +158,7 @@
 
 	.slide {
 		grid-row: 2/3;
+		background-color: rgba(39, 39, 39, 0.5);
 	}
 
 	.swiper {
@@ -175,7 +176,6 @@
 		align-items: center;
 		justify-content: center;
 		color: #fff;
-		background-color: rgba(39, 39, 39, 0.5);
 		padding: 20px;
 		overflow-y: auto;
 		backdrop-filter: blur(2px);
