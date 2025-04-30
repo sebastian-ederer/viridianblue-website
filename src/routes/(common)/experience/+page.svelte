@@ -163,55 +163,85 @@
 </svelte:head>
 
 <div class="experience">
-	<h1>Experience</h1>
+	<div class="wrapper">
+		<h1>Experience</h1>
 
-	<div class="filter-wrapper">
-		<div class="filter">
-			<div class="input-group">
-				<label for="start-date">started</label>
-				<input
-					id="start-date"
-					type="text"
-					placeholder="MM / YYYY"
-					value={startDate}
-					oninput={(event) => handleDateInput(event, (value) => (startDate = value))}
-					maxlength="9"
-				/>
+		<div class="links">
+			<p>
+				You can find my profiles on professional platforms like
+				<a
+					href="https://www.freelancermap.de/profil/sebastian-ederer"
+					target="_blank"
+					rel="noopener noreferrer">freelancermap.de</a
+				>
+				and
+				<a
+					href="https://www.freelance.de/Freelancer/326029-IT-Consultant-Fullstack-Developer"
+					target="_blank"
+					rel="noopener noreferrer">freelance.de</a
+				>.
+			</p>
+		</div>
+
+		<div class="filter-wrapper">
+			<div class="filter">
+				<div class="input-group">
+					<label for="start-date">started</label>
+					<input
+						id="start-date"
+						type="text"
+						placeholder="MM / YYYY"
+						value={startDate}
+						oninput={(event) => handleDateInput(event, (value) => (startDate = value))}
+						maxlength="9"
+					/>
+				</div>
+				<div class="input-group">
+					<label for="end-date">finished</label>
+					<input
+						id="end-date"
+						type="text"
+						placeholder="MM / YYYY"
+						value={endDate}
+						oninput={(event) => handleDateInput(event, (value) => (endDate = value))}
+						maxlength="9"
+					/>
+				</div>
 			</div>
-			<div class="input-group">
-				<label for="end-date">finished</label>
+
+			<div class="filter">
 				<input
-					id="end-date"
+					bind:value={searchString}
+					oninput={filterProjects}
 					type="text"
-					placeholder="MM / YYYY"
-					value={endDate}
-					oninput={(event) => handleDateInput(event, (value) => (endDate = value))}
-					maxlength="9"
+					placeholder="Search"
 				/>
 			</div>
 		</div>
 
-		<div class="filter">
-			<input bind:value={searchString} oninput={filterProjects} type="text" placeholder="Search" />
+		<div class="projects">
+			{#each projects as project}
+				<ProjectCard {project} />
+			{/each}
 		</div>
-	</div>
-
-	<div class="projects">
-		{#each projects as project}
-			<ProjectCard {project} />
-		{/each}
 	</div>
 </div>
 
 <style lang="scss">
 	.experience {
 		width: 100%;
+		padding: 20px 0;
+		background-color: #f9f9f9;
+		display: flex;
+		justify-content: center;
+	}
+
+	.wrapper {
+		max-width: 768px;
 		display: flex;
 		flex-direction: column;
 		gap: 24px;
 		align-items: center;
-		padding: 20px 0;
-		background-color: #f9f9f9;
 	}
 
 	.projects {
@@ -224,7 +254,6 @@
 
 	.filter-wrapper {
 		width: 100%;
-		max-width: 768px;
 
 		display: flex;
 		flex-direction: column;
@@ -257,6 +286,27 @@
 		border: 1px solid #e6e6e6;
 		&::placeholder {
 			color: #999;
+		}
+	}
+
+	.links {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		background-color: #fff;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		padding: 20px;
+
+		@media (min-width: 768px) {
+			border-radius: 4px;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		a {
+			color: #2c3e50;
 		}
 	}
 </style>
