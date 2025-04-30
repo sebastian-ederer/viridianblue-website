@@ -49,6 +49,13 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-fall.png" as="image" />
+	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-spring.png" as="image" />
+	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-summer.png" as="image" />
+	<link rel="preload" href="sveltekit.assets%/forrest-base-bg-winter.png" as="image" />
+</svelte:head>
+
 <div class="about">
 	<SeasonBackground {season} />
 	<div class="swiper">
