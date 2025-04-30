@@ -170,11 +170,10 @@
 	}
 
 	.overlay-input {
-		// TODO: the slider-vertical is deprecated
-		appearance: slider-vertical;
-		-webkit-appearance: slider-vertical;
+		transform: rotate(-90deg);
 		writing-mode: bt-lr;
 		position: relative;
+		width: 100px;
 		height: 100px;
 		opacity: 0;
 		cursor: pointer;
