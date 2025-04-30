@@ -65,7 +65,7 @@
 			"Testing the business logic and components with Jest.",
 			"Replacing Redux with TanstackQuery and Jotai for improved state management."
 		],
-		"customer": "car manufacturer",
+		"customer": "Mercedes-Benz Group AG",
 		"metadata": [
 			{
 				"start": "04/2023",
@@ -91,7 +91,7 @@
 			"Optimizing data persistence and API communication with AWS DynamoDB and AWS S3.",
 			"Implementing a feature with the Google Docs API for profile generation based on templates with export options."
 		],
-		"customer": "web agency",
+		"customer": "Rockstardevelopers GmbH",
 		"metadata": [
 			{
 				"start": "01/2023",
@@ -110,7 +110,7 @@
 			"Implementing the login and registration system according to OAuth 2.0 standards.",
 			"Styling and optimizing the frontend components with SCSS."
 		],
-		"customer": "infant nutrition sector",
+		"customer": "HiPP GmbH & Co. Vertrieb KG",
 		"metadata": [
 			{
 				"start": "10/2022",
@@ -135,7 +135,7 @@
 			"Promoting teamwork and efficiency through documentation and Storybook.",
 			"Successful use of the UI library at Freudenberg SE."
 		],
-		"customer": "web agency",
+		"customer": "Rockstardevelopers GmbH",
 		"metadata": [
 			{
 				"start": "04/2022",
@@ -147,7 +147,7 @@
 	{
 		"id": 6,
 		"technologyIds": [14, 15, 65, 16, 66, 26, 82, 67, 49, 68, 69, 70, 71],
-		"description": "Development and enhancement of an order management software for planning and processing laser orders for bus panels. Special requirements included the integration of SAP data, user management via LDAP and Active Directory, as well as a customizable interface with PDF generation.",
+		"description": "Development and enhancement of an order management software for planning and processing orders. Special requirements included the integration of SAP data, user management via LDAP and Active Directory, as well as a customizable interface with PDF generation.",
 		"tasks": [
 			"Conceptualization of the data structure in MSSQL, considering SAP integration.",
 			"Creation of Database-First migrations with Entity Framework.",
@@ -165,7 +165,7 @@
 			"Conceptualization and coordination of new requirements with the customer.",
 			"Project management and version control with Redmine and Git."
 		],
-		"customer": "automotive supplier",
+		"customer": "Continental AG",
 		"metadata": [
 			{
 				"start": "02/2021",
@@ -188,7 +188,7 @@
 			"Creation of Database-First migrations with Entity Framework.",
 			"Implementation of new frontend features with Telerik Kendo UI and CSS."
 		],
-		"customer": "semiconductor manufacturer",
+		"customer": "Infineon Technologies AG",
 		"metadata": [
 			{
 				"start": "11/2020",
@@ -209,7 +209,7 @@
 			"Documentation of the API using Swagger and Swashbuckle to provide a clear and complete overview of the available endpoints.",
 			"Writing file-based logs with Serilog to ensure seamless logging and traceability of backend activities."
 		],
-		"customer": "automotive supplier",
+		"customer": "Gefasoft Engineering GmbH",
 		"metadata": [
 			{
 				"start": "10/2020",
@@ -230,7 +230,7 @@
 			"Implementation of unit tests with NUnit and FakeItEasy to ensure the functionality and reliability of the backend components.",
 			"Writing file-based logs with log4net to enable seamless logging and analysis of processes."
 		],
-		"customer": "car manufacturer",
+		"customer": "BMW AG",
 		"metadata": [
 			{
 				"start": "06/2020",
@@ -248,7 +248,7 @@
 			"Development of a test environment in C++ that visualized the results of the algorithm in the console to interpret the behavior of the parameters and their effects on learning.",
 			"Analysis and documentation of the results in the form of a bachelor's thesis, which details the methodology, the experiments, and the learning behavior of the various parameters of the Temporal Memory part of the algorithm."
 		],
-		"customer": "automotive supplier",
+		"customer": "Gefasoft Engineering GmbH",
 		"metadata": [
 			{
 				"start": "02/2020",
@@ -270,7 +270,7 @@
 			"Integration of Apple Push Notifications in the .NET backend to send alarms directly to iOS devices.",
 			"Implementation of a configurable file-based logging system with log4net to create detailed logs for analysis and troubleshooting purposes."
 		],
-		"customer": "car manufacturer",
+		"customer": "BMW AG",
 		"metadata": [
 			{
 				"start": "08/2018",
