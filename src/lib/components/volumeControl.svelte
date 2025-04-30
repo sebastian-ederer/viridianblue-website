@@ -171,7 +171,9 @@
 
 	.overlay-input {
 		transform: rotate(-90deg);
-		writing-mode: bt-lr;
+		-webkit-transform: rotate(-90deg);
+		-moz-transform: rotate(0deg);
+		transform-origin: center center;
 		position: relative;
 		width: 100px;
 		height: 100px;
