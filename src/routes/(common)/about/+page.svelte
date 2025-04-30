@@ -60,9 +60,17 @@
 						<div>
 							<h2>Introduction</h2>
 							<p>
-								Hi and welcome to my Website! I am glad that you've found it. <br />
-								My name is <i>Sebastian</i> and I am a Software Developer from Germany who just wants
-								to have fun building awesome stuff.
+								Hi, my name is <strong>Sebastian</strong>, and I'm a Software Developer from
+								Germany. My interest in programming sparked around the age of 12. This early passion
+								led me to pursue computer science, culminating in both a <strong>B.Sc.</strong> and
+								an
+								<strong>M.Sc.</strong>
+								degree. <br /><br />
+								During my fifth semester, I began working as a software developer at a professional company
+								while continuing my studies. From the very beginning, I had direct interaction with great
+								customers and even greater colleagues, which allowed me to learn a tremendous amount.
+								<br /><br />Today, I am confident in my abilities and consistently seek out new
+								challenges to hone them. Happy coding to all my colleagues!
 							</p>
 						</div>
 					</div>
@@ -72,12 +80,16 @@
 			<div data-season="fall" class="slide swiper-slide">
 				<div class="card">
 					<h2>My Approach</h2>
-
 					<p>
 						A key priority in my work is developing scalable and maintainable software architectures
-						that ensure the long-term success of a project. My goal is not only to create
-						high-quality applications but also to structure the development process in a way that
-						keeps efficiency and sustainability at its core.
+						that ensure the long-term success of a project. As a Full Stack Developer and IT
+						Consultant, I bring an ideal combination of technical expertise, strategic foresight,
+						and the ability to implement complex projects efficiently and with a clear focus. My
+						goal is not only to create high-quality applications tailored to diverse industries and
+						the unique requirements of my clients, but also to structure the development process in
+						a way that keeps efficiency and sustainability at its core. This involves a deep
+						understanding of architectural patterns and best practices to build robust and adaptable
+						systems.
 					</p>
 				</div>
 			</div>
@@ -87,12 +99,16 @@
 					<h2>Development</h2>
 					<p>
 						As an expert in both frontend and backend technologies, I am capable of developing
-						robust and high-performance applications from a single source. Using modern frameworks
-						such as React/Next.js, Svelte/SvelteKit, I create appealing, responsive user interfaces
-						that meet the highest standards. On the backend, I leverage my extensive experience with
-						.NET, AWS and relational database systems like PostgreSQL and MSSQL. Additionally, I
-						have solid expertise in developing cross-platform applications (Web, Android, iOS) using
-						Capacitor.js, ensuring seamless implementation across different platforms.
+						robust and high-performance applications from a single source. My proficiency extends
+						across the entire development lifecycle, allowing for seamless integration and optimized
+						solutions. Using modern frameworks such as React/Next.js and Svelte/SvelteKit, I create
+						appealing, responsive user interfaces that meet the highest standards of user experience
+						and accessibility. On the backend, I leverage my extensive experience with the .NET
+						ecosystem and relational database systems like PostgreSQL and Microsoft SQL Server
+						(MSSQL). Additionally, I have solid expertise in developing cross-platform applications
+						(Web, Android, iOS) using Capacitor.js, ensuring seamless implementation and consistent
+						performance across different platforms, providing comprehensive solutions for diverse
+						project needs.
 					</p>
 				</div>
 			</div>
@@ -100,15 +116,19 @@
 			<div data-season="spring" class="slide swiper-slide">
 				<div class="card">
 					<h2>Integration</h2>
-
 					<p>
 						For automation and deployment, I have extensive experience with modern cloud
-						technologies such as AWS ECS, AWS Amplify, Docker, and GitHub Actions. These
-						technologies enable efficient deployments, allowing more focus on development itself.
-						Additionally, I have expertise in implementing secure authentication and authorization
-						systems based on OAuth 2.0, ensuring accessibility (WCAG standards) and integrating
-						payment systems with Stripe. With these capabilities, I help bring comprehensive and
-						future-proof products to life.
+						technologies such as AWS ECS and AWS Amplify, alongside containerization with Docker and
+						continuous integration/continuous deployment (CI/CD) pipelines using GitHub Actions.
+						These technologies enable efficient and reliable deployments, allowing for more focus on
+						the core development tasks. Additionally, I possess expertise in implementing secure
+						authentication and authorization systems based on OAuth 2.0 and ensuring accessibility
+						according to WCAG standards. Furthermore, a significant focus in my work is on quality
+						assurance. I plan and execute comprehensive tests at all levels, from Unit Tests (e.g.,
+						with NUnit, Jest) and End-to-End tests (e.g., with Playwright) to Mocking solutions
+						using libraries like MSW, FakeItEasy, and NSubstitute. With these capabilities, I help
+						bring comprehensive and future-proof products to life, ensuring both functionality and
+						long-term maintainability.
 					</p>
 				</div>
 			</div>
