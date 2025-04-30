@@ -161,13 +161,6 @@
 
 <div class="experience">
 	<h1>Experience</h1>
-	<p class="note">
-		<span class="info-icon"><Info /></span>
-		<i>
-			Most customer names have been anonymized to ensure compliance with potential Non-Disclosure
-			Agreements (NGAs).
-		</i>
-	</p>
 
 	<div class="filter-wrapper">
 		<div class="filter">
