@@ -25,5 +25,6 @@
 		margin: 0;
 		display: flex;
 		flex-direction: column;
+		overflow-x: hidden;
 	}
 </style>
