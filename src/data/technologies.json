@@ -490,5 +490,59 @@
 		"name": "FakeItEasy",
 		"synonyms": [],
 		"color": "#5C2D91"
+	},
+	{
+		"id": 83,
+		"name": "Node.js",
+		"synonyms": [],
+		"color": "#339933"
+	},
+	{
+		"id": 84,
+		"name": "Webpack",
+		"synonyms": [],
+		"color": "#8DD6F9"
+	},
+	{
+		"id": 85,
+		"name": "Vite",
+		"synonyms": [],
+		"color": "#646CFF"
+	},
+	{
+		"id": 86,
+		"name": "Git",
+		"synonyms": [],
+		"color": "#F05032"
+	},
+	{
+		"id": 87,
+		"name": "npm",
+		"synonyms": [],
+		"color": "#CB3837"
+	},
+	{
+		"id": 88,
+		"name": "Tailwind CSS",
+		"synonyms": ["Tailwind"],
+		"color": "#06B6D4"
+	},
+	{
+		"id": 89,
+		"name": "HTML",
+		"synonyms": [],
+		"color": "#E34F26"
+	},
+	{
+		"id": 90,
+		"name": "Atlas Mongo DB",
+		"synonyms": ["MongoDB Atlas"],
+		"color": "#47A248"
+	},
+	{
+		"id": 91,
+		"name": "Yarn",
+		"synonyms": [],
+		"color": "#2C8EBB"
 	}
 ]

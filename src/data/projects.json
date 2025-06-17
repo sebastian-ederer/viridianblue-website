@@ -6,7 +6,7 @@
 			27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
 			50, 51, 52
 		],
-		"description": "Development of the cross-platform app Chatsprint, an AI-supported language learning platform that enables users to learn new languages. The app offers interaction with AI chatbots that generate and correct answers based on user input. A spaced repetitive learning algorithm ensures efficient vocabulary training. The app is published on the web, iOS, and Android.",
+		"description": "Development of an AI-supported language learning platform that enables users to learn new languages. The app offers interaction with AI chatbots that generate and correct answers based on user input. A spaced repetitive learning algorithm ensures efficient vocabulary training. The app is published on the web, iOS, and Android.",
 		"tasks": [
 			"Conception and implementation of the software architecture for the cross-platform app Chatsprint.",
 			"Development of the app with Capacitor.js and React based on a Figma design and styling with SCSS modules.",
@@ -44,8 +44,8 @@
 		"metadata": [
 			{
 				"start": "07/2023",
-				"end": null,
-				"role": "Technical Lead & CEO"
+				"end": "02/2025",
+				"role": "Technical Lead"
 			}
 		]
 	},
@@ -276,6 +276,30 @@
 				"start": "08/2018",
 				"end": "12/2018",
 				"role": "Fullstack Developer"
+			}
+		]
+	},
+	{
+		"id": 12,
+		"technologyIds": [2, 4, 83, 54, 84, 85, 86, 87, 23, 24, 71, 10, 88, 89, 55, 1, 70, 90, 28, 62],
+		"description": "Consulting and development for a DAX-listed industrial group.",
+		"tasks": [
+			"Development of new features in React, Next.js, and Angular.",
+			"Development of design components and integration into Storybook.",
+			"Development of E2E tests with Playwright.",
+			"Development of unit tests with Jest.",
+			"Implementation of search indexes and filters for optimized search queries in Atlas Mongo DB.",
+			"Implementation of data tables with PrimeNG.",
+			"Development of new pages and components based on Figma designs using Tailwind.",
+			"Optimization of components and ensuring compliance with WCAG guidelines.",
+			"Optimization of pages for screen readers."
+		],
+		"customer": "DAX-listed industrial group",
+		"metadata": [
+			{
+				"start": "02/2025",
+				"end": "06/2025",
+				"role": "Full Stack Developer"
 			}
 		]
 	}
