@@ -30,9 +30,9 @@
 
 <style lang="scss">
 	.pill {
-		padding: 2px 8px;
+		padding: 0.125em 0.5em;
+		margin: 0.25em;
 		border-radius: 1em;
-		margin: 4px;
 		white-space: nowrap;
 	}
 </style>

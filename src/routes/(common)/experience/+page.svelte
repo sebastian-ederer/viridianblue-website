@@ -230,7 +230,7 @@
 <style lang="scss">
 	.experience {
 		width: 100%;
-		padding: 20px 0;
+		padding: 1.25em 0;
 		background-color: #f9f9f9;
 		display: flex;
 		justify-content: center;
@@ -240,14 +240,14 @@
 		max-width: 768px;
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
+		gap: 1.5em;
 		align-items: center;
 	}
 
 	.projects {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: 1.25em;
 		width: 100%;
 		max-width: 768px;
 	}
@@ -257,9 +257,9 @@
 
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: 0.75em;
 
-		padding: 0 20px;
+		padding: 0 1.25em;
 
 		@media (min-width: 788px) {
 			padding: 0;
@@ -271,7 +271,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: 12px;
+		gap: 0.75em;
 	}
 
 	.input-group {
@@ -281,7 +281,7 @@
 
 	input {
 		width: 100%;
-		padding: 10px;
+		padding: 0.625em;
 		border-radius: 4px;
 		border: 1px solid #e6e6e6;
 		&::placeholder {
@@ -295,7 +295,7 @@
 		width: 100%;
 		background-color: #fff;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		padding: 20px;
+		padding: 1.25em;
 
 		@media (min-width: 768px) {
 			border-radius: 4px;

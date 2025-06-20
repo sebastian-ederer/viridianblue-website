@@ -53,8 +53,8 @@
 <style lang="scss">
 	.audioControl {
 		border-radius: 50%;
-		width: 70px;
-		height: 70px;
+		width: 4.5em;
+		height: 4.5em;
 		padding: 0;
 		border: none;
 		z-index: 2;
@@ -80,7 +80,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-left: 4px;
+		margin-left: 0.25em;
 	}
 
 	.pauseIconWrapper {
@@ -90,8 +90,8 @@
 	}
 
 	.pause-icon {
-		width: 24px;
-		height: 32px;
+		width: 1.5em;
+		height: 2em;
 		position: relative;
 		display: inline-block;
 	}
@@ -100,8 +100,8 @@
 	.pause-icon::after {
 		content: '';
 		position: absolute;
-		width: 8px;
-		height: 32px;
+		width: 0.5em;
+		height: 2em;
 		border: 1px solid rgb(var(--color-primary));
 		border-radius: 3px;
 	}

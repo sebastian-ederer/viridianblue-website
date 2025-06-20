@@ -59,21 +59,21 @@
 
 <style>
 	.icon {
-		width: 18px;
-		height: 18px;
+		width: 1.125em;
+		height: 1.125em;
 		display: inline;
 	}
 	.menu-container {
 		background-color: #1d1d1d;
 		width: 100%;
-		height: 60px;
+		height: 3.75em;
 		position: sticky;
 		top: 0;
 		z-index: 9;
 		display: flex;
 		align-items: center;
 		justify-content: start;
-		padding: 4px 20px;
+		padding: 0.25em 1.25em;
 
 		@media (min-width: 480px) {
 			justify-content: center;
@@ -84,8 +84,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		width: 30px;
-		height: 20px;
+		width: 1.875em;
+		height: 1.25em;
 		background: transparent;
 		border: none;
 		cursor: pointer;
@@ -93,7 +93,7 @@
 
 		.bar {
 			width: 100%;
-			height: 3px;
+			height: 0.125em;
 			background-color: #fff;
 			transition: 0.4s;
 		}
@@ -106,10 +106,10 @@
 	.menu {
 		width: 0;
 		position: fixed;
-		top: 60px;
+		top: 3.75em;
 		left: 0;
 		right: 0;
-		height: calc(100dvh - 60px);
+		height: calc(100dvh - 3.75em);
 		overflow: hidden;
 		background-color: #292929;
 
@@ -120,10 +120,10 @@
 			display: flex;
 			top: 0;
 			flex-direction: row;
-			gap: 20px;
+			gap: 1.25em;
 			justify-content: center;
 			align-items: center;
-			height: 60px;
+			height: 3.75em;
 			width: 100%;
 			overflow: visible;
 		}
@@ -131,16 +131,16 @@
 
 	.inner-menu {
 		display: flex;
-		padding: 20px;
+		padding: 1.25em;
 		flex-direction: column;
-		gap: 20px;
+		gap: 1.25em;
 		height: 100%;
 
 		@media (min-width: 480px) {
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
-			height: 60px;
+			height: 3.75em;
 			width: 100%;
 			padding: 0;
 		}
@@ -156,14 +156,14 @@
 		text-decoration: none;
 		display: flex;
 		flex-direction: row;
-		gap: 12px;
+		gap: 0.75em;
 		position: relative;
 		transition: color 0.3s ease;
 		align-items: center;
 		height: auto;
 
 		@media (min-width: 480px) {
-			height: 60px;
+			height: 3.75em;
 		}
 	}
 
@@ -176,9 +176,9 @@
 		content: '';
 		position: absolute;
 		left: 0;
-		bottom: -2px;
+		bottom: -0.125em;
 		width: 0%;
-		height: 2px;
+		height: 0.125em;
 		background-color: #73c6b6;
 		transition: width 0.3s ease;
 	}
@@ -215,7 +215,7 @@
 	}
 
 	.dropdown {
-		padding: 12px 0 0 60px;
+		padding: 0.75em 0 0 3.75em;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -227,13 +227,13 @@
 			border-radius: 0 0 4px 4px;
 			overflow: hidden;
 			z-index: 10;
-			min-width: calc(100% + 8px);
+			min-width: calc(100% + 0.5em);
 			margin-top: 0;
-			padding: 6px 6px 12px 6px;
-			width: calc(100% - 18px);
+			padding: 0.375em 0.375em 0.75em 0.375em;
+			width: calc(100% - 1.125em);
 
 			opacity: 0;
-			transform: translateY(-10px);
+			transform: translateY(-0.625em);
 			transition:
 				opacity 0.3s ease,
 				transform 0.3s ease;

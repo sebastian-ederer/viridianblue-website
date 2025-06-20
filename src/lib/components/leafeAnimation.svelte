@@ -33,8 +33,8 @@
 			animation-timing-function: ease-in-out;
 			transform-origin: center center;
 			$initial-scale: random-float(0.5, 1);
-			width: calc(64px * $initial-scale);
-			height: calc(64px * $initial-scale);
+			width: calc(4em * $initial-scale);
+			height: calc(4em * $initial-scale);
 			filter: hue-rotate(#{random-float(-20, 20)}deg);
 		}
 

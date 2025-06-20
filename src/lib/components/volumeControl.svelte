@@ -116,10 +116,10 @@
 
 <style lang="scss">
 	:root {
-		--slider-track-height: 4px;
-		--slider-track-height-correction: -6px;
-		--slider-thumb-size: 12px;
-		--slider-thumb-size-correction: 4px;
+		--slider-track-height: 0.25em;
+		--slider-track-height-correction: -0.375em;
+		--slider-thumb-size: 0.75em;
+		--slider-thumb-size-correction: 0.25em;
 		--slider-color: rgb(var(--color-primary));
 		--slider-bg: #fff;
 		--percentage: 20%;
@@ -129,14 +129,14 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: start;
-		height: 150px;
+		height: 9.375em;
 		align-items: end;
 	}
 
 	.input-wrapper {
 		display: flex;
 		align-items: center;
-		gap: 6px;
+		gap: 0.375em;
 		flex-direction: column;
 		justify-content: end;
 		opacity: 0.5;
@@ -154,8 +154,8 @@
 		background: transparent;
 
 		svg {
-			height: 20px;
-			width: 20px;
+			height: 1.25em;
+			width: 1.25em;
 			stroke: var(--slider-color);
 			fill: var(--slider-color);
 		}
@@ -166,7 +166,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 30px;
+		width: 1.875em;
 	}
 
 	.overlay-input {
@@ -175,14 +175,14 @@
 		-moz-transform: rotate(0deg);
 		transform-origin: center center;
 		position: relative;
-		width: 100px;
-		height: 100px;
+		width: 6.25em;
+		height: 6.25em;
 		opacity: 0;
 		cursor: pointer;
 	}
 
 	.volume-input {
-		width: 100px;
+		width: 6.25em;
 		transform: rotate(-90deg);
 		background: linear-gradient(
 			to right,

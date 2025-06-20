@@ -184,7 +184,7 @@
 		align-items: center;
 		justify-content: center;
 		color: #fff;
-		padding: 20px;
+		padding: 1.25em;
 		overflow-y: auto;
 		backdrop-filter: blur(2px);
 		width: 100%;
@@ -192,7 +192,7 @@
 		height: 100%;
 
 		@media (min-width: 480px) {
-			padding: 40px 20px;
+			padding: 2.5em 1.25em;
 			grid-row: 2/3;
 		}
 
@@ -227,7 +227,7 @@
 
 	.navigation {
 		--swiper-theme-color: rgba(255, 255, 255, 0.5);
-		--swiper-navigation-size: 24px;
+		--swiper-navigation-size: 1.5em;
 		display: none;
 
 		@media (min-width: 768px) {

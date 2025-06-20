@@ -22,7 +22,7 @@
 	}
 
 	.initial-snow > * {
-		font-size: 30px;
+		font-size: 1.875em;
 		color: white;
 		position: absolute;
 		top: -5dvh;
@@ -39,30 +39,27 @@
 
 	.snow {
 		&:nth-child(2n) {
-			font-size: 25px;
+			font-size: 1.5625em;
 		}
 		&:nth-child(4n) {
-			filter: blur(1px);
-			font-size: 20px;
+			filter: blur(0.0625em);
+			font-size: 1.25em;
 		}
 		&:nth-child(6n) {
-			filter: blur(2px);
-			font-size: 15px;
+			filter: blur(0.125em);
+			font-size: 0.9375em;
 		}
-
 		&:nth-child(8n) {
-			filter: blur(3px);
-			font-size: 12px;
+			filter: blur(0.1875em);
+			font-size: 0.75em;
 		}
-
 		&:nth-child(10n) {
-			filter: blur(4px);
-			font-size: 10px;
+			filter: blur(0.25em);
+			font-size: 0.625em;
 		}
-
 		&:nth-child(17n) {
-			filter: blur(6px);
-			font-size: 6px;
+			filter: blur(0.375em);
+			font-size: 0.375em;
 		}
 	}
 

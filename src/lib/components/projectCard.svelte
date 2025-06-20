@@ -65,7 +65,7 @@
 
 <style lang="scss">
 	.project-card {
-		padding: 20px;
+		padding: 1.25em;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -86,7 +86,7 @@
 	.row {
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: 0.5em;
 
 		@media (min-width: 480px) {
 			display: grid;
@@ -98,10 +98,10 @@
 		display: flex;
 		flex-direction: column;
 		font-size: 10pt;
-		gap: 24px;
+		gap: 1.5em;
 
 		@media (min-width: 480px) {
-			gap: 6px;
+			gap: 0.375em;
 		}
 	}
 
@@ -118,19 +118,19 @@
 	.date,
 	.role {
 		display: flex;
-		gap: 10px;
+		gap: 0.625em;
 	}
 
 	.techstack {
 		display: flex;
 		flex-wrap: wrap;
-		margin-top: 10px;
+		margin-top: 0.625em;
 	}
 
 	.collapsables {
 		display: flex;
 		flex-direction: column;
-		gap: 20px;
+		gap: 1.25em;
 	}
 
 	.collapsable-btn {
@@ -138,7 +138,7 @@
 		justify-content: space-between;
 		width: 100%;
 		text-align: left;
-		padding: 12px;
+		padding: 0.75em;
 		font-size: 12pt;
 		background-color: #eee;
 		border: none;

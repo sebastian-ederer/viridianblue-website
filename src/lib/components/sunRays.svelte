@@ -43,9 +43,9 @@
 	@for $i from 1 through 20 {
 		.ray#{$i} {
 			top: calc(((100dvw + 100dvh) / 4) * -1);
-			left: -140px;
+			left: -8.75em;
 			position: absolute;
-			width: calc(math.random(100) + 30) + px;
+			width: calc((math.random(100) + 30) / 16) + em;
 			height: calc(100dvw + 100dvh);
 			clip-path: polygon(50% 10%, 100% 100%, 0 100%);
 			transform-origin: top right;

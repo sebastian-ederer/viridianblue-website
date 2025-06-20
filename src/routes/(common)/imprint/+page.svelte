@@ -44,15 +44,15 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: 40px 20px;
+		padding: 2.5em 1.25em;
 		background-color: #f9f9f9;
 		flex: 1;
 	}
 
 	.wrapper {
 		text-align: left;
-		width: min(100%, 768px);
-		padding: 30px;
+		width: min(100%, 48em);
+		padding: 1.875em;
 		background-color: #fff;
 		border-radius: 8px;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -60,20 +60,20 @@
 
 	h1 {
 		font-size: 2.5em;
-		margin-bottom: 20px;
+		margin-bottom: 1.25em;
 		color: #2c3e50;
 	}
 
 	h2 {
 		font-size: 1.8em;
-		margin-top: 30px;
-		margin-bottom: 15px;
+		margin-top: 1.875em;
+		margin-bottom: 0.9375em;
 		color: #2c3e50;
 	}
 
 	p {
 		line-height: 1.6;
-		margin-bottom: 15px;
+		margin-bottom: 0.9375em;
 		color: #2c3e50;
 	}
 
@@ -100,6 +100,6 @@
 	}
 
 	section {
-		margin-top: 25px;
+		margin-top: 1.625em;
 	}
 </style>
