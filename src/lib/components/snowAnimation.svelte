@@ -25,7 +25,7 @@
 		font-size: 30px;
 		color: white;
 		position: absolute;
-		top: -5vh;
+		top: -5dvh;
 	}
 
 	@keyframes snowfall {
@@ -33,7 +33,7 @@
 			transform: translate3d(var(--left-ini), 0, 0);
 		}
 		100% {
-			transform: translate3d(var(--left-end), 110vh, 0);
+			transform: translate3d(var(--left-end), 110dvh, 0);
 		}
 	}
 
@@ -71,9 +71,9 @@
 	}
 
 	@for $i from 0 through 18 {
-		$left-ini: random-float(-10vw, 10vw);
-		$left-end: random-float(-10vw, 10vw);
-		$left: random-float(0vw, 90vw);
+		$left-ini: random-float(-10dvw, 10dvw);
+		$left-end: random-float(-10dvw, 10dvw);
+		$left: random-float(0dvw, 90dvw);
 		$duration: random-float(6s, 15s);
 		$delay: random-float(-8s, -1s);
 
@@ -87,9 +87,9 @@
 	}
 
 	@for $i from 19 through 49 {
-		$left-ini: random-float(-10vw, 10vw);
-		$left-end: random-float(-10vw, 10vw);
-		$left: random-float(0vw, 90vw);
+		$left-ini: random-float(-10dvw, 10dvw);
+		$left-end: random-float(-10dvw, 10dvw);
+		$left: random-float(0dvw, 90dvw);
 		$duration: random-float(6s, 15s);
 		$delay: random-float(-15s, 0s);
 

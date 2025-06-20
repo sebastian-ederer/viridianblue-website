@@ -20,7 +20,7 @@
 
 	.main {
 		font-family: 'Figtree Variable', sans-serif;
-		width: 100vw;
+		width: 100dvw;
 		height: 100dvh;
 		margin: 0;
 		display: flex;

@@ -148,7 +148,7 @@
 
 	.open {
 		width: 480px;
-		max-width: 100vw;
+		max-width: 100dvw;
 	}
 
 	a {

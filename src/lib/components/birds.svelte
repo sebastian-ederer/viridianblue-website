@@ -21,7 +21,7 @@
 	.bird-container {
 		position: absolute;
 		left: -10%;
-		transform: scale(0) translateX(-10vw);
+		transform: scale(0) translateX(-10dvw);
 		will-change: transform;
 
 		animation-name: fly-right;
@@ -81,47 +81,47 @@
 
 	@keyframes fly-right {
 		0% {
-			transform: translateX(-10vw);
+			transform: translateX(-10dvw);
 		}
 
 		10% {
-			transform: translateY(7px) translateX(0vw);
+			transform: translateY(7px) translateX(0dvw);
 		}
 
 		20% {
-			transform: translateY(15px) translateX(14vw);
+			transform: translateY(15px) translateX(14dvw);
 		}
 
 		30% {
-			transform: translateY(30px) translateX(28vw);
+			transform: translateY(30px) translateX(28dvw);
 		}
 
 		40% {
-			transform: translateY(20px) translateX(42vw);
+			transform: translateY(20px) translateX(42dvw);
 		}
 
 		50% {
-			transform: translateY(15px) translateX(56vw);
+			transform: translateY(15px) translateX(56dvw);
 		}
 
 		60% {
-			transform: translateY(20px) translateX(70vw);
+			transform: translateY(20px) translateX(70dvw);
 		}
 
 		70% {
-			transform: translateY(25px) translateX(84vw);
+			transform: translateY(25px) translateX(84dvw);
 		}
 
 		80% {
-			transform: translateY(30px) translateX(98vw);
+			transform: translateY(30px) translateX(98dvw);
 		}
 
 		90% {
-			transform: translateY(20px) translateX(112vw);
+			transform: translateY(20px) translateX(112dvw);
 		}
 
 		100% {
-			transform: translateY(0x) translateX(112vw);
+			transform: translateY(0x) translateX(112dvw);
 		}
 	}
 </style>

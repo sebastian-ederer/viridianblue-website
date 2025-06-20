@@ -40,24 +40,24 @@
 
 		@keyframes fall-animation#{$i} {
 			0% {
-				transform: translate3d(0, -10vh, 0) rotate(#{random-float(-15deg, 15deg)}) scale(1);
+				transform: translate3d(0, -10dvh, 0) rotate(#{random-float(-15deg, 15deg)}) scale(1);
 				opacity: 0;
 			}
 			10% {
 				opacity: random-float(0.7, 1);
 			}
 			25% {
-				transform: translate3d(#{random-float(-8vw, 8vw)}, 25vh, 0)
+				transform: translate3d(#{random-float(-8dvw, 8dvw)}, 25dvh, 0)
 					rotate(#{random-float(0deg, 360deg)}) scale(random-float(0.9, 1.1));
 				opacity: random-float(0.6, 0.9);
 			}
 			50% {
-				transform: translate3d(#{random-float(-12vw, 12vw)}, 50vh, 0)
+				transform: translate3d(#{random-float(-12dvw, 12dvw)}, 50dvh, 0)
 					rotate(#{random-float(0deg, 360deg)}) scale(random-float(0.8, 1.2));
 				opacity: random-float(0.4, 0.7);
 			}
 			75% {
-				transform: translate3d(#{random-float(-6vw, 6vw)}, 75vh, 0)
+				transform: translate3d(#{random-float(-6dvw, 6dvw)}, 75dvh, 0)
 					rotate(#{random-float(0deg, 360deg)}) scale(random-float(0.9, 1.1));
 				opacity: random-float(0.2, 0.5);
 			}
@@ -65,7 +65,7 @@
 				opacity: random-float(0.1, 0.3);
 			}
 			100% {
-				transform: translate3d(0, 110vh, 0) rotate(#{random-float(-10deg, 10deg)}) scale(1);
+				transform: translate3d(0, 110dvh, 0) rotate(#{random-float(-10deg, 10deg)}) scale(1);
 				opacity: 0;
 			}
 		}
