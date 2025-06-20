@@ -239,7 +239,7 @@
 		@media (min-width: 480px) {
 			position: absolute;
 			top: 100%;
-			border-radius: 0 0 4px 4px;
+			border-radius: 0 0 0.25em 0.25em;
 			overflow: hidden;
 			z-index: 10;
 			min-width: calc(100% + 0.5em);

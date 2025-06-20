@@ -54,7 +54,7 @@
 		width: min(100%, 48em);
 		padding: 1.875em;
 		background-color: #fff;
-		border-radius: 8px;
+		border-radius: 0.5em;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
 

@@ -282,7 +282,7 @@
 	input {
 		width: 100%;
 		padding: 0.625em;
-		border-radius: 4px;
+		border-radius: 0.25em;
 		border: 1px solid #e6e6e6;
 		&::placeholder {
 			color: #999;
@@ -298,7 +298,7 @@
 		padding: 1.25em;
 
 		@media (min-width: 768px) {
-			border-radius: 4px;
+			border-radius: 0.25em;
 		}
 
 		p {

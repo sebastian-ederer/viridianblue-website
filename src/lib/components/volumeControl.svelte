@@ -190,7 +190,7 @@
 			var(--slider-bg) var(--percentage)
 		);
 		border: solid 1px var(--slider-color);
-		border-radius: 4px;
+		border-radius: 0.25em;
 		height: var(--slider-track-height);
 		transition: background 250ms ease-in-out;
 		appearance: none;
@@ -203,7 +203,7 @@
 	.volume-input::-webkit-slider-runnable-track {
 		background: transparent;
 		height: var(--slider-track-height);
-		border-radius: 4px;
+		border-radius: 0.25em;
 	}
 
 	.volume-input::-webkit-slider-thumb {
@@ -221,7 +221,7 @@
 	.volume-input::-moz-range-track {
 		background: transparent;
 		height: var(--slider-track-height);
-		border-radius: 4px;
+		border-radius: 0.25em;
 	}
 
 	.volume-input::-moz-range-progress {
@@ -234,7 +234,7 @@
 		width: var(--slider-thumb-size);
 		height: var(--slider-thumb-size);
 		border-radius: 50%;
-		border: 2px solid var(--slider-color);
+		border: 0.125em solid var(--slider-color);
 	}
 
 	/* Edge */

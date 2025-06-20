@@ -73,7 +73,7 @@
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 		@media (min-width: 768px) {
-			border-radius: 4px;
+			border-radius: 0.25em;
 		}
 
 		h1 {
@@ -142,7 +142,7 @@
 		font-size: 12pt;
 		background-color: #eee;
 		border: none;
-		border-radius: 4px;
+		border-radius: 0.25em;
 		cursor: pointer;
 
 		&:hover {

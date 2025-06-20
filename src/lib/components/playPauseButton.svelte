@@ -103,7 +103,7 @@
 		width: 0.5em;
 		height: 2em;
 		border: 1px solid rgb(var(--color-primary));
-		border-radius: 3px;
+		border-radius: 0.25em;
 	}
 
 	.pause-icon::before {
