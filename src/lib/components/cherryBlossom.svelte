@@ -40,18 +40,18 @@
 		};
 	});
 
-	function resizeCanvas() {
+	const resizeCanvas = () => {
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
-	}
+	};
 
-	function render() {
+	const render = () => {
 		if (ctx) {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			petalArray.forEach((petal) => petal.animate(ctx!));
 			animationFrameId = window.requestAnimationFrame(() => render());
 		}
-	}
+	};
 
 	class Petal {
 		x: number;

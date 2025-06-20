@@ -63,16 +63,16 @@
 		}
 	}
 
-	function resizeCanvas() {
+	const resizeCanvas = () => {
 		width = window.innerWidth;
 		height = window.innerHeight;
 		if (canvas) {
 			canvas.width = width;
 			canvas.height = height;
 		}
-	}
+	};
 
-	function draw() {
+	const draw = () => {
 		if (!ctx) return;
 
 		// Background (transparent to blend with other elements)
@@ -81,13 +81,13 @@
 		// Apply additive blending for a soft glow effect
 		ctx.globalCompositeOperation = 'lighter';
 		system.draw(ctx);
-	}
+	};
 
-	function animate() {
+	const animate = () => {
 		system.update();
 		draw();
 		requestAnimationFrame(animate);
-	}
+	};
 
 	onMount(() => {
 		width = window.innerWidth;

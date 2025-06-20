@@ -1,5 +1,5 @@
 <script lang="ts">
-	function getRayColor() {
+	const getRayColor = () => {
 		const sunRayColors = [
 			'#FFFFFF',
 			'#FFF9F0',
@@ -13,7 +13,7 @@
 		];
 		const randomIndex = Math.floor(Math.random() * sunRayColors.length);
 		return sunRayColors[randomIndex];
-	}
+	};
 </script>
 
 <div class="sun-rays">

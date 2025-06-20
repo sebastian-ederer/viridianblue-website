@@ -12,16 +12,16 @@
 	let volumeInput: HTMLInputElement;
 	let overlayInput: HTMLInputElement;
 
-	function updateGradient() {
+	const updateGradient = () => {
 		const percentage =
 			((volume - parseFloat(volumeInput.min)) /
 				(parseFloat(volumeInput.max) - parseFloat(volumeInput.min))) *
 			100;
 
 		volumeInput.style.setProperty('--percentage', `${percentage}%`);
-	}
+	};
 
-	function toggleMuted() {
+	const toggleMuted = () => {
 		if (muted) {
 			volume = previousVolume;
 		} else {
@@ -31,15 +31,15 @@
 
 		muted = !muted;
 		updateGradient();
-	}
+	};
 
-	function handleVolumeChange() {
+	const handleVolumeChange = () => {
 		if (muted && volume > 0) {
 			muted = !muted;
 		}
 
 		updateGradient();
-	}
+	};
 
 	onMount(() => {
 		updateGradient();

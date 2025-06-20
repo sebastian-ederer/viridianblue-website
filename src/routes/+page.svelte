@@ -14,12 +14,12 @@
 	let audioWaveHeight: number = $state(80);
 	let isSafari = $state(false); // Safari does not support volume controls
 
-	function onWindowResize() {
+	const onWindowResize = () => {
 		audioWaveHeight = window.innerWidth > 1200 ? 120 : 80;
 		if (window.innerWidth <= 480 || isSafari) {
 			volume = 1;
 		}
-	}
+	};
 
 	onMount(() => {
 		const userAgent = window.navigator.userAgent.toLocaleLowerCase();

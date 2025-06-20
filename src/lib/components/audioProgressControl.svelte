@@ -12,26 +12,26 @@
 	let isDragging = false;
 
 	// Updates the slider when the song progress changes
-	function updateProgress() {
+	const updateProgress = () => {
 		if (audio && !isDragging && duration > 0) {
 			inputValue = audio.currentTime / duration;
 			updateGradient();
 		}
-	}
+	};
 
 	// Update progress bar gradient
-	function updateGradient() {
+	const updateGradient = () => {
 		const percentage = inputValue * 100;
 		progressElement.style.setProperty('--percentage', `${percentage}%`);
-	}
+	};
 
-	function handleDrag() {
+	const handleDrag = () => {
 		isDragging = true;
 		updateGradient();
-	}
+	};
 
 	// Seek function: Moves the audio to selected position
-	function handleSeek() {
+	const handleSeek = () => {
 		isDragging = false;
 		if (audio && duration > 0) {
 			const newTime = inputValue * duration;
@@ -39,15 +39,15 @@
 				audio.currentTime = newTime;
 			}
 		}
-	}
+	};
 
 	// Ensure metadata is loaded to get duration
-	function handleMetadata() {
+	const handleMetadata = () => {
 		if (audio.duration && !isNaN(audio.duration)) {
 			duration = audio.duration;
 			updateProgress();
 		}
-	}
+	};
 
 	// Attach event listeners when component is mounted
 	onMount(() => {

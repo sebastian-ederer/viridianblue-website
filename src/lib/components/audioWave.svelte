@@ -16,17 +16,17 @@
 	let canvasWidth: number;
 	let canvasHeight: number;
 
-	function setupAudio() {
+	const setupAudio = () => {
 		analyser = audioContext.createAnalyser();
 		const source = audioContext.createMediaElementSource(audio);
 		source.connect(analyser);
 		analyser.connect(audioContext.destination);
 		updateFFTSize();
 		frequencyData = new Uint8Array(analyser.frequencyBinCount);
-	}
+	};
 
 	// Function to dynamically adjust FFT size
-	function updateFFTSize() {
+	const updateFFTSize = () => {
 		const fixedBarWidth = 10; // Fixed bar width in pixels
 		const screenBars = Math.floor(window.innerWidth / (fixedBarWidth * 2)); // Number of bars needed
 
@@ -38,9 +38,9 @@
 
 		analyser.fftSize = fftSize;
 		frequencyData = new Uint8Array(analyser.frequencyBinCount);
-	}
+	};
 
-	function setupAudioVisualizer() {
+	const setupAudioVisualizer = () => {
 		if (!canvas) return;
 
 		canvasCtx = canvas.getContext('2d');
@@ -49,16 +49,16 @@
 		canvas.width = canvasWidth;
 		canvas.height = canvasHeight;
 		canvasCtx?.clearRect(0, 0, canvasWidth, canvasHeight);
-	}
+	};
 
-	function drawRoundedRect(
+	const drawRoundedRect = (
 		ctx: CanvasRenderingContext2D,
 		x: number,
 		y: number,
 		width: number,
 		height: number,
 		radius: number
-	) {
+	) => {
 		ctx.beginPath();
 		// Start at bottom-left
 		ctx.moveTo(x, y + height);
@@ -75,9 +75,9 @@
 		// Close the path (bottom edge)
 		ctx.closePath();
 		ctx.fill();
-	}
+	};
 
-	function draw() {
+	const draw = () => {
 		if (canvasCtx === null) return;
 		requestAnimationFrame(draw);
 
@@ -138,13 +138,13 @@
 			xLeft -= fixedBarWidth + gap;
 			xRight += fixedBarWidth + gap;
 		}
-	}
+	};
 
-	function init() {
+	const init = () => {
 		setupAudio();
 		setupAudioVisualizer();
 		draw();
-	}
+	};
 
 	onMount(() => {
 		init();

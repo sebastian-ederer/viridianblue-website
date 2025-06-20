@@ -7,19 +7,19 @@
 	}>();
 	let isPlaying = $state(false);
 
-	async function playSong() {
+	const playSong = async () => {
 		if (audioContext.state === 'suspended') {
 			await audioContext.resume();
 		}
 
 		audio?.play();
 		isPlaying = true;
-	}
+	};
 
-	function pauseSong() {
+	const pauseSong = () => {
 		audio?.pause();
 		isPlaying = false;
-	}
+	};
 </script>
 
 {#if !isPlaying}
