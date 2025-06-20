@@ -24,7 +24,6 @@
 	}
 
 	@for $i from 0 through 4 {
-		// Adjusted loop to 4
 		.leaf#{$i} {
 			left: list.nth($leaf-positions, ($i % $num-positions) + 1);
 			animation-name: fall-animation#{$i};
