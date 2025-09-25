@@ -59,7 +59,7 @@
 			</div>
 		</div>
 
-		<a href="/experience">Experience</a>
+		<a href="/contact">Contact me</a>
 	</div>
 
 	<div class={'audioWrapper'} style="z-index: 10">

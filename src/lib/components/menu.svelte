@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import Experience from './icons/experience.svelte';
+	import Contact from './icons/contact.svelte';
 	import Logo from './icons/logo.svelte';
 	import Person from './icons/person.svelte';
 
@@ -48,9 +48,9 @@
 			</div>
 
 			<div class="menu-group">
-				<a href="/experience" onclick={closeMenuIfMobile}>
-					<span class="icon"><Experience /></span>
-					<span class:active={isActive('/experience')}>Experience</span>
+				<a href="/contact" onclick={closeMenuIfMobile}>
+					<span class="icon"><Contact /></span>
+					<span class:active={isActive('/contact')}>Contact me</span>
 				</a>
 			</div>
 		</div>
