@@ -1,10 +1,93 @@
 <script lang="ts">
+	import { contactSchema } from '$lib/schemas/contactSchema.js';
+	import { invalidateAll } from '$app/navigation';
+	import { applyAction, deserialize } from '$app/forms';
+	import { showToast } from '$lib/stores/toastStore';
+
 	let email: string;
 	let subject: string;
 	let message: string;
 	let isUnlocking = false;
 	let isOpening = false;
 	let isFinished = false;
+
+	let isSubmitting = false;
+	let errors: { [key: string]: Array<string> } = {};
+
+	// State to track whether a field has been focused/touched
+	let touched: { [key: string]: boolean } = {
+		subject: false,
+		message: false,
+		email: false
+	};
+
+	const handleSubmit = async (event: Event) => {
+		isSubmitting = true;
+
+		const data = new FormData(event.currentTarget as HTMLFormElement);
+		const isValid = await contactSchema.isValid({ subject, email, message });
+		if (!isValid) {
+			await validateForm();
+			isSubmitting = false;
+			return;
+		}
+
+		const response = await fetch((event.currentTarget as HTMLFormElement).action, {
+			method: 'POST',
+			body: data
+		});
+
+		const result: any = deserialize(await response.text());
+
+		if (result.type === 'success') {
+			// rerun all `load` functions, following the successful update
+			await invalidateAll();
+			showToast('Message sent successfully!', 'success');
+			email = '';
+			subject = '';
+			message = '';
+			errors = {};
+		} else if (result.status === 400) {
+			errors = result?.data;
+			showToast(result.data?.error || 'Failed to send message.', 'error');
+		}
+
+		applyAction(result);
+		isSubmitting = false;
+	};
+
+	const validateForm = async () => {
+		errors = {};
+
+		await contactSchema
+			.validate({ subject, email, message }, { abortEarly: false })
+			.catch((error) => {
+				for (let i = 0; i < error.inner.length; i++) {
+					const key = error.inner[i].path as keyof typeof errors;
+					errors[key] = error.inner[i].errors;
+				}
+			});
+	};
+
+	const validateField = async (field: string, value: string) => {
+		if (!touched[field]) return;
+
+		try {
+			await contactSchema.validateAt(field, { [field]: value });
+			errors[field] = [];
+		} catch (error: any) {
+			errors[field] = error.errors;
+		}
+	};
+
+	const handleBlur = (field: keyof typeof touched) => {
+		touched[field] = true;
+	};
+
+	const handleOnChange = async (field: string, value: string) => {
+		touched[field] = true;
+		await validateField(field, value);
+	};
 
 	const revealContactForm = () => {
 		// Unlocking (rotation) animation
@@ -62,32 +145,69 @@
 <div class="contact">
 	<div class="form-card">
 		<div class="card-header">
-			<h2>Get in Touch</h2>
+			<h2>Get in touch</h2>
 			<p>Have a question or a project in mind? I'd love to hear from you.</p>
 		</div>
 		<div class="card-content">
-			<form>
+			<form method="POST" on:submit|preventDefault={handleSubmit}>
 				<div class="input-group">
 					<label for="email">Email</label>
-					<input id="email" bind:value={email} type="email" placeholder="your.email@example.com" />
+					<input
+						id="email"
+						type="email"
+						placeholder="your.email@example.com"
+						name="email"
+						on:change={() => handleOnChange('email', email)}
+						on:blur={() => handleBlur('email')}
+						bind:value={email}
+						required
+						class:error={errors?.email?.length > 0}
+					/>
+					{#if errors?.email?.length > 0}
+						<small class="error-msg">{errors.email}</small>
+					{/if}
 				</div>
 				<div class="input-group">
 					<label for="subject">Subject</label>
-					<input id="subject" bind:value={subject} type="text" placeholder="What is this about?" />
+					<input
+						id="subject"
+						type="text"
+						placeholder="What is this about?"
+						name="subject"
+						bind:value={subject}
+						on:change={() => handleOnChange('subject', subject)}
+						on:blur={() => handleBlur('subject')}
+						class:error={errors?.subject?.length > 0}
+						required
+					/>
+					{#if errors?.subject?.length > 0}
+						<small class="error-msg">{errors.subject}</small>
+					{/if}
 				</div>
 				<div class="input-group">
 					<label for="message">Message</label>
-					<textarea id="message" bind:value={message} rows="6" placeholder="Your message..."
+					<textarea
+						id="message"
+						rows="6"
+						placeholder="Your message..."
+						name="message"
+						required
+						on:change={() => handleOnChange('message', message)}
+						on:blur={() => handleBlur('message')}
+						bind:value={message}
+						class:error={errors?.message?.length > 0}
 					></textarea>
+					{#if errors?.message?.length > 0}
+						<small class="error-msg">{errors.message}</small>
+					{/if}
 				</div>
-				<button type="submit" class="submit-btn">Send Message</button>
+				<button type="submit" class="submit-btn" disabled={isSubmitting}>Send Message</button>
 			</form>
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
-	/* --- CSS Variables --- */
 	:root {
 		--gate-fg: #3d352a;
 		--gate-size: 320px;
@@ -444,6 +564,7 @@
 
 	textarea {
 		resize: vertical;
+		font-family: 'Figtree Variable', sans-serif;
 	}
 
 	.submit-btn {
@@ -460,6 +581,25 @@
 
 		&:hover {
 			background-color: rgb(62, 155, 125);
+		}
+
+		&:disabled {
+			background-color: rgb(148, 181, 171);
+			opacity: 0.7;
+			cursor: not-allowed;
+		}
+	}
+
+	.error-msg {
+		color: #ff5569;
+		margin-top: 4px;
+	}
+
+	.error {
+		outline: 2px solid #ff5569;
+
+		&:focus {
+			outline: 2px solid #ff5569;
 		}
 	}
 </style>
