@@ -212,7 +212,6 @@
 		--gate-fg: #3d352a;
 		--gate-size: 320px;
 		--menu-bar-height: 3.75em;
-		--dirt-texture: url('/dirt-texture.jpg');
 	}
 
 	/* --- Reveal Layer & Panels --- */
@@ -300,7 +299,7 @@
 			width: 100%;
 			height: 100%;
 
-			background-image: var(--dirt-texture);
+			background-image: url('/dirt-texture.jpg');
 			background-size: 700px;
 			background-repeat: repeat;
 
