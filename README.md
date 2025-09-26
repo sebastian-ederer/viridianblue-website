@@ -1,38 +1,53 @@
-# sv
+# Viridian Blue - Personal Portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Welcome to the repository for my personal portfolio website, live at [viridianblue.com](https://www.viridianblue.com/). This project was just me having fun.
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🛠️ Tech Stack
 
-```bash
-# create a new project in the current directory
-npx sv create
+This project was built from the ground up using a modern web development stack:
 
-# create a new project in my-app
-npx sv create my-app
-```
+- **Framework**: [SvelteKit](https://kit.svelte.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [SCSS/Sass](https://sass-lang.com/)
+- **Backend (Contact Form)**: [Nodemailer](https://nodemailer.com/) running in a serverless function.
+- **Deployment**: [Vercel](https://vercel.com/)
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## 🚀 Running Locally
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+You need to have [Node.js](https://nodejs.org/) (v18 or higher) and `npm` installed.
+
+### Installation & Setup
+
+1.  Clone the repository:
+    ```sh
+    git clone https://github.com/sebastian-ederer/viridianblue-website.git
+    ```
+2.  Navigate to the project directory:
+    ```sh
+    cd viridianblue-website
+    ```
+3.  Install the dependencies:
+    ```sh
+    npm install
+    ```
+4.  To run the contact form locally, you'll need to set up your own email credentials. Create a `.env` file in the root of the project and add your variables:
+    ```.env
+    EMAIL_USER="your-email@example.com"
+    EMAIL_PASS="your-email-app-password"
+    ```
+
+### Development
+
+Start the development server. By default, it runs on `http://localhost:5177`.
 
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
