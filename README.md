@@ -1,4 +1,4 @@
-# Viridian Blue - Personal Portfolio
+# Viridian Blue
 
 Welcome to the repository for my personal portfolio website, live at [viridianblue.com](https://www.viridianblue.com/). This project was just me having fun.
 
