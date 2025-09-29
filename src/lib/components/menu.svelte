@@ -19,7 +19,7 @@
 </script>
 
 <div class="menu-container">
-	<button aria-label="toggle menu" class="burger-menu" onclick={toggleMenu}>
+	<button aria-label="toggle menu" class="burger-menu" class:open={isOpen} onclick={toggleMenu}>
 		<div class="bar"></div>
 		<div class="bar"></div>
 		<div class="bar"></div>
@@ -69,7 +69,7 @@
 		height: 3.75em;
 		position: sticky;
 		top: 0;
-		z-index: 9;
+		z-index: 99;
 		display: flex;
 		align-items: center;
 		justify-content: start;
@@ -91,16 +91,34 @@
 		cursor: pointer;
 		padding: 0;
 
+		&:focus {
+			outline: none;
+		}
+
 		.bar {
-			width: 100%;
-			height: 0.125em;
-			background-color: #fff;
-			transition: 0.4s;
+			width: 1.5rem;
+			height: 0.25rem;
+			background: #fff;
+			border-radius: 10px;
+			transition: all 0.3s ease-in-out;
+			position: relative;
 		}
 
 		@media (min-width: 480px) {
 			display: none;
 		}
+	}
+
+	.burger-menu.open .bar:nth-child(1) {
+		transform: translateY(0.25rem) rotate(45deg);
+	}
+
+	.burger-menu.open .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	.burger-menu.open .bar:nth-child(3) {
+		transform: translateY(-0.5rem) rotate(-45deg);
 	}
 
 	.menu {
@@ -206,6 +224,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		white-space: nowrap;
 	}
 
 	.menu-group:hover .dropdown {

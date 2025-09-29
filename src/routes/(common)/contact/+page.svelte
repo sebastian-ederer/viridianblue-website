@@ -40,7 +40,6 @@
 		const result: any = deserialize(await response.text());
 
 		if (result.type === 'success') {
-			// rerun all `load` functions, following the successful update
 			await invalidateAll();
 			showToast('Message sent successfully!', 'success');
 			email = '';
@@ -134,10 +133,7 @@
 		</div>
 	</div>
 
-	<!-- The button is separate, to sit on top of the gate -->
 	<button class:hidden={isUnlocking} on:click={revealContactForm}>Contact me</button>
-
-	<!-- These are the original colored background panels -->
 	<div class="half top" class:opening={isOpening}></div>
 	<div class="half bottom" class:opening={isOpening}></div>
 </div>
@@ -487,17 +483,25 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
-		padding: 2em;
+		padding: 1em 0;
+
+		@media (min-width: 480px) {
+			padding: 2em;
+		}
 	}
 
 	.form-card {
 		width: 100%;
 		max-width: 900px;
 		background-color: #ffffff;
-		border-radius: 12px;
+		border-radius: 0;
 		padding: 2.5em;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 		border: 1px solid #e9e9e9;
+
+		@media (min-width: 480px) {
+			border-radius: 12px;
+		}
 	}
 
 	.card-header {
@@ -591,7 +595,7 @@
 
 	.error-msg {
 		color: #ff5569;
-		margin-top: 4px;
+		margin-top: 0.25em;
 	}
 
 	.error {

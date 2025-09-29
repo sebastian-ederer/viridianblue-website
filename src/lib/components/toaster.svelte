@@ -22,7 +22,7 @@
 		flex-direction: column;
 		gap: 0.75rem;
 		width: calc(100% - 2rem);
-		max-width: 400px;
+		max-width: 25em;
 		align-items: center;
 	}
 </style>

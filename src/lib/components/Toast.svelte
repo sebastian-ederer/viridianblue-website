@@ -43,14 +43,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 16px;
-		padding: 12px 16px 12px 24px;
+		gap: 1em;
+		padding: 0.75em 1em 0.75em 1.5em;
 		border-radius: 8px;
 		color: #fff;
 		font-weight: 500;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 		width: 100%;
-		max-width: 400px;
+		max-width: 25em;
 	}
 
 	.success {
@@ -71,8 +71,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 40px;
-		height: 40px;
+		width: 2.5rem;
+		height: 2.5rem;
 		padding: 0;
 		border: none;
 		background-color: transparent;
@@ -83,7 +83,7 @@
 	.close-icon {
 		position: absolute;
 		color: white;
-		font-size: 24px;
+		font-size: 1.5rem;
 		line-height: 1;
 		font-weight: bold;
 		transition: transform 0.2s ease;
