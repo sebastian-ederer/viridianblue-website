@@ -3,6 +3,9 @@
 	import { invalidateAll } from '$app/navigation';
 	import { applyAction, deserialize } from '$app/forms';
 	import { showToast } from '$lib/stores/toastStore';
+	import { onMount } from 'svelte';
+	import 'quill/dist/quill.snow.css';
+	import '$lib/theme/quill.scss';
 
 	let email: string;
 	let subject: string;
@@ -10,6 +13,9 @@
 	let isUnlocking = false;
 	let isOpening = false;
 	let isFinished = false;
+
+	let textarea: HTMLElement;
+	let quill: any;
 
 	let isSubmitting = false;
 	let errors: { [key: string]: Array<string> } = {};
@@ -21,16 +27,68 @@
 		email: false
 	};
 
+	const supportedFormats = [
+		'bold',
+		'font',
+		'code',
+		'italic',
+		'link',
+		'size',
+		'strike',
+		'script',
+		'underline',
+		'blockquote',
+		'header',
+		'indent',
+		'list',
+		'align',
+		'code-block'
+	];
+
+	onMount(async () => {
+		const { default: Quill } = await import('quill');
+
+		const toolbarOptions = [
+			[{ size: [] }],
+			['bold', 'italic', 'underline', 'strike'],
+			['blockquote', 'code-block'],
+			[{ list: 'ordered' }, { list: 'bullet' }],
+			['link']
+		];
+
+		quill = new Quill(textarea, {
+			modules: {
+				toolbar: toolbarOptions
+			},
+			placeholder: 'Your message...',
+			theme: 'snow',
+			formats: supportedFormats
+		});
+
+		// Add validation
+		quill.on('text-change', async () => {
+			touched['message'] = true;
+			message = quill.getText().trim();
+			await validateField('message', message);
+		});
+		quill.on('selection-change', () => {
+			touched['message'] = true;
+		});
+	});
+
 	const handleSubmit = async (event: Event) => {
 		isSubmitting = true;
 
-		const data = new FormData(event.currentTarget as HTMLFormElement);
+		message = quill.getSemanticHTML();
 		const isValid = await contactSchema.isValid({ subject, email, message });
 		if (!isValid) {
 			await validateForm();
 			isSubmitting = false;
 			return;
 		}
+
+		const data = new FormData(event.currentTarget as HTMLFormElement);
+		data.set('message', message);
 
 		const response = await fetch((event.currentTarget as HTMLFormElement).action, {
 			method: 'POST',
@@ -182,17 +240,9 @@
 				</div>
 				<div class="input-group">
 					<label for="message">Message</label>
-					<textarea
-						id="message"
-						rows="6"
-						placeholder="Your message..."
-						name="message"
-						required
-						on:change={() => handleOnChange('message', message)}
-						on:blur={() => handleBlur('message')}
-						bind:value={message}
-						class:error={errors?.message?.length > 0}
-					></textarea>
+					<div class="textarea-wrapper" class:error={errors?.message?.length > 0}>
+						<div bind:this={textarea}></div>
+					</div>
 					{#if errors?.message?.length > 0}
 						<small class="error-msg">{errors.message}</small>
 					{/if}
@@ -542,8 +592,7 @@
 		color: #333;
 	}
 
-	input,
-	textarea {
+	input {
 		width: 100%;
 		padding: 0.8em 1em;
 		border-radius: 8px;
@@ -565,9 +614,14 @@
 		}
 	}
 
-	textarea {
-		resize: vertical;
-		font-family: 'Figtree Variable', sans-serif;
+	.textarea-wrapper {
+		border-radius: 8px;
+
+		&:focus-within {
+			outline: none;
+			border-color: rgb(70, 165, 135);
+			box-shadow: 0 0 0 3px rgba(83, 197, 160, 0.2);
+		}
 	}
 
 	.submit-btn {

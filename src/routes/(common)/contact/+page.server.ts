@@ -1,6 +1,7 @@
 import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
 import nodemailer from 'nodemailer';
+import sanitizeHtml from 'sanitize-html';
 
 import { EMAIL_USER, EMAIL_PASS } from '$env/static/private';
 import { contactSchema } from '$lib/schemas/contactSchema';
@@ -8,14 +9,15 @@ import { contactSchema } from '$lib/schemas/contactSchema';
 export const actions = {
 	default: async ({ request }) => {
 		const formData = await request.formData();
-		const email = formData.get('email');
-		const subject = formData.get('subject');
-		const message = formData.get('message');
+		const email = String(formData.get('email') || '');
+		const subject = String(formData.get('subject') || '');
+		const message = String(formData.get('message') || '');
+		const cleanMessage = sanitizeHtml(message);
 
 		let errors: { [key: string]: Array<string> } = {};
 
 		await contactSchema
-			.validate({ subject, email: email, message }, { abortEarly: false })
+			.validate({ subject, email: email, message: cleanMessage }, { abortEarly: false })
 			.catch((error) => {
 				for (let i = 0; i < error.inner.length; i++) {
 					const key = error.inner[i].path as keyof typeof errors;
@@ -37,21 +39,19 @@ export const actions = {
 			}
 		});
 
-		transporter.verify(function (error: any) {
-			if (error) {
-				console.error(error);
-			} else {
-				console.log('Server is ready to take our messages');
-			}
-		});
-
 		// Construct the email
 		const mailOptions = {
 			from: email,
 			to: EMAIL_USER,
 			replyTo: String(email),
 			subject: subject,
-			text: `${message} \n\n---\n\nSent by: ${email}`
+			html: `
+				<div style="font-family: sans-serif; font-size: 16px; color: #333;">
+					${cleanMessage}
+					<hr style="margin-top: 2em; border: none; border-top: 1px solid #ccc;" />
+					<p><strong>Sender:</strong> ${email}</p>
+				</div>
+			`
 		};
 
 		const sendEmail = async (email: any) => {
@@ -71,7 +71,8 @@ export const actions = {
 			await sendEmail(mailOptions);
 			return { success: true };
 		} catch (error) {
-			return fail(500, { success: false, error });
+			console.error('Email send failed:', error);
+			return fail(500, { success: false, error: 'Internal server error' });
 		}
 	}
 } satisfies Actions;

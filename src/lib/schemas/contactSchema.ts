@@ -11,6 +11,6 @@ export const contactSchema = yup.object().shape({
 		.required('Please provide a valid email address.'),
 	message: yup
 		.string()
-		.max(20000, 'The message may not exceed 20.000 characters.')
+		.max(200000, 'The message may not exceed 200.000 characters.')
 		.required('Message is required.')
 });

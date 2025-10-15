@@ -6,7 +6,7 @@
 {#if $toasts.length}
 	<div class="toaster-container">
 		{#each $toasts as toast (toast.id)}
-			<Toast id={toast.id} type={toast.type} message={toast.message} />
+			<Toast id={toast.id} type={toast.type} message={toast.message} duration={toast.duration} />
 		{/each}
 	</div>
 {/if}

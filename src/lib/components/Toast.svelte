@@ -83,10 +83,9 @@
 	.close-icon {
 		position: absolute;
 		color: white;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		line-height: 1;
 		font-weight: bold;
-		transition: transform 0.2s ease;
 	}
 
 	.progress-ring {
