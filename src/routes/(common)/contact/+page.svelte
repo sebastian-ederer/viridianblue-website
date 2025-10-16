@@ -60,7 +60,6 @@
 			modules: {
 				toolbar: toolbarOptions
 			},
-			placeholder: 'Your message...',
 			theme: 'snow',
 			formats: supportedFormats
 		});
