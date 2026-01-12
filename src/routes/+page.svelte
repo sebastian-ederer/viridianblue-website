@@ -2,6 +2,7 @@
 	import AudioProgressControl from '$lib/components/audioProgressControl.svelte';
 	import AudioWave from '$lib/components/audioWave.svelte';
 	import Background from '$lib/components/background.svelte';
+	import Github from '$lib/components/icons/github.svelte';
 	import Menu from '$lib/components/menu.svelte';
 	import PlayPauseButton from '$lib/components/playPauseButton.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
@@ -60,6 +61,8 @@
 		</div>
 
 		<a href="/contact">Contact me</a>
+
+		<a href="https://github.com/sebastian-ederer" target="_blank" class="socials"><Github /></a>
 	</div>
 
 	<div class={'audioWrapper'} style="z-index: 10">
@@ -170,6 +173,8 @@
 		z-index: 9;
 		top: 1.875em;
 		gap: 1.875em;
+		width: 100%;
+		justify-content: center;
 
 		a {
 			font-weight: 500;
@@ -203,6 +208,22 @@
 
 				&::after {
 					width: 100%;
+				}
+			}
+
+			&.socials {
+				position: absolute;
+				right: 2.3em;
+				display: flex;
+				align-items: center;
+
+				&::after {
+					display: none;
+				}
+
+				:global(svg) {
+					width: 1.25em;
+					height: 1.25em;
 				}
 			}
 		}

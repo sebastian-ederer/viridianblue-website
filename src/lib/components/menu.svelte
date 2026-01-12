@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import Contact from './icons/contact.svelte';
+	import Github from './icons/github.svelte';
 	import Logo from './icons/logo.svelte';
 	import Person from './icons/person.svelte';
 
@@ -24,6 +25,10 @@
 		<div class="bar"></div>
 		<div class="bar"></div>
 	</button>
+
+	<a href="https://github.com/sebastian-ederer" target="_blank" class="socials">
+		<Github />
+	</a>
 
 	<div class="menu" class:open={isOpen}>
 		<div class="inner-menu">
@@ -260,6 +265,24 @@
 
 		a {
 			height: fit-content;
+		}
+	}
+
+	.socials {
+		position: absolute;
+		right: 1.25em;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		height: auto;
+
+		&:hover {
+			color: #73c6b6;
+		}
+
+		:global(svg) {
+			width: 1.25em;
+			height: 1.25em;
 		}
 	}
 </style>
