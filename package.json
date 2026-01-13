@@ -38,7 +38,6 @@
 	"dependencies": {
 		"@fontsource-variable/dancing-script": "^5.1.1",
 		"@fontsource-variable/figtree": "^5.1.2",
-		"fuse.js": "^7.1.0",
 		"nodemailer": "^7.0.6",
 		"quill": "^2.0.3",
 		"sanitize-html": "^2.17.0",

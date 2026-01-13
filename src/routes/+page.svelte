@@ -6,6 +6,7 @@
 	import Menu from '$lib/components/menu.svelte';
 	import PlayPauseButton from '$lib/components/playPauseButton.svelte';
 	import VolumeControl from '$lib/components/volumeControl.svelte';
+	import { BREAKPOINTS, AUDIO_WAVE } from '$lib/constants';
 	import { onMount } from 'svelte';
 
 	let audio: HTMLAudioElement | undefined = $state();
@@ -16,8 +17,9 @@
 	let isSafari = $state(false); // Safari does not support volume controls
 
 	const onWindowResize = () => {
-		audioWaveHeight = window.innerWidth > 1200 ? 120 : 80;
-		if (window.innerWidth <= 480 || isSafari) {
+		audioWaveHeight =
+			window.innerWidth > BREAKPOINTS.DESKTOP ? AUDIO_WAVE.HEIGHT_DESKTOP : AUDIO_WAVE.HEIGHT_MOBILE;
+		if (window.innerWidth <= BREAKPOINTS.MOBILE || isSafari) {
 			volume = 1;
 		}
 	};
@@ -41,7 +43,7 @@
 
 <svelte:head>
 	<title>Viridian Blue</title>
-	<link rel="preload" href="/forrest-base-bg-summer.png" as="image" />
+	<link rel="preload" href="/forrest-base-bg-summer.webp" as="image" />
 </svelte:head>
 
 <div class="mobile-menu">
@@ -67,8 +69,8 @@
 
 	<div class={'audioWrapper'} style="z-index: 10">
 		<audio bind:this={audio} loop {volume} {muted}>
+			<source src={'/sus-falling-tears-edm.webm'} type="audio/webm" />
 			<source src={'/sus-falling-tears-edm.mp3'} type="audio/mpeg" />
-			<source src={'/sus-falling-tears-edm.ogg'} type="audio/ogg" />
 		</audio>
 	</div>
 

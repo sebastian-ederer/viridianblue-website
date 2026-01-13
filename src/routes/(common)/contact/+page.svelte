@@ -3,6 +3,7 @@
 	import { invalidateAll } from '$app/navigation';
 	import { applyAction, deserialize } from '$app/forms';
 	import { showToast } from '$lib/stores/toastStore';
+	import { ANIMATION_DURATION } from '$lib/constants';
 	import { onMount } from 'svelte';
 	import 'quill/dist/quill.snow.css';
 	import '$lib/theme/quill.scss';
@@ -15,7 +16,7 @@
 	let isFinished = false;
 
 	let textarea: HTMLElement;
-	let quill: any;
+	let quill: import('quill').default | undefined;
 
 	let isSubmitting = false;
 	let errors: { [key: string]: Array<string> } = {};
@@ -67,7 +68,7 @@
 		// Add validation
 		quill.on('text-change', async () => {
 			touched['message'] = true;
-			message = quill.getText().trim();
+			message = quill?.getText().trim() ?? '';
 			await validateField('message', message);
 		});
 		quill.on('selection-change', () => {
@@ -78,6 +79,7 @@
 	const handleSubmit = async (event: Event) => {
 		isSubmitting = true;
 
+		if (!quill) return;
 		message = quill.getSemanticHTML();
 		const isValid = await contactSchema.isValid({ subject, email, message });
 		if (!isValid) {
@@ -149,14 +151,14 @@
 		// Unlocking (rotation) animation
 		isUnlocking = true;
 
-		// After the rotation is finished (800ms), start the opening (sliding) animation
+		// After the rotation is finished, start the opening (sliding) animation
 		setTimeout(() => {
 			isOpening = true;
 
 			setTimeout(() => {
 				isFinished = true;
-			}, 800);
-		}, 800);
+			}, ANIMATION_DURATION.SLIDE_OPEN);
+		}, ANIMATION_DURATION.GATE_ROTATION);
 	};
 </script>
 

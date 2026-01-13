@@ -149,16 +149,15 @@
 	onMount(() => {
 		init();
 
-		window.addEventListener('resize', () => {
+		const handleResize = () => {
 			updateFFTSize();
 			setupAudioVisualizer();
-		});
+		};
+
+		window.addEventListener('resize', handleResize);
 
 		return () => {
-			window.removeEventListener('resize', () => {
-				updateFFTSize();
-				setupAudioVisualizer();
-			});
+			window.removeEventListener('resize', handleResize);
 		};
 	});
 </script>

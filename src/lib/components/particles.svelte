@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { BREAKPOINTS, PARTICLES } from '$lib/constants';
 
 	let canvas: HTMLCanvasElement;
 	let ctx: CanvasRenderingContext2D | null = null;
 	let width = 0;
 	let height = 0;
 	let system: ParticleSystem;
+	let animationId: number;
+	let isVisible = true;
 
 	class Particle {
 		x: number = 0;
@@ -84,26 +87,50 @@
 	};
 
 	const animate = () => {
+		if (!isVisible) return;
 		system.update();
 		draw();
-		requestAnimationFrame(animate);
+		animationId = requestAnimationFrame(animate);
 	};
 
 	onMount(() => {
 		width = window.innerWidth;
 		height = window.innerHeight;
-		system = new ParticleSystem(200);
+
+		// Reduce particle count on mobile for better performance
+		const particleCount =
+			window.innerWidth < BREAKPOINTS.TABLET ? PARTICLES.COUNT_MOBILE : PARTICLES.COUNT_DESKTOP;
+		system = new ParticleSystem(particleCount);
 
 		if (canvas) {
 			ctx = canvas.getContext('2d');
 			resizeCanvas();
+
+			// Intersection Observer to pause animation when off-screen
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						isVisible = entry.isIntersecting;
+						if (isVisible && !animationId) {
+							animate();
+						}
+					});
+				},
+				{ threshold: 0 }
+			);
+			observer.observe(canvas);
+
 			animate();
 			window.addEventListener('resize', resizeCanvas);
-		}
 
-		return () => {
-			window.addEventListener('resize', resizeCanvas);
-		};
+			return () => {
+				window.removeEventListener('resize', resizeCanvas);
+				observer.disconnect();
+				if (animationId) {
+					cancelAnimationFrame(animationId);
+				}
+			};
+		}
 	});
 </script>
 

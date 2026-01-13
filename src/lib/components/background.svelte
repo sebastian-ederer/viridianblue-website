@@ -16,7 +16,7 @@
 		overflow: hidden;
 		inset: 0;
 		z-index: -1;
-		background-image: url('/forrest-base-bg-summer.png');
+		background-image: url('/forrest-base-bg-summer.webp');
 		background-size: cover;
 		background-repeat: no-repeat;
 	}

@@ -1,14 +1,20 @@
 <script lang="ts">
 	import SeasonBackground from '$lib/components/seasonBackground.svelte';
 	import { onDestroy, onMount } from 'svelte';
-	import Swiper from 'swiper';
-	import 'swiper/css/bundle';
-	import { A11y, Autoplay, Keyboard, Mousewheel, Navigation, Scrollbar } from 'swiper/modules';
+	import type SwiperType from 'swiper';
 
-	let swiper: Swiper | null = $state(null);
+	let swiper: SwiperType | null = $state(null);
 	let season: 'spring' | 'summer' | 'fall' | 'winter' = $state('summer');
 
-	onMount(() => {
+	onMount(async () => {
+		// Lazy-load Swiper and its modules
+		const [{ default: Swiper }, { A11y, Autoplay, Keyboard, Mousewheel, Navigation, Scrollbar }] =
+			await Promise.all([import('swiper'), import('swiper/modules')]);
+
+		// Lazy-load CSS (using @ts-ignore since CSS modules don't have type declarations)
+		// @ts-ignore
+		await import('swiper/css/bundle');
+
 		swiper = new Swiper('.swiper', {
 			modules: [Scrollbar, Mousewheel, Keyboard, Autoplay, Navigation, A11y],
 			mousewheel: true,
@@ -51,10 +57,10 @@
 
 <svelte:head>
 	<title>About Me</title>
-	<link rel="preload" href="/forrest-base-bg-fall.png" as="image" />
-	<link rel="preload" href="/forrest-base-bg-spring.png" as="image" />
-	<link rel="preload" href="/forrest-base-bg-summer.png" as="image" />
-	<link rel="preload" href="/forrest-base-bg-winter.png" as="image" />
+	<link rel="preload" href="/forrest-base-bg-fall.webp" as="image" />
+	<link rel="preload" href="/forrest-base-bg-spring.webp" as="image" />
+	<link rel="preload" href="/forrest-base-bg-summer.webp" as="image" />
+	<link rel="preload" href="/forrest-base-bg-winter.webp" as="image" />
 </svelte:head>
 
 <div class="about">
@@ -64,7 +70,7 @@
 			<div data-season="summer" class="slide swiper-slide">
 				<div class="card">
 					<div class="introduction">
-						<img alt="pic" src="/profile_pic.jpg" />
+						<img alt="pic" src="/profile_pic.webp" />
 						<div>
 							<h2>Introduction</h2>
 							<p>

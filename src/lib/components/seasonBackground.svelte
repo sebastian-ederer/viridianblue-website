@@ -5,22 +5,14 @@
 	import CherryBlossom from './cherryBlossom.svelte';
 	import SnowAnimation from './snowAnimation.svelte';
 
-	export let season: 'spring' | 'summer' | 'fall' | 'winter' = 'summer';
-	let backgroundImageElement: HTMLDivElement;
-
-	$: if (season) {
-		if (backgroundImageElement) {
-			const newBackgroundImage = backgroundImageElement.cloneNode(true) as HTMLDivElement;
-			backgroundImageElement.replaceWith(newBackgroundImage);
-			backgroundImageElement = newBackgroundImage;
-			backgroundImageElement.classList.add('animate');
-		}
-	}
+	let { season = 'summer' }: { season: 'spring' | 'summer' | 'fall' | 'winter' } = $props();
 </script>
 
-<div class={['background', season]}>
-	<div class={['background-colored-image']} data-swiper-parallax="-23%"></div>
-	<div bind:this={backgroundImageElement} class={['background-image']}></div>
+<div class={`background ${season}`}>
+	<div class="background-colored-image" data-swiper-parallax="-23%"></div>
+	{#key season}
+		<div class="background-image"></div>
+	{/key}
 	{#if season === 'summer' || season == 'spring' || season == 'fall'}
 		<Birds />
 	{/if}
@@ -64,7 +56,7 @@
 	.background-image {
 		position: absolute;
 		inset: 0;
-		background-image: url('/forrest-base-bg-summer.png');
+		background-image: url('/forrest-base-bg-summer.webp');
 		background-size: cover;
 		background-repeat: no-repeat;
 
@@ -96,7 +88,7 @@
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-summer.png');
+			background-image: url('/forrest-base-bg-summer.webp');
 		}
 	}
 
@@ -107,7 +99,7 @@
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-fall.png');
+			background-image: url('/forrest-base-bg-fall.webp');
 		}
 	}
 
@@ -118,7 +110,7 @@
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-winter.png');
+			background-image: url('/forrest-base-bg-winter.webp');
 		}
 	}
 
@@ -129,7 +121,7 @@
 
 		.background-image,
 		.background-colored-image {
-			background-image: url('/forrest-base-bg-spring.png');
+			background-image: url('/forrest-base-bg-spring.webp');
 		}
 	}
 </style>
