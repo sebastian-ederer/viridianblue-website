@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Birds from '$lib/components/birds.svelte';
+	import LeafeAnimation from '$lib/components/leafeAnimation.svelte';
 	import Particles from '$lib/components/particles.svelte';
 	import SunRays from '$lib/components/sunRays.svelte';
 	import CherryBlossom from './cherryBlossom.svelte';
@@ -28,6 +29,10 @@
 
 	{#if season === 'spring'}
 		<CherryBlossom />
+	{/if}
+
+	{#if season === 'fall'}
+		<LeafeAnimation />
 	{/if}
 </div>
 
