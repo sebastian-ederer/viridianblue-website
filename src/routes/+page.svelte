@@ -18,7 +18,9 @@
 
 	const onWindowResize = () => {
 		audioWaveHeight =
-			window.innerWidth > BREAKPOINTS.DESKTOP ? AUDIO_WAVE.HEIGHT_DESKTOP : AUDIO_WAVE.HEIGHT_MOBILE;
+			window.innerWidth > BREAKPOINTS.DESKTOP
+				? AUDIO_WAVE.HEIGHT_DESKTOP
+				: AUDIO_WAVE.HEIGHT_MOBILE;
 		if (window.innerWidth <= BREAKPOINTS.MOBILE || isSafari) {
 			volume = 1;
 		}
@@ -64,7 +66,12 @@
 
 		<a href="/contact">Contact me</a>
 
-		<a href="https://github.com/sebastian-ederer" target="_blank" class="socials"><Github /></a>
+		<a
+			href="https://github.com/sebastian-ederer"
+			target="_blank"
+			class="socials"
+			aria-label="Check out my GitHub profile"><Github /></a
+		>
 	</div>
 
 	<div class={'audioWrapper'} style="z-index: 10">

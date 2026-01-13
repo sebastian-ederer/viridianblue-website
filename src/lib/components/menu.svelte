@@ -26,7 +26,12 @@
 		<div class="bar"></div>
 	</button>
 
-	<a href="https://github.com/sebastian-ederer" target="_blank" class="socials">
+	<a
+		href="https://github.com/sebastian-ederer"
+		target="_blank"
+		class="socials"
+		aria-label="Check out my GitHub profile"
+	>
 		<Github />
 	</a>
 
